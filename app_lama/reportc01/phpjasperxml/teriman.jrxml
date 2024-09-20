@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kasn" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfad45cf-72e9-4697-a6dc-fa407eb0bfe2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="1ca77ded-8c64-4fed-a35d-53c974271eab"/>
+	<queryString>
+		<![CDATA[SELECT KD_BRG, NA_BRG, TGL, AWAL, MASUK, KELUAR, LAIN, AKHIR FROM KARTU]]>
+	</queryString>
+	<field name="NO_BUKTI" class="java.lang.String"/>
+	<field name="KODES" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAMAS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TGL" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AWAL" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KELUAR" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LAIN" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AKHIR" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NO_BL" class="java.lang.String"/>
+	<field name="KD_BRG" class="java.lang.String"/>
+	<field name="NA_BRG" class="java.lang.String"/>
+	<field name="NOTES" class="java.lang.String"/>
+	<field name="KG" class="java.lang.Float"/>
+	<field name="HARGA" class="java.lang.Float"/>
+	<variable name="VAR_KG" class="java.lang.Double" resetType="Group" resetGroup="Item" calculation="Sum">
+		<variableExpression><![CDATA[$F{KG}]]></variableExpression>
+	</variable>
+	<variable name="VAR_TOTAL" class="java.lang.Double" resetType="Group" resetGroup="Item" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+	<variable name="var_keluar" class="java.lang.Double" resetType="Group" resetGroup="Item" calculation="Sum">
+		<variableExpression><![CDATA[$F{KELUAR}]]></variableExpression>
+	</variable>
+	<variable name="var_lain" class="java.lang.Double" resetType="Group" resetGroup="Item" calculation="Sum">
+		<variableExpression><![CDATA[$F{LAIN}]]></variableExpression>
+	</variable>
+	<variable name="var_saldo" class="java.lang.Double" resetType="Group" resetGroup="Item" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL}]]></variableExpression>
+	</variable>
+	<group name="Item">
+		<groupExpression><![CDATA[$F{KD_BRG}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="280" y="18" width="216" height="20" uuid="875eb13b-3110-49a3-a8af-ae0c33a2ff79"/>
+				<textElement textAlignment="Center">
+					<font fontName="CourierN" size="14" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Laporan Terima Gudang"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="6" width="80" height="20" uuid="663d8198-c7fb-41cd-a11a-fd282d12016d"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="512" y="6" width="40" height="20" uuid="b8c2b5ec-666d-47cc-ad9d-d0b1db12d931"/>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="27" width="316" height="20" uuid="dddc6b73-5a89-4ccb-8d25-ab9c3386dda7"/>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KODES}+'-'+$F{NAMAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="194" height="18" uuid="ef85a71c-7810-43c9-a2cd-dcd8bb514562"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["UD. Jago - Kerek Tuban"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="5" y="2" width="793" height="24" uuid="9f29e13f-0b92-47ac-a091-1e5d68103c5e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="90" y="5" width="59" height="20" uuid="6b256670-80d5-4f56-8a0b-9d7e94fc7edd"/>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tgl"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="6" width="45" height="20" uuid="fe480d55-1b69-448f-89e5-a74f257ff443"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Kg"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="5" width="76" height="20" uuid="3dd2fcb0-1a0f-4690-b9be-2fd49f761731"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Barang#"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="5" width="76" height="20" uuid="77b5b9fb-8444-4d2e-932f-011faeb5d76e"/>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bukti#"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="749" y="6" width="49" height="20" uuid="68d8622e-78be-4189-b5f2-2b6b6da4013c"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="663" y="6" width="50" height="20" uuid="2bf059e3-aee1-495d-9696-d2e116f7ab42"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Harga"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="5" width="70" height="20" uuid="07be0961-a171-4fa9-8b84-c1243a907539"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Beli#"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="5" width="76" height="20" uuid="c531e86c-0e29-4ec5-b22e-d819c80fa684"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nama"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="0" width="81" height="17" uuid="b40156b6-0109-4587-b0f9-81048240f567"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NO_BUKTI}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="90" y="0" width="59" height="17" uuid="15c7b745-49b0-4d1e-8130-17b6ea3837ba"/>
+				<textElement>
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TGL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="520" y="0" width="95" height="17" uuid="78c6c50f-28cb-45d5-b014-f27909ce0693"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KG}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="620" y="0" width="93" height="17" uuid="2b972f1b-c0d0-40f1-9fb2-f661e1384d3b"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HARGA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="366" y="0" width="149" height="17" uuid="f5b1830a-1e8a-4753-bad7-4a3df0f43ec7"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NA_BRG}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="720" y="0" width="78" height="17" uuid="6771af26-b4b7-4b22-bb40-b5ee54642e06"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="151" y="0" width="72" height="17" uuid="5bd7c7f6-9cc1-449b-b0d3-b5102380e2e9"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NO_BL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="228" y="0" width="133" height="17" uuid="090566e3-d6e4-40a1-89bd-23e723fc5926"/>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAMAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="150" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="1" width="793" height="24" uuid="6f0ca931-16a3-4fda-b418-325dd6d18dc3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField pattern="#,##0">
+				<reportElement x="520" y="3" width="95" height="20" uuid="35da091a-2cf7-4789-ab45-6aa7936b2ea5"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{VAR_KG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="3" width="76" height="20" uuid="17785d82-98c7-4ea9-8d68-909300f2c459"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total :"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="697" y="3" width="101" height="20" uuid="608577a3-7b8c-4f2a-9543-5ae17b8ca57d"/>
+				<textElement textAlignment="Right">
+					<font fontName="CourierN"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{VAR_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="166" y="60" width="136" height="70" uuid="ddb7b13c-0dab-44af-aeec-b7e3079a1ef9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="CourierN" size="11" isUnderline="false"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="31" width="136" height="29" uuid="2299657b-1b6f-4351-ac4b-ae72791548c8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CourierN" size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pimpinan"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="130" width="136" height="20" uuid="2644f7ca-f6a4-4625-9036-a23d1093e6b2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tgl :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="130" width="136" height="20" uuid="abfdabce-7497-4cfe-86eb-cb15dadc5275"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tgl :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="166" y="31" width="136" height="29" uuid="70eec02b-f2db-4548-a2ef-ce5210afdade"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CourierN" size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Kontrol"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="130" width="136" height="20" uuid="345dcde8-281d-4a7f-b341-62d16cf32169"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="CourierN" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tgl :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="302" y="31" width="136" height="29" uuid="b449071e-a72e-44a2-a78c-11819d7712d8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="CourierN" size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Kasir"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="30" y="60" width="136" height="70" uuid="16fa0b8b-bfca-43e1-b6d2-fb4716ffaf12"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="CourierN" size="11" isUnderline="false"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="302" y="60" width="136" height="70" uuid="9d7ef59f-576e-4b51-b3c6-77149721cced"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="CourierN" size="11" isUnderline="false"/>
+				</textElement>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
