@@ -54,6 +54,21 @@ class PiuController extends Controller
         return view('otransaksi_piu.index')->with(['judul' => $this->judul, 'golz' => $this->GOLZ , 'flagz' => $this->FLAGZ ]);
     }
 
+    public function browsekartu(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+
+        $piu = DB::SELECT("SELECT NO_BUKTI, NO_SO, DATE_FORMAT(piu.TGL,'%d/%m/%Y') AS TGL, KODEC, NAMAC, URAIAN, BAYAR 
+        FROM piu
+		-- WHERE GOL='$request->GOL' AND PER='$periode' 
+		WHERE 
+        -- PER='$periode' AND 
+        NO_SO=(SELECT max(NO_SO) from so WHERE NO_ID='$request->IDSO')
+        ORDER BY NO_BUKTI; ");
+
+        return response()->json($piu);
+    }
+
 
     // ganti 4
 

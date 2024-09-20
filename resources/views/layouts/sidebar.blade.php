@@ -487,6 +487,22 @@
             </a>
 
             <ul class="nav nav-treeview">
+
+              <li class="nav-item {{ (Request::is('rkartuh')) ? 'active' : '' }}">
+                <a href="{{url('kartupo/index-posting')}}" class="nav-link">
+                  <!-- <i class="nav-icon far fa-sticky-note icon-pink"></i> -->
+                  <p>Purchase Order</p>
+                </a>
+              </li>
+
+              <li class="nav-item {{ (Request::is('rkartuh')) ? 'active' : '' }}">
+                <a href="{{url('kartuso/index-posting')}}" class="nav-link">
+                  <!-- <i class="nav-icon far fa-sticky-note icon-pink"></i> -->
+                  <p>Sales Order</p>
+                </a>
+              </li>
+
+
               <li class="nav-item {{ (Request::is('rkarstk')) ? 'active' : '' }}">
                 <a href="{{url('rkarstk')}}" class="nav-link">
                   <!-- <i class="nav-icon fas fa-box-open icon-red"></i> -->

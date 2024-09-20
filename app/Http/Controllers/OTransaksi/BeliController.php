@@ -84,6 +84,48 @@ class BeliController extends Controller
         return response()->json($beli);
     }
 
+    public function browsekartu(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+
+        $beli = DB::SELECT(" SELECT NO_BUKTI, NO_PO, DATE_FORMAT(beli.TGL,'%d/%m/%Y') AS TGL, NAMAS, NA_BRG, TRUCK, KG, HARGA, TOTAL 
+        FROM BELI
+		WHERE 
+        -- PER='$periode' AND 
+        NO_PO=(SELECT max(NO_PO) from po WHERE NO_ID='$request->IDPO')
+        ORDER BY NO_BUKTI; ");
+
+        return response()->json($beli);
+    }
+
+    public function browsekartu2(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+        $tahun = substr($periode,3,4);
+
+        $kartu = DB::SELECT(" SELECT *,@akum:=@akum+TOTAL-BAYAR AS SALDO from
+                    (
+
+                    SELECT NO_BUKTI, DATE_FORMAT(belix.TGL,'%d/%m/%Y') AS TGL, NAMAS, 0 AS KG, PER01 AS TOTAL, 0 AS BAYAR
+                    from belix where belix.YER='$tahun' and PER01<>0  union all
+
+                    SELECT NO_PO AS NO_BUKTI, DATE_FORMAT(po.TGL,'%d/%m/%Y') AS TGL , NAMAS, KG, 0 AS TOTAL, 0 AS BAYAR
+                    from po 
+                    WHERE 
+                    -- PER='$periode' AND 
+                    NO_PO=(SELECT max(NO_PO) from po WHERE NO_ID='$request->IDPO') union all
+
+                    SELECT NO_BUKTI, DATE_FORMAT(hut.TGL,'%d/%m/%Y') AS TGL, NAMAS, 0 AS KG, TOTAL, BAYAR 
+                    from hut 
+                    WHERE 
+                    -- PER='$periode' AND 
+                    NO_PO=(SELECT max(NO_PO) from po WHERE NO_ID='$request->IDPO')
+                                    
+                    ) as  kartu ");
+
+        return response()->json($kartu);
+    }
+
     public function getBeli(Request $request)
     {
         if ($request->session()->has('periode')) {

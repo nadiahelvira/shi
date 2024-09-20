@@ -52,6 +52,21 @@ class HutController extends Controller
         $this->setFlag($request);
         // ganti 3
         return view('otransaksi_hut.index')->with(['judul' => $this->judul, 'golz' => $this->GOLZ , 'flagz' => $this->FLAGZ ]);
+    } 
+
+    public function browsekartu(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+
+        $hut = DB::SELECT("SELECT NO_BUKTI, NO_PO, DATE_FORMAT(hut.TGL,'%d/%m/%Y') AS TGL, KODES, NAMAS, URAIAN, BAYAR 
+        FROM HUT
+		-- WHERE GOL='$request->GOL' AND PER='$periode' 
+		WHERE 
+        -- PER='$periode' AND 
+        NO_PO=(SELECT max(NO_PO) from po WHERE NO_ID='$request->IDPO')
+        ORDER BY NO_BUKTI; ");
+
+        return response()->json($hut);
     }
 
 

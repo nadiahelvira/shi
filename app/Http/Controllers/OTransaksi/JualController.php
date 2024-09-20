@@ -88,6 +88,49 @@ class JualController extends Controller
 
         return response()->json($jual);
     }
+    
+
+    public function browsekartu(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+
+        $jual = DB::SELECT(" SELECT NO_BUKTI, NO_SO, DATE_FORMAT(jual.TGL,'%d/%m/%Y') AS TGL, NAMAC, NA_BRG, TRUCK, KG, HARGA, TOTAL 
+        FROM jual
+		WHERE 
+        -- PER='$periode' AND 
+        NO_SO=(SELECT max(NO_SO) from so WHERE NO_ID='$request->IDSO')
+        ORDER BY NO_BUKTI; ");
+
+        return response()->json($jual);
+    }
+
+    public function browsekartu2(Request $request)
+    {
+		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
+        $tahun = substr($periode,3,4);
+
+        $kartu = DB::SELECT(" SELECT *,@akum:=@akum+TOTAL-BAYAR AS SALDO from
+                    (
+
+                    SELECT NO_BUKTI, DATE_FORMAT(jualx.TGL,'%d/%m/%Y') AS TGL, NAMAC, 0 AS KG, PER01 AS TOTAL, 0 AS BAYAR
+                    from jualx where jualx.YER='$tahun' and PER01<>0  union all
+
+                    SELECT NO_SO AS NO_BUKTI, DATE_FORMAT(so.TGL,'%d/%m/%Y') AS TGL , NAMAC, KG, 0 AS TOTAL, 0 AS BAYAR
+                    from so 
+                    WHERE 
+                    -- PER='$periode' AND 
+                    NO_SO=(SELECT max(NO_SO) from so WHERE NO_ID='$request->IDSO') union all
+
+                    SELECT NO_BUKTI, DATE_FORMAT(piu.TGL,'%d/%m/%Y') AS TGL, NAMAC, 0 AS KG, TOTAL, BAYAR 
+                    from piu 
+                    WHERE 
+                    -- PER='$periode' AND 
+                    NO_SO=(SELECT max(NO_SO) from so WHERE NO_ID='$request->IDSO')
+                                    
+                    ) as  kartu ");
+
+        return response()->json($kartu);
+    }
 	
 	
     // ganti 4
