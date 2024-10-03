@@ -192,8 +192,13 @@ class KasController extends Controller
 
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
-        $query = DB::table('kas')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
-
+        // $query = DB::table('kas')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
+        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(kas.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI,
+                            FROM kas
+                            WHERE PER = '$periode'
+                            AND TYPE ='$FLAGZ'
+                            ORDER BY NO_BUKTI DESC Limit 1");
+                            
         // Check apakah No Bukti terakhir NULL
         if ($query != '[]') {
             $query = substr($query[0]->NO_BUKTI, -4);
