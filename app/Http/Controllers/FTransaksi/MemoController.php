@@ -160,7 +160,7 @@ class MemoController extends Controller
         $tahun    = substr(session()->get('periode')['tahun'], -2);
         // $query = DB::table('memo')->select('NO_BUKTI')->where('PER', $periode)->where('FLAG', 'M')->orderByDesc('NO_BUKTI')->limit(1)->get();
         
-        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(memo.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI,
+        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(memo.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI
                             FROM memo
                             WHERE PER = '$periode'
                             AND FLAG ='$FLAGZ'

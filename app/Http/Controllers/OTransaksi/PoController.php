@@ -272,7 +272,7 @@ class PoController extends Controller
 		
 		if ( $GOLZ == 'A1' ) {
 	
-			$query = DB::table('po')->select('NO_PO')->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
+			$query = DB::table('po')->select(DB::raw("TRIM(NO_PO) AS NO_PO"))->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
 			
 			if ($query != '[]') {
 				$query = substr($query[0]->NO_PO, -4);
@@ -284,7 +284,7 @@ class PoController extends Controller
 
 		} else if ( $GOLZ == 'A2' ) {
 
-			$query = DB::table('po')->select('NO_PO')->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
+			$query = DB::table('po')->select(DB::raw("TRIM(NO_PO) AS NO_PO"))->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
 
 			if ($query != '[]') {
 				$query = substr($query[0]->NO_PO, -4);

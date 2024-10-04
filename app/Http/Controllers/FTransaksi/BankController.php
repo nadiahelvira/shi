@@ -166,7 +166,7 @@ class BankController extends Controller
         $tahun    = substr(session()->get('periode')['tahun'], -2);
         // $query = DB::table('bank')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
        
-        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(bank.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI,
+        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(bank.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI
                             FROM bank
                             WHERE PER = '$periode'
                             AND TYPE ='$FLAGZ'
