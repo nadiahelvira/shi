@@ -199,7 +199,7 @@ class RBukuController extends Controller
 		(
 			SELECT '' AS NO_BUKTI, DATE_FORMAT($tglDrD,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, BACNO, BNAMA, '' AS ACNO, '' AS NACNO, '' AS KODE, '' AS NAMA,
 			'SALDO AWAL' URAIAN,
-			SUM(AWAL) AS AWAL, 0 AS DEBET, 0 AS KREDIT , 1 as URUTAN, time('00:00:00') as WAKTU
+			SUM(AWAL) AS AWAL, 0 AS DEBET, 0 AS KREDIT , 1 as URUTAN, time('00:00:00') as WAKTU, '' AS TYPE
 			from
 			(
 
@@ -233,29 +233,37 @@ class RBukuController extends Controller
 				
 			UNION ALL
 			
-			SELECT kas.NO_BUKTI, DATE_FORMAT(kas.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, kas.BACNO, kas.BNAMA, kasd.ACNO, kasd.NACNO,  KAS.KODE, KAS.NAMA,  KASD.URAIAN , 0 AWAL, kasd.DEBET, kasd.KREDIT , IF (kasd.DEBET <> 0, 2, 7) as URUTAN, time(kas.TG_SMP) as WAKTU
+			SELECT kas.NO_BUKTI, DATE_FORMAT(kas.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, kas.BACNO, kas.BNAMA, kasd.ACNO, 
+					kasd.NACNO,  KAS.KODE, KAS.NAMA,  KASD.URAIAN , 0 AWAL, kasd.DEBET, kasd.KREDIT , IF (kasd.DEBET <> 0, 2, 7) as URUTAN, 
+					time(kas.TG_SMP) as WAKTU, kas.TYPE
 			from kas, kasd where kas.NO_BUKTI=kasd.NO_BUKTI and kas.PER='$periode' and kas.TGL BETWEEN '$tglDrD' and '$tglSmpD' and kas.BACNO between '$acno' and '$acno2'
 			
 			UNION ALL
 			
-			SELECT kas.NO_BUKTI, DATE_FORMAT(kas.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, kasd.ACNO AS BACNO, kasd.NACNO AS BNAMA, kas.BACNO AS ACNO, kas.BNAMA AS NACNO,KAS.KODE, KAS.NAMA,  KASD.URAIAN , 0 AWAL, kasd.KREDIT AS DEBET, kasd.DEBET AS KREDIT , IF (kasd.DEBET <> 0, 3, 8) as URUTAN, time(kas.TG_SMP) as WAKTU
+			SELECT kas.NO_BUKTI, DATE_FORMAT(kas.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, kasd.ACNO AS BACNO, 
+					kasd.NACNO AS BNAMA, kas.BACNO AS ACNO, kas.BNAMA AS NACNO,KAS.KODE, KAS.NAMA,  KASD.URAIAN , 0 AWAL, kasd.KREDIT AS DEBET, 
+					kasd.DEBET AS KREDIT , IF (kasd.DEBET <> 0, 3, 8) as URUTAN, time(kas.TG_SMP) as WAKTU, kas.TYPE
 			from kas, kasd where kas.NO_BUKTI=kasd.NO_BUKTI and kas.PER='$periode'  and kas.TGL BETWEEN '$tglDrD' and '$tglSmpD' and kasd.ACNO between '$acno' and '$acno2'
 			
 			UNION ALL
 			
-			SELECT bank.NO_BUKTI, DATE_FORMAT(bank.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, bank.BACNO, bank.BNAMA, bankd.ACNO, bankd.NACNO, BANK.KODE, BANK.NAMA,  BANKD.URAIAN , 0 AWAL, bankd.DEBET, bankd.KREDIT , IF (bankd.DEBET <> 0, 4, 9) as URUTAN, time(bank.TG_SMP) as WAKTU
+			SELECT bank.NO_BUKTI, DATE_FORMAT(bank.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, bank.BACNO, bank.BNAMA, 
+					bankd.ACNO, bankd.NACNO, BANK.KODE, BANK.NAMA,  BANKD.URAIAN , 0 AWAL, bankd.DEBET, bankd.KREDIT , 
+					IF (bankd.DEBET <> 0, 4, 9) as URUTAN, time(bank.TG_SMP) as WAKTU, bank.TYPE
 			from bank, bankd where bank.NO_BUKTI=bankd.NO_BUKTI and bank.PER='$periode' and bank.TGL BETWEEN '$tglDrD' and '$tglSmpD' and bank.BACNO between '$acno' and '$acno2'
 			
 			UNION ALL
 			
-			SELECT bank.NO_BUKTI, DATE_FORMAT(bank.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, bankd.ACNO AS BACNO, bankd.NACNO AS BNAMA, bank.BACNO AS ACNO, bank.BNAMA AS NACNO, BANK.KODE, BANK.NAMA,  BANKD.URAIAN , 0 AWAL, bankd.KREDIT AS DEBET, bankd.DEBET AS KREDIT , IF (bankd.DEBET <> 0, 5, 10)  as URUTAN, time(bank.TG_SMP) as WAKTU
+			SELECT bank.NO_BUKTI, DATE_FORMAT(bank.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, bankd.ACNO AS BACNO, 
+					bankd.NACNO AS BNAMA, bank.BACNO AS ACNO, bank.BNAMA AS NACNO, BANK.KODE, BANK.NAMA,  BANKD.URAIAN , 0 AWAL, bankd.KREDIT AS DEBET, 
+					bankd.DEBET AS KREDIT , IF (bankd.DEBET <> 0, 5, 10)  as URUTAN, time(bank.TG_SMP) as WAKTU, bank.TYPE
 			from bank, bankd where bank.NO_BUKTI=bankd.NO_BUKTI and bank.PER='$periode' and bank.TGL BETWEEN '$tglDrD' and '$tglSmpD' and bankd.ACNO between '$acno' and '$acno2'
 			
 			UNION ALL
 			
 			SELECT memo.NO_BUKTI, DATE_FORMAT(memo.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK, 
 			memod.ACNO as BACNO, memod.NACNO as BNAMA, ' ' AS ACNO, ' ' AS NACNO,  MEMO.KODE, MEMO.NAMA, 
-			MEMOD.URAIAN , 0 AWAL, memod.DEBET, 0 as KREDIT, 6  as URUTAN, time(memo.TG_SMP) as WAKTU
+			MEMOD.URAIAN , 0 AWAL, memod.DEBET, 0 as KREDIT, 6  as URUTAN, time(memo.TG_SMP) as WAKTU, memo.TYPE
 			from memo, memod where memo.NO_BUKTI=memod.NO_BUKTI and memo.PER='$periode' and memo.TGL BETWEEN '$tglDrD' 
 			and '$tglSmpD' and memod.ACNO between '$acno' and '$acno2' and memod.debet <> 0
 			
@@ -263,10 +271,10 @@ class RBukuController extends Controller
 			
 			SELECT memo.NO_BUKTI, DATE_FORMAT(memo.TGL,'%d/%m/%Y') AS TGL, DATE_FORMAT(NOW(),'%d/%m/%Y') AS TGL_CETAK,
 			memod.ACNO AS BACNO, memod.NACNO AS BNAMA, ' ' AS ACNO, ' ' AS NACNO,  MEMO.KODE, MEMO.NAMA,
-			MEMOD.URAIAN , 0 AWAL, 0 as DEBET, memod.KREDIT  , 11   as URUTAN, time(memo.TG_SMP) as WAKTU
+			MEMOD.URAIAN , 0 AWAL, 0 as DEBET, memod.KREDIT  , 11   as URUTAN, time(memo.TG_SMP) as WAKTU, memo.TYPE
 			from memo, memod where memo.NO_BUKTI=memod.NO_BUKTI and memo.PER='$periode' and memo.TGL BETWEEN '$tglDrD'
 			and '$tglSmpD' and memod.ACNO between '$acno' and '$acno2'  and memod.kredit <>0			
-			ORDER BY BACNO,TGL,WAKTU, URUTAN, NO_BUKTI
+			ORDER BY BACNO,TGL,WAKTU, URUTAN, NO_BUKTI, TYPE
 		)
 		as rbuku ;"
 		);
