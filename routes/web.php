@@ -8,9 +8,15 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->midd
 // Chart Dashboard
 Route::get('/chart', 'App\Http\Controllers\ChartController@chart')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant']);
 Route::get('/cheatsheet', 'App\Http\Controllers\CheatsheetController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer']);
+
 //User Edit
+
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->middleware(['auth']);
 Route::post('/profile/update', 'App\Http\Controllers\ProfileController@update')->middleware(['auth']);
+Route::post('/profile/setting/update', 'App\Http\Controllers\ProfileController@updateSetting')->middleware(['auth']);
+
+////////
+
 
 // Periode
 Route::post('/periode', 'App\Http\Controllers\PeriodeController@index')->middleware(['auth'])->name('periode');

@@ -35,6 +35,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
    {{-- LOADING BAR --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/ldbtn/ldbtn.min.css') }}" />
   
+    @auth
+    <style>
+      p, label, span, div, a {
+        font-family:{{Auth::user()->font_family}} !important;
+        font-size:{{Auth::user()->font_size}}px !important;
+      }
+    </style>
+    @endauth
+  
+  
   @yield('styles')
 </head>
 <body class="hold-transition sidebar-mini">
