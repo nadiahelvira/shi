@@ -256,7 +256,8 @@ class KasController extends Controller
                 $detail->NACNO    = ($NACNO[$key] == null) ? "" :  $NACNO[$key];
                 $detail->URAIAN    = ($URAIAN[$key] == null) ? "" :  $URAIAN[$key];
                 $detail->JUMLAH    = (float) str_replace(',', '', $JUMLAH[$key]);
-                $detail->DEBET    = (float) str_replace(',', '', $JUMLAH[$key]);
+                $detail->DEBET    = ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
+				$detail->KREDIT    = ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
                 $detail->save();
             }
         }
@@ -538,8 +539,9 @@ class KasController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => (float) str_replace(',', '', $JUMLAH[$i]),
-					
+                        'DEBET'      => ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'KREDIT'      => ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        
 						
 						
 						
@@ -560,8 +562,9 @@ class KasController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => (float) str_replace(',', '', $JUMLAH[$i]),
-
+                        'DEBET'      => ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'KREDIT'      => ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        
                     ]
                 );
             }

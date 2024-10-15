@@ -699,7 +699,7 @@ class PoController extends Controller
 			FROM beli 
 			WHERE beli.NO_PO='$no_po'  UNION ALL 
 			SELECT NO_BUKTI, NO_PO, TGL, KODES, NAMAS, if(ALAMAT='','NOT-FOUND.png',ALAMAT) as ALAMAT, 'C' AS FLAG, '' AS AJU, '' AS BL, '' AS EMKL, '' AS TRUCK, '' AS KD_BRG, '' AS NA_BRG, 0 AS KG, 
-			0 AS HARGA, 0 AS TOTAL, BAYAR, NOTES
+			0 AS HARGA, TOTAL AS TOTAL, BAYAR, NOTES
 			FROM hut 
 			WHERE hut.NO_PO='$no_po' 
 			ORDER BY TGL, NO_BUKTI;

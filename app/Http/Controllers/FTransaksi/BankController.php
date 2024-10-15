@@ -229,7 +229,8 @@ class BankController extends Controller
                 $detail->NACNO    = ($NACNO[$key] == null) ? "" :  $NACNO[$key];
                 $detail->URAIAN    = ($URAIAN[$key] == null) ? "" :  $URAIAN[$key];
                 $detail->JUMLAH    = (float) str_replace(',', '', $JUMLAH[$key]);
-                $detail->DEBET    = (float) str_replace(',', '', $JUMLAH[$key]);
+                $detail->DEBET    = ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
+				$detail->KREDIT    = ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
                 $detail->save();
             }
         }
@@ -478,7 +479,8 @@ class BankController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => (float) str_replace(',', '', $JUMLAH[$i])
+                        'DEBET'      => ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'KREDIT'      => ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
                     ]
                 );
             } else {
@@ -495,7 +497,8 @@ class BankController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => (float) str_replace(',', '', $JUMLAH[$i])
+                        'DEBET'      => ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'KREDIT'     => ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
                     ]
                 );
             }
