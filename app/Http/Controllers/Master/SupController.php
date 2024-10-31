@@ -28,7 +28,6 @@ class SupController extends Controller
 
 		
         $sup = DB::table('sup')->select('KODES', 'NAMAS', 'ALAMAT', 'KOTA')->where('GOL', $request['GOL'] )->orderBy('KODES', 'ASC')->get();
-        // $sup = DB::table('sup')->select('KODES', 'NAMAS', 'ALAMAT', 'KOTA')->orderBy('KODES', 'ASC')->get();
         return response()->json($sup);
     }
 
@@ -118,30 +117,31 @@ class SupController extends Controller
 		
         $sup = Sup::create(
             [
-//              'KODES'         => $kodes,
+//                'KODES'         => $kodes,
+
                 'KODES'         => ($request['KODES'] == null) ? "" : $request['KODES'],				
-                'NAMAS'         => ($request['NAMAS'] == null) ? "" : $request['NAMAS'],
-                //'KODESGD'     => ($request['KODESGD'] == null) ? "" : $request['KODESGD'],				
-                //'NAMASGD'     => ($request['NAMASGD'] == null) ? "" : $request['NAMASGD'],
-                'ALAMAT'        => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
-                'KOTA'          => ($request['KOTA'] == null) ? "" : $request['KOTA'],
+                'NAMAS'         => ($request['NAMAS'] == null) ? "" : $request['NAMAS'],				
+                'NAMAS_LM'         => ($request['NAMAS_LM'] == null) ? "" : $request['NAMAS_LM'],
+                // 'KODESGD'         => ($request['KODESGD'] == null) ? "" : $request['KODESGD'],				
+                // 'NAMASGD'         => ($request['NAMASGD'] == null) ? "" : $request['NAMASGD'],
+                'ALAMAT'           => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
+                'KOTA'            => ($request['KOTA'] == null) ? "" : $request['KOTA'],
+                'GOL'            => ($request['GOL'] == null) ? "" : $request['GOL'],
                 'TELPON1'       => ($request['TELPON1'] == null) ? "" : $request['TELPON1'],
-                'FAX'           => ($request['FAX'] == null) ? "" : $request['FAX'],
+                'FAX'            => ($request['FAX'] == null) ? "" : $request['FAX'],
                 'HP'            => ($request['HP'] == null) ? "" : $request['HP'],
-                'AKT'           => ($request['AKT'] == null) ? "" : $request['AKT'],
+                // 'AKT'            => ($request['AKT'] == null) ? "" : $request['AKT'],
                 'KONTAK'        => ($request['KONTAK'] == null) ? "" : $request['KONTAK'],
-                'EMAIL'         => ($request['EMAIL'] == null) ? "" : $request['EMAIL'],
-                'NPWP'          => ($request['NPWP'] == null) ? "" : $request['NPWP'],
-                'KET'           => ($request['KET'] == null) ? "" : $request['KET'],
-                'BANK'          => ($request['BANK'] == null) ? "" : $request['BANK'],
+                'EMAIL'           => ($request['EMAIL'] == null) ? "" : $request['EMAIL'],
+                'NPWP'            => ($request['NPWP'] == null) ? "" : $request['NPWP'],
+                'KET'            => ($request['KET'] == null) ? "" : $request['KET'],
+                'BANK'            => ($request['BANK'] == null) ? "" : $request['BANK'],
                 'BANK_CAB'      => ($request['BANK_CAB'] == null) ? "" : $request['BANK_CAB'],
                 'BANK_KOTA'     => ($request['BANK_KOTA'] == null) ? "" : $request['BANK_KOTA'],
                 'BANK_NAMA'     => ($request['BANK_NAMA'] == null) ? "" : $request['BANK_NAMA'],
                 'BANK_REK'      => ($request['BANK_REK'] == null) ? "" : $request['BANK_REK'],
-                'GOL'           => ($request['GOL'] == null) ? "" : $request['GOL'],
-                'TYPE'          => ($request['TYPE'] == null) ? "" : $request['TYPE'],
-                'HARI'          => (float) str_replace(',', '', $request['HARI']),
-                'USRNM'         => Auth::user()->username,
+                'HARI'            => (float) str_replace(',', '', $request['HARI']),
+                'USRNM'          => Auth::user()->username,
                 'TG_SMP'        => Carbon::now()
             ]
         );
@@ -328,29 +328,29 @@ class SupController extends Controller
         $sup->update(
             [
 
-                'NAMAS'       	=> $request['NAMAS'],
-                //'KODESGD'     => ($request['KODESGD'] == null) ? "" : $request['KODESGD'],
-                //'NAMASGD'     => ($request['NAMASGD'] == null) ? "" : $request['NAMASGD'],
-                'ALAMAT'        => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
-                'KOTA'          => ($request['KOTA'] == null) ? "" : $request['KOTA'],
+                'NAMAS'       => $request['NAMAS'],
+                // 'KODESGD'           => ($request['KODESGD'] == null) ? "" : $request['KODESGD'],
+                // 'NAMASGD'            => ($request['NAMASGD'] == null) ? "" : $request['NAMASGD'],
+                'NAMAS_LM'           => ($request['NAMAS_LM'] == null) ? "" : $request['NAMAS_LM'],
+                'ALAMAT'           => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
+                'KOTA'            => ($request['KOTA'] == null) ? "" : $request['KOTA'],
                 'TELPON1'       => ($request['TELPON1'] == null) ? "" : $request['TELPON1'],
-                'FAX'           => ($request['FAX'] == null) ? "" : $request['FAX'],
+                'FAX'            => ($request['FAX'] == null) ? "" : $request['FAX'],
                 'HP'            => ($request['HP'] == null) ? "" : $request['HP'],
-                'AKT'           => ($request['AKT'] == null) ? "" : $request['AKT'],
+                // 'AKT'            => ($request['AKT'] == null) ? "" : $request['AKT'],
                 'KONTAK'        => ($request['KONTAK'] == null) ? "" : $request['KONTAK'],
-                'EMAIL'         => ($request['EMAIL'] == null) ? "" : $request['EMAIL'],
-                'NPWP'          => ($request['NPWP'] == null) ? "" : $request['NPWP'],
-                'KET'           => ($request['KET'] == null) ? "" : $request['KET'],
-                'BANK'          => ($request['BANK'] == null) ? "" : $request['BANK'],
+                'EMAIL'           => ($request['EMAIL'] == null) ? "" : $request['EMAIL'],
+                'NPWP'            => ($request['NPWP'] == null) ? "" : $request['NPWP'],
+                'KET'            => ($request['KET'] == null) ? "" : $request['KET'],
+                'BANK'            => ($request['BANK'] == null) ? "" : $request['BANK'],
                 'BANK_CAB'      => ($request['BANK_CAB'] == null) ? "" : $request['BANK_CAB'],
                 'BANK_KOTA'     => ($request['BANK_KOTA'] == null) ? "" : $request['BANK_KOTA'],
                 'BANK_NAMA'     => ($request['BANK_NAMA'] == null) ? "" : $request['BANK_NAMA'],
                 'BANK_REK'      => ($request['BANK_REK'] == null) ? "" : $request['BANK_REK'],
-                'HARI'          => (float) str_replace(',', '', $request['HARI']),
-                'GOL'     		=> ($request['GOL'] == null) ? "" : $request['GOL'],
-                'TYPE'     		=> ($request['TYPE'] == null) ? "" : $request['TYPE'],
-                'USRNM'         => Auth::user()->username,
-                'TG_SMP'        => Carbon::now()
+                'GOL'      => ($request['GOL'] == null) ? "" : $request['GOL'],
+                'HARI'            => (float) str_replace(',', '', $request['HARI']),
+                'USRNM'          => Auth::user()->username,
+                'TG_SMP'         => Carbon::now()
             ]
         );
 

@@ -67,7 +67,7 @@
 	<pageHeader>
 		<band height="168">
 			<textField>
-				<reportElement x="390" y="61" width="160" height="18" uuid="bb4360ad-d3a9-4983-8466-18c51e0f32af"/>
+				<reportElement x="480" y="61" width="160" height="18" uuid="bb4360ad-d3a9-4983-8466-18c51e0f32af"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -81,14 +81,14 @@
 				<textFieldExpression><![CDATA["BARANG"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="390" y="99" width="160" height="18" uuid="8a2a4132-ece6-45f0-99d8-4687fc895365"/>
+				<reportElement x="480" y="99" width="160" height="18" uuid="8a2a4132-ece6-45f0-99d8-4687fc895365"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["NILAI KONTRAK"]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="570" y="61" width="231" height="18" uuid="c33cc23d-a457-461b-a384-52437ef8a9c9"/>
+				<reportElement x="661" y="61" width="116" height="18" uuid="c33cc23d-a457-461b-a384-52437ef8a9c9"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -102,7 +102,7 @@
 				<textFieldExpression><![CDATA["SALES ORDER"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="390" y="80" width="160" height="18" uuid="ae70ec2f-04e4-4ba1-a92c-ac1071a8ea92"/>
+				<reportElement x="480" y="80" width="160" height="18" uuid="ae70ec2f-04e4-4ba1-a92c-ac1071a8ea92"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -123,7 +123,7 @@
 				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="550" y="80" width="20" height="18" uuid="ed92d437-3eeb-434f-b8d0-cd2f9eac65f6"/>
+				<reportElement x="641" y="80" width="20" height="18" uuid="ed92d437-3eeb-434f-b8d0-cd2f9eac65f6"/>
 				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -131,20 +131,20 @@
 			</textField>
 			<textField>
 				<reportElement x="90" y="116" width="181" height="18" uuid="104ce3df-bdbc-4c6e-8af4-cf06760d42c3"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[trim($P{NA_BRG1})]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="570" y="99" width="231" height="18" uuid="68e9d0a7-b7ca-4f2d-b8ab-7e58c5438f81"/>
+				<reportElement x="661" y="99" width="116" height="18" uuid="68e9d0a7-b7ca-4f2d-b8ab-7e58c5438f81"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{TOTAL1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="550" y="99" width="20" height="18" uuid="5c934f18-76df-4c3d-ba52-f266ea05f34e"/>
+				<reportElement x="641" y="99" width="20" height="18" uuid="5c934f18-76df-4c3d-ba52-f266ea05f34e"/>
 				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -158,7 +158,7 @@
 				<textFieldExpression><![CDATA["CUSTOMER"]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="570" y="80" width="231" height="18" uuid="30b45820-9838-454c-b859-4c87e3a32fef"/>
+				<reportElement x="661" y="80" width="116" height="18" uuid="30b45820-9838-454c-b859-4c87e3a32fef"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -179,21 +179,21 @@
 				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="90" y="97" width="181" height="18" uuid="4e3c60e3-1bdd-4157-886c-391733d92eaa"/>
-				<textElement textAlignment="Left">
+				<reportElement x="90" y="96" width="181" height="18" uuid="4e3c60e3-1bdd-4157-886c-391733d92eaa"/>
+				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{TGL1}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="90" y="79" width="181" height="18" uuid="a7a91335-4468-421b-ab9c-f9b1c6d9aae6"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{NO_SO1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="550" y="61" width="20" height="18" uuid="918d7321-f94b-4576-8712-d6e2722dae50"/>
+				<reportElement x="641" y="61" width="20" height="18" uuid="918d7321-f94b-4576-8712-d6e2722dae50"/>
 				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -201,7 +201,7 @@
 			</textField>
 			<textField>
 				<reportElement x="90" y="60" width="181" height="18" uuid="bc0f9738-1a7e-4d16-aab9-f5c720e3a9e4"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{NAMAC1}]]></textFieldExpression>
@@ -316,7 +316,7 @@
 				<textElement textAlignment="Left">
 					<font fontName="CourierN" size="12" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["PT. Subur Harapan Indah "]]></textFieldExpression>
+				<textFieldExpression><![CDATA["PT. Bumi Universal Makmur "]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="140" y="150" width="60" height="18" uuid="8acf7805-c1ea-4739-82ed-cd336bed0bb4"/>
@@ -332,21 +332,21 @@
 				<textFieldExpression><![CDATA["TRUCK"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="390" y="117" width="160" height="18" uuid="9a21a3bd-f858-41ba-b19a-4ca95792b8d3"/>
+				<reportElement x="480" y="117" width="160" height="18" uuid="9a21a3bd-f858-41ba-b19a-4ca95792b8d3"/>
 				<textElement textAlignment="Right">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["NOTES"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="570" y="117" width="231" height="18" uuid="bfbf4505-ec42-487c-a984-a730c63b15e7"/>
-				<textElement textAlignment="Left">
-					<font fontName="DejaVu Serif" size="12" isItalic="false"/>
+				<reportElement x="661" y="117" width="116" height="18" uuid="bfbf4505-ec42-487c-a984-a730c63b15e7"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{NOTES1}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="550" y="117" width="20" height="18" uuid="d329d034-9435-47f0-9a7c-a29a60193a06"/>
+				<reportElement x="641" y="117" width="20" height="18" uuid="d329d034-9435-47f0-9a7c-a29a60193a06"/>
 				<textElement textAlignment="Center">
 					<font fontName="DejaVu Serif" size="12"/>
 				</textElement>
@@ -466,14 +466,14 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band>
+		<band height="3">
 			<line>
-				<reportElement x="1" y="-1" width="800" height="1" uuid="0201099a-6f3a-4447-bade-8d4920608fc4"/>
+				<reportElement x="-1" y="2" width="800" height="1" uuid="0201099a-6f3a-4447-bade-8d4920608fc4"/>
 			</line>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="128">
+		<band height="136">
 			<textField>
 				<reportElement x="5" y="65" width="245" height="18" uuid="c0f060e4-fc63-4aab-afd3-658580cdadf2"/>
 				<textElement>
@@ -486,7 +486,7 @@
 				<textElement textAlignment="Left">
 					<font fontName="CourierN" size="12" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["PT. Subur Harapan Indah "]]></textFieldExpression>
+				<textFieldExpression><![CDATA["PT. Bumi Universal Makmur "]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="5" y="47" width="245" height="18" uuid="7eb56cd3-8435-4fb1-927f-fe6ca8659df8"/>

@@ -31,9 +31,9 @@ class HutController extends Controller
 	
     function setFlag(Request $request)
     {
-        if ( $request->flagz == 'PH' && $request->golz == 'A1' ) {
+        if ( $request->flagz == 'B' && $request->golz == 'Y' ) {
             $this->judul = "Pembayaran Hutang Barang";
-        } else if ( $request->flagz == 'PH' && $request->golz == 'A2' ) {
+        } else if ( $request->flagz == 'B' && $request->golz == 'Z' ) {
             $this->judul = "Pembayaran Hutang Non";
         } 
 		
@@ -52,28 +52,10 @@ class HutController extends Controller
         $this->setFlag($request);
         // ganti 3
         return view('otransaksi_hut.index')->with(['judul' => $this->judul, 'golz' => $this->GOLZ , 'flagz' => $this->FLAGZ ]);
-    } 
-
-    public function browsekartu(Request $request)
-    {
-		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
-
-        $hut = DB::SELECT("SELECT NO_BUKTI, NO_PO, DATE_FORMAT(hut.TGL,'%d/%m/%Y') AS TGL, KODES, NAMAS, URAIAN, BAYAR 
-        FROM HUT
-		-- WHERE GOL='$request->GOL' AND PER='$periode' 
-		WHERE 
-        -- PER='$periode' AND 
-        NO_PO=(SELECT max(NO_PO) from po WHERE NO_ID='$request->IDPO')
-        ORDER BY NO_BUKTI; ");
-
-        return response()->json($hut);
     }
 
 
     // ganti 4
-	
-	
-	
 
     public function getHut(Request $request)
     {
@@ -87,7 +69,7 @@ class HutController extends Controller
 
         $this->setFlag($request);
 	
-        $hut = DB::SELECT("SELECT * from hut  where  PER ='$periode' and FLAG ='$this->FLAGZ' AND GOL ='A2'  ORDER BY NO_BUKTI ");
+        $hut = DB::SELECT("SELECT * from hut  where  PER ='$periode' and FLAG ='$this->FLAGZ' AND GOL ='$this->GOLZ'  ORDER BY NO_BUKTI ");
 	
 
         // ganti 6
@@ -156,9 +138,9 @@ class HutController extends Controller
             // GANTI 9
 
             [
-                'NO_PO'       => 'required',
+ //               'NO_PO'       => 'required',
                 'TGL'      => 'required',
-                // 'BACNO'       => 'required',
+                'BACNO'       => 'required',
                 'KODES'       => 'required'
 
             ]
@@ -178,34 +160,34 @@ class HutController extends Controller
 
         // Check apakah No Bukti terakhir NULL
  
-		if ( $request->flagz == 'PH' && $request->golz == 'A1' ) {
+		if ( $request->flagz == 'B' && $request->golz == 'Y' ) {
 
             $query = DB::table('hut')->select(DB::raw("TRIM(NO_BUKTI) AS NO_BUKTI"))->where('PER', $periode)
-			         ->where('FLAG', 'PH')->where('GOL', 'A1')->orderByDesc('NO_BUKTI')->limit(1)->get();
+			         ->where('FLAG', 'B')->where('GOL', 'Y')->orderByDesc('NO_BUKTI')->limit(1)->get();
 			
 			if ($query != '[]') {
             
 				$query = substr($query[0]->NO_BUKTI, -4);
 				$query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
-				$no_bukti = 'HA1' . $tahun . $bulan . '-' . $query;
+				$no_bukti = 'HY' . $tahun . $bulan . '-' . $query;
 			
 			} else {
-				$no_bukti = 'HA1' . $tahun . $bulan . '-0001';
+				$no_bukti = 'HY' . $tahun . $bulan . '-0001';
 				}
 		
-        } else if ( $request->flagz == 'PH' && $request->golz == 'A2' ) {
+        } else if ( $request->flagz == 'B' && $request->golz == 'Z' ) {
 
             $query = DB::table('hut')->select(DB::raw("TRIM(NO_BUKTI) AS NO_BUKTI"))->where('PER', $periode)
-			         ->where('FLAG', 'PH')->where('GOL', 'A2')->orderByDesc('NO_BUKTI')->limit(1)->get();
+			         ->where('FLAG', 'B')->where('GOL', 'Z')->orderByDesc('NO_BUKTI')->limit(1)->get();
 			
 			if ($query != '[]') {
             
 				$query = substr($query[0]->NO_BUKTI, -4);
 				$query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
-				$no_bukti = 'HA2' . $tahun . $bulan . '-' . $query;
+				$no_bukti = 'HZ' . $tahun . $bulan . '-' . $query;
 			
 			} else {
-				$no_bukti = 'HA2' . $tahun . $bulan . '-0001';
+				$no_bukti = 'HZ' . $tahun . $bulan . '-0001';
 				}
 				
         } 
@@ -217,7 +199,7 @@ class HutController extends Controller
 
 
 		
-		if ( $typebayar == 'B' )
+		if ( $typebayar != 'K' )
         {	
 		   
               $bulan    = session()->get('periode')['bulan'];
@@ -235,7 +217,7 @@ class HutController extends Controller
 		   
         } 
 ///////////////////////////////////////////////////////////////////////////
-        else if ( $typebayar == 'K' )
+        else 
         {
 
     		   $bulan    = session()->get('periode')['bulan'];
@@ -250,15 +232,6 @@ class HutController extends Controller
                   $no_bukti2 = 'BKK' . $tahun . $bulan . '-0001';
                 }
 			
-		   
-            
-        }
-
-        else if ( $typebayar == '' )
-        {
-
-            $no_bukti2='';
-
 		   
             
         }
@@ -281,19 +254,43 @@ class HutController extends Controller
                 'FLAG'             =>  $FLAGZ,
                 'GOL'               => $GOLZ,
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
-                'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-                'BAYAR'            => (float) str_replace(',', '', $request['BAYAR']),
-                'LAIN'            => (float) str_replace(',', '', $request['LAIN']),
+                'BAYAR'            => (float) str_replace(',', '', $request['TBAYAR']),
                 'USRNM'            => Auth::user()->username,
+                'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
 
 
+        $REC        = $request->input('REC');
+        $NO_FAKTUR    = $request->input('NO_FAKTUR');
+        $TOTAL    = $request->input('TOTAL');
+        $BAYAR    = $request->input('BAYAR');
+        $SISA    = $request->input('SISA');
+
+        // Check jika value detail ada/tidak
+        if ($REC) {
+            foreach ($REC as $key => $value) {
+                // Declare new data di Model
+                $detail    = new HutDetail;
+
+                // Insert ke Database
+                $detail->NO_BUKTI  = $no_bukti;
+                $detail->REC       = $REC[$key];
+                $detail->PER       = $periode;
+                $detail->FLAG       = $FLAGZ;
+                $detail->GOL       =  $GOLZ;
+                $detail->NO_FAKTUR = ($NO_FAKTUR[$key] == null) ? "" :  $NO_FAKTUR[$key];
+                $detail->TOTAL       = (float) str_replace(',', '', $TOTAL[$key]);
+                $detail->BAYAR       = (float) str_replace(',', '', $BAYAR[$key]);
+                $detail->SISA       = (float) str_replace(',', '', $SISA[$key]);
+                $detail->save();
+            }
+        }
+
+
         //  ganti 11
-        //$variablell = DB::select('call hutins(?,?)', array($no_bukti, $no_bukti2));
-		
-		$variablell = DB::select('call hutins(?)', array($no_bukti));
+        $variablell = DB::select('call hutins(?,?)', array($no_bukti, $no_bukti2));
 
 	    $no_buktix = $no_bukti;
 		
@@ -303,11 +300,8 @@ class HutController extends Controller
                             SET HUTD.ID = HUT.NO_ID  WHERE HUT.NO_BUKTI = HUTD.NO_BUKTI 
 							AND HUT.NO_BUKTI='$no_buktix';");
 
-		// return redirect('/hut?flagz='.$FLAGZ.'&golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
-
-        return redirect('/hut/edit/?idx=' . $hut->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
-
+		return redirect('/hut?flagz='.$FLAGZ.'&golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
     }
 
     /**
@@ -491,7 +485,7 @@ class HutController extends Controller
  
          
          return view('otransaksi_hut.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -518,9 +512,9 @@ class HutController extends Controller
 
                 // ganti 19
 
-                'NO_PO'       => 'required',
+ //               'NO_PO'       => 'required',
                 'TGL'      => 'required',
-                // 'BACNO'       => 'required',
+                'BACNO'       => 'required',
                 'KODES'       => 'required'
 
 
@@ -535,9 +529,7 @@ class HutController extends Controller
 		
 		
         // ganti 20
-        //$variablell = DB::select('call hutdel(?,?)', array($hut['NO_BUKTI'], '0'));
-		
-		$variablell = DB::select('call hutdel(?)', array($hut['NO_BUKTI']));
+        $variablell = DB::select('call hutdel(?,?)', array($hut['NO_BUKTI'], '0'));
 
         $periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
 
@@ -552,19 +544,65 @@ class HutController extends Controller
                 'BACNO'            => ($request['BACNO'] == null) ? "" : $request['BACNO'],
                 'BNAMA'                => ($request['BNAMA'] == null) ? "" : $request['BNAMA'],
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
-                'BAYAR'            => (float) str_replace(',', '', $request['BAYAR']),
-                'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-                'LAIN'            => (float) str_replace(',', '', $request['LAIN']),
+                'BAYAR'            => (float) str_replace(',', '', $request['TBAYAR']),
                 'USRNM'            => Auth::user()->username,
-                //'updated_by'       => Auth::user()->username,
+                'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
 
+
+        // Update Detail
+        $length = sizeof($request->input('REC'));
+        $NO_ID  = $request->input('NO_ID');
+
+        $REC    = $request->input('REC');
+        $NO_FAKTUR = $request->input('NO_FAKTUR');
+        $BAYAR    = $request->input('BAYAR');
+        $TOTAL    = $request->input('TOTAL');
+        $SISA    = $request->input('SISA');
+
+        $query = DB::table('hutd')->where('NO_BUKTI', $request->NO_BUKTI)->whereNotIn('NO_ID',  $NO_ID)->delete();
+
+        // Update / Insert
+        for ($i = 0; $i < $length; $i++) {
+            // Insert jika NO_ID baru
+            if ($NO_ID[$i] == 'new') {
+                $insert = HutDetail::create(
+                    [
+                        'NO_BUKTI'   => $request->NO_BUKTI,
+                        'REC'        => $REC[$i],
+                        'PER'        => $periode,
+                        'FLAG'       => 'HY',
+                        'GOL'        => 'Y',
+                        'NO_FAKTUR'  => ($NO_FAKTUR[$i] == null) ? "" :  $NO_FAKTUR[$i],
+                        'TOTAL'      => (float) str_replace(',', '', $TOTAL[$i]),
+                        'BAYAR'      => (float) str_replace(',', '', $BAYAR[$i]),
+                        'SISA'       => (float) str_replace(',', '', $SISA[$i]),
+                    ]
+                );
+            } else {
+                // Update jika NO_ID sudah ada
+                $upsert = HutDetail::updateOrCreate(
+                    [
+                        'NO_BUKTI'  => $request->NO_BUKTI,
+                        'NO_ID'     => (int) str_replace(',', '', $NO_ID[$i])
+                    ],
+
+                    [
+                        'REC'        => $REC[$i],
+                        'NO_FAKTUR'  => ($NO_FAKTUR[$i] == null) ? "" :  $NO_FAKTUR[$i],
+                        'TOTAL'      => (float) str_replace(',', '', $TOTAL[$i]),
+                        'BAYAR'      => (float) str_replace(',', '', $BAYAR[$i]),
+                        'SISA'       => (float) str_replace(',', '', $SISA[$i]),
+                    ]
+                );
+            }
+        }
+
+
         //  ganti 21
-        //$variablell = DB::select('call hutins(?,?)', array($hut['NO_BUKTI'], 'X'));
-		
-		$variablell = DB::select('call hutins(?)', array($hut['NO_BUKTI']));
+        $variablell = DB::select('call hutins(?,?)', array($hut['NO_BUKTI'], 'X'));
 
 		$no_buktix = $hut->NO_BUKTI;
 		
@@ -574,10 +612,8 @@ class HutController extends Controller
                             SET HUTD.ID = HUT.NO_ID  WHERE HUT.NO_BUKTI = HUTD.NO_BUKTI 
 							AND HUT.NO_BUKTI='$no_buktix';");
 							
-		// return redirect('/hut?flagz='.$FLAGZ.'&golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
-        
-        return redirect('/hut/edit/?idx=' . $hut->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
+		return redirect('/hut?flagz='.$FLAGZ.'&golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
 
     }
 
@@ -609,9 +645,7 @@ class HutController extends Controller
 				
         }
 		
-        //$variablell = DB::select('call hutdel(?,?)', array($hut['NO_BUKTI'], '1'));
-		
-		$variablell = DB::select('call hutdel(?)', array($hut['NO_BUKTI']));
+        $variablell = DB::select('call hutdel(?,?)', array($hut['NO_BUKTI'], '1'));
 
 
         // ganti 23

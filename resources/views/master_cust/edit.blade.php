@@ -61,7 +61,7 @@
 
 								<div class="col-md-2">
                                     <input type="text" class="form-control KODEC" id="KODEC" name="KODEC"
-                                    placeholder="Masukkan Kode Customer" value="{{$header->KODEC}}" readonly>
+                                    placeholder="Masukkan Kode Customer" value="{{$header->KODEC}}" >
                                 </div>                                
                             </div>
 
@@ -72,7 +72,15 @@
                                 <div class="col-md-4">
                                     <input type="text" class="form-control NAMAC" id="NAMAC" name="NAMAC"
                                     placeholder="Masukkan Nama Customer" value="{{$header->NAMAC}}">
-                                </div>                                
+                                </div> 
+								
+                                <div class="col-md-1">
+                                    <label for="NAMAC_LM" class="form-label">Nama Lama</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control NAMAC_LM" id="NAMAC_LM" name="NAMAC_LM"
+                                    placeholder="Masukkan Nama Customer Lama" value="{{$header->NAMAC_LM}}">
+                                </div>                                               
                             </div>
         
                             <div class="form-group row">
@@ -518,7 +526,21 @@
 	function simpan() {
         //cekCust($('#KODEC').val());
         //(hasilCek==0) ? document.getElementById("entri").submit() : alert('Customer '+$('#KODEC').val()+' sudah ada!');
-        document.getElementById("entri").submit() 
+        
+		hasilCek=0;
+		$tipx = $('#tipx').val();
+				
+        if ( $tipx == 'new' )
+		{
+			cekCust($('#KODEC').val());		
+		}
+		
+
+        (hasilCek==0) ? document.getElementById("entri").submit() : alert('Customer'+$('#KODEC').val()+' sudah ada!');
+        
+		
+		
+		//document.getElementById("entri").submit() 
 	}
 </script>
 @endsection

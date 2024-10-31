@@ -74,7 +74,7 @@
             processing: true,
             serverSide: true,
             autoWidth: true,
-            //'scrollX': true,
+            // 'scrollX': true,
             'scrollY': '400px',	
             "order": [[ 0, "asc" ]],
             ajax: 

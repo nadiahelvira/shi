@@ -38,6 +38,7 @@ class HomeController extends Controller
 		DB::SELECT("Call hitungbrg('$tahun');");
 		DB::SELECT("Call hitungcust('$tahun');");
 		DB::SELECT("Call hitungsup('$tahun');");
+		DB::SELECT("Call hitungposo('$tahun');");
 	//	DB::SELECT("Call hitungbelijual('$tahun');");
         return view('dashboard')->with('status', 'Hitung Ulang selesai..');
     }

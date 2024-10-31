@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('styles')
-<!-- <link rel="stylesheet" href="{{url('http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css') }}"> -->
-<link rel="stylesheet" href="{{asset('foxie_js_css/jquery.dataTables.min.css')}}" />
+<link rel="stylesheet" href="{{url('AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+<link rel="stylesheet" href="{{url('http://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css') }}">
 
 @endsection
 
@@ -54,23 +54,26 @@
                             <th scope="col" style="text-align: left">Kode#</th>
                             <th scope="col" style="text-align: left">Suplier</th>
                             <th {{($flagz == 'BL') ? '' : 'hidden' }}  
-							    scope="col" style="text-align: right">Kg</th>
+                                scope="col" style="text-align: right">Kg</th>
                             <th scope="col" style="text-align: center">Total</th>
-							<th scope="col" style="text-align: center">RpTotal</th>							
-							<th scope="col" style="text-align: center">Notes</th>
-							<th {{($flagz == 'BL') ? '' : 'hidden' }} 
-							    scope="col" style="text-align: center">AJU</th>
-							
-							<th {{($flagz == 'BL') ? '' : 'hidden' }} 
-							    scope="col" style="text-align: center">BL</th>
-								
-							<th {{($flagz == 'BL') ? '' : 'hidden' }} 
-							    scope="col" style="text-align: center">Emkl</th>	
-								
-							<th scope="col" style="text-align: center">Posted</th>
-							<th scope="col" style="text-align: center">User</th>
-                            <th 
-							scope="col" style="text-align: center">Bank#</th>							
+                            <th scope="col" style="text-align: center">RpTotal</th>							
+                            <th scope="col" style="text-align: center">Notes</th>
+                            <th {{($flagz == 'BL') ? '' : 'hidden' }} 
+                                scope="col" style="text-align: center">AJU</th>
+                            
+                            <th {{($flagz == 'BL') ? '' : 'hidden' }} 
+                                scope="col" style="text-align: center">BL</th>
+
+                            <th {{($flagz == 'BL') ? '' : 'hidden' }} 
+                                scope="col" style="text-align: center">RpRate</th>
+                              
+                            <th {{($flagz == 'BL' || $flagz == 'TH') ? '' : 'hidden' }} 
+                                scope="col" width="200px" style="text-align: center">COA</th>	
+                              
+                            <th scope="col" style="text-align: center">Posted</th>
+                            <th scope="col" style="text-align: center">User</th>
+                                          <th 
+                            scope="col" style="text-align: center">Bank#</th>							
                         </tr>
                     </thead>
     
@@ -100,30 +103,31 @@
             ajax: 
             {
                 url: "{{ route('get-beli') }}",
-				data: {
-					'flagz': "{{$flagz}}",
-					'golz': "{{$golz}}",
-				},
+                data: {
+                  'flagz': "{{$flagz}}",
+                  'golz': "{{$golz}}",
+                },
 				
             },
             columns: 
             [
                 { data: 'DT_RowIndex', orderable: false, searchable: false },
-			    { data: 'action', name: 'action'},
+			          { data: 'action', name: 'action'},
                 { data: 'NO_BUKTI', name: 'NO_BUKTI'},
                 { data: 'TGL', name: 'TGL'},
                 { data: 'NO_PO', name: 'NO_PO'},
                 { data: 'KODES', name: 'KODES'},
                 { data: 'NAMAS', name: 'NAMAS'},
-                { data: 'KG', name: 'KG', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},								
-                { data: 'TOTAL', name: 'TOTAL', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},	
+                { data: 'KG', name: 'KG', render: $.fn.dataTable.render.number( ',', '.', 2, '' )},								
+                { data: 'TOTAL', name: 'TOTAL', render: $.fn.dataTable.render.number( ',', '.', 2, '' )},	
                 { data: 'RPTOTAL', name: 'RPTOTAL', render: $.fn.dataTable.render.number( ',', '.', 2, '' )},
                 { data: 'NOTES', name: 'NOTES'},
 				
 	 
-					{ data: 'AJU', name: 'AJU'},
-					{ data: 'BL', name: 'BL'},
-					{ data: 'EMKL', name: 'EMKL'},				
+                { data: 'AJU', name: 'AJU'},
+                { data: 'BL', name: 'BL'},	
+                { data: 'RPRATE', name: 'RPRATE', render: $.fn.dataTable.render.number( ',', '.', 2, '' )},
+                { data: 'NACNOA', name: 'NACNOA'},				
                 { data: 'POSTED', name: 'POSTED',
                   render : function(data, type, row, meta) {
                     if(row['POSTED']=="0"){
@@ -167,21 +171,34 @@
 
        });
 
+
+            if ( '{{$flagz}}' == 'BL' ) {
+              
+              dataTable.columns([7,11,12,13,14]).visible(true);
+              
+            }
+            else
+            {
+              
+              dataTable.columns([7,11,12,13,14]).visible(false);
+              
+            }
+			
+			if ( '{{$flagz}}' == 'TH' ) {
+              
+              dataTable.columns([14]).visible(true);
+              
+            }
+            else
+            {
+              
+              dataTable.columns([14]).visible(false);
+              
+            }
+
        $("div.test_btn").html('<a class="btn btn-lg btn-md btn-success" href="{{url('beli/edit?flagz='.$flagz.'&golz='.$golz.'&idx=0&tipx=new')}}"> <i class="fas fa-plus fa-sm md-3" ></i></a>');
 
 
-		
-		if ( '{{$flagz}}' == 'BL' ) {
-			datatable.column(7).visible(true, true)
-			datatable.column(11).visible(true, true)
-			datatable.column(12).visible(true, true)
-			datatable.column(13).visible(true, true)			
-		} else {
-			datatable.column(7).visible(false, false)
-			datatable.column(11).visible(false, false)			
-			datatable.column(12).visible(false, false)
-			datatable.column(13).visible(false, false)			
-		}
 		
 		
     });

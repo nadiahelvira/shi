@@ -437,11 +437,11 @@
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
-	$(document).ready(function() {
+		$(document).ready(function() {
 
 		$tipx = $('#tipx').val();
 		$searchx = $('#CARI').val();
-		
+
 		$('body').on('keydown', 'input, select', function(e) {
 			if (e.key === "Enter") {
 				var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
@@ -460,7 +460,7 @@
 				return false;
 			}
 		});
-
+		
 		
         if ( $tipx == 'new' )
 		{

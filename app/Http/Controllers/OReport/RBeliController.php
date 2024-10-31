@@ -75,7 +75,7 @@ class RBeliController extends Controller
 		
 		$query = DB::SELECT("
 			SELECT trim(NO_BUKTI) as NO_BUKTI,TGL,NO_PO,KODES,TRUCK,NAMAS,KD_BRG,trim(NA_BRG) as NA_BRG,KG,HARGA,
-			LAIN, TOTAL, AJU, BL,EMKL, NOTES, RPRATE, RPLAIN, RPHARGA, RPTOTAL  
+			LAIN, TOTAL, AJU, BL,EMKL, NOTES, RPRATE, RPLAIN, RPHARGA, RPTOTAL, ACNOA, NACNOA, KONTRAK   
 			from beli WHERE FLAG ='BL' $filtertgl $filtergol $filterkodes $filterbrg 
 			ORDER BY trim(NA_BRG),FLAG,TGL,trim(NO_BUKTI) ASC;
 		");

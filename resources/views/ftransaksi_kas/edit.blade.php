@@ -97,7 +97,7 @@
                                     <label for="BACNO" class="form-label">Kas</label>
                                 </div>
                                  <div class="col-md-2 input-group" >
-                                  <input type="text" class="form-control BACNO" onclick="browseAccount1()" id="BACNO" name="BACNO" placeholder="Masukkan Bank" value="{{$header->BACNO ?? ''}}"  style="text-align: left" readonly >
+                                  <input type="text" class="form-control BACNO" id="BACNO" name="BACNO" placeholder="Masukkan Bank" value="{{$header->BACNO ?? ''}}"  style="text-align: left" readonly >
                                  </div>
 								
 								 <div class="col-md-4">
@@ -148,10 +148,8 @@
                                         </td>
 
                                         <td>
-                                            <!-- <input name="ACNO[]" id="ACNO{{$no}}" type="text" value="{{$detail->ACNO}}"
-                                              class="form-control ACNO " required readonly onclick="getNacno(this.id)"> -->
-											<input name="ACNO[]" id="ACNO{{$no}}" type="text" value="{{$detail->ACNO}}"
-											class="form-control ACNO " onclick="browseAccount({{$no}})" required >
+                                            <input name="ACNO[]" id="ACNO{{$no}}" type="text" value="{{$detail->ACNO}}"
+                                              class="form-control ACNO " required readonly onclick="getNacno(this.id)">
 										</td>
 			
 										 <td>
@@ -202,20 +200,20 @@
 						        
 						<div class="mt-3 col-md-12 form-group row">
 							<div class="col-md-4">
-								<button type="button" id='TOPX'  onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'' )}}'" class="btn btn-outline-primary">Top</button>
-								<button type="button" id='PREVX' onclick="location.href='{{url('/kas/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
-								<button type="button" id='NEXTX' onclick="location.href='{{url('/kas/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
-								<button type="button" id='BOTTOMX' onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
+								<button type="button" hidden id='TOPX'  onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'' )}}'" class="btn btn-outline-primary">Top</button>
+								<button type="button" hidden id='PREVX' onclick="location.href='{{url('/kas/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
+								<button type="button" hidden id='NEXTX' onclick="location.href='{{url('/kas/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
+								<button type="button" hidden id='BOTTOMX' onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
 							</div>
 							<div class="col-md-5">
-								<button type="button" id='NEWX' onclick="location.href='{{url('/kas/edit/?idx=0&tipx=new&flagz='.$flagz.'' )}}'" class="btn btn-warning">New</button>
-								<button type="button" id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
-								<button type="button" id='UNDOX' onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'' )}}'" class="btn btn-info">Undo</button>  
-								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
+								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/kas/edit/?idx=0&tipx=new&flagz='.$flagz.'' )}}'" class="btn btn-warning">New</button>
+								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
+								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/kas/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'' )}}'" class="btn btn-info">Undo</button>  
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success"<i class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
-								<button type="button" id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
+								<button type="button" hidden id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
 								<button type="button" id='CLOSEX'  onclick="location.href='{{url('/kas?flagz='.$flagz.'' )}}'" class="btn btn-outline-secondary">Close</button>
 							</div>
 						</div>
@@ -328,8 +326,8 @@
 				} else {
 					tambah();
 					var nomer = idrow-1;
-					console.log("ACNO"+nomor);
-					document.getElementById("ACNO"+nomor).focus();
+					console.log("ACNO"+nomer);
+					document.getElementById("ACNO"+nomer).focus();
 					// form.submit();
 				}
 				return false;
@@ -351,9 +349,12 @@
 			nomor();
 		});
 		
+		
 		$(".date").datepicker({
 			'dateFormat': 'dd-mm-yy',
 		})
+		
+
 		
 		
 		
@@ -622,8 +623,8 @@
 	
 	function ganti() {
 		
-		 mati();
-		//  hidup();
+		 //mati();
+		 hidup();
 	}
 	
 	function batal() {
@@ -775,7 +776,7 @@
 	            </td>
 						       
                 <td>
-				    <input name='ACNO[]' data-rowid=${idrow} onclick='browseAccount(${idrow})' id='ACNO${idrow}' type='text' class='form-control  ACNO' required readonly>
+				    <input name='ACNO[]' data-rowid=${idrow}  id='ACNO${idrow}' type='text' class='form-control  ACNO' required readonly>
                 </td>
                 <td>
 				    <input name='NACNO[]'   id='NACNO${idrow}' type='text' class='form-control  NACNO' required readonly>

@@ -24,23 +24,47 @@
 					<div class="card-body">
 					    <form method="POST" action="{{url('jasper-account-report')}}">
 					    @csrf
-						<div class="form-group nowrap">
-							<label><strong>Periode :</strong></label>
-							<select name="perio" id="perio" class="form-control perio" style="width: 200px">
-								<option value="">--Pilih Periode--</option>
-								@foreach($per as $perD)
-									<option value="{{$perD->PERIO}}" {{ (session()->get('filter_periode') == $perD->PERIO) ? 'selected' : '' }}>{{$perD->PERIO}}</option>
-								@endforeach
-							</select>
-<!-- GANTI 2.1 -->
-							<!--
-							<select name="acno" id="acno" class="form-control acno" style="width: 200px">
-								<option value="">--Pilih Bahan--</option>
-								<option value="1000">Kas</option>
-								<option value="1100">Bank</option>
-							</select>
-							-->
-						</div>
+						
+						<div class="form-group row">
+
+                            <div class="col-md-1" align="left"><strong style="font-size: 13px;">Jenis Laporan</strong></div>
+							<div class="col-md-4">
+								<select name="PILIH" id="PILIH" class="form-control PILIH" style="width: 200px">
+									<option value="1" {{ ( session()->get('filter_pilih') == '1') ? 'selected' : '' }} >Neraca Percobaan Bulan</option>
+									<option value="2" {{ ( session()->get('filter_pilih') == '2') ? 'selected' : '' }} >Neraca Percobaan Tahun</option>
+								</select>
+							</div>
+                        </div>
+
+                        <div class="form-group row">
+                            
+                            <div class="col-md-1" align="left"><strong style="font-size: 13px;">Periode :</strong></div>
+							<div class="col-md-2">
+                                <select name="perio" id="perio" class="form-control perio" style="width: 200px">
+                                    <option value="">--Pilih Periode--</option>
+                                    @foreach($per as $perD)
+                                        <option value="{{$perD->PERIO}}" {{ (session()->get('filter_periode') == $perD->PERIO) ? 'selected' : '' }}>{{$perD->PERIO}}</option>
+                                    @endforeach
+                                </select>
+							</div>
+
+
+                            <div class="col-md-1" align="left"><strong style="font-size: 13px;">Tahun :</strong></div>
+							<div class="col-md-2">
+								<select name="tahun" id="tahun" class="form-control tahun" style="width: 200px">
+									<option value="2018" {{ ( session()->get('filter_tahun') == '2018') ? 'selected' : '' }} >2018</option>
+									<option value="2019" {{ ( session()->get('filter_tahun') == '2019') ? 'selected' : '' }} >2019</option>
+									<option value="2020" {{ ( session()->get('filter_tahun') == '2020') ? 'selected' : '' }} >2020</option>
+									<option value="2021" {{ ( session()->get('filter_tahun') == '2021') ? 'selected' : '' }} >2021</option>
+									<option value="2022" {{ ( session()->get('filter_tahun') == '2022') ? 'selected' : '' }} >2022</option>
+									<option value="2023" {{ ( session()->get('filter_tahun') == '2023') ? 'selected' : '' }} >2023</option>
+									<option value="2024" {{ ( session()->get('filter_tahun') == '2024') ? 'selected' : '' }} >2024</option>
+									<option value="2025" {{ ( session()->get('filter_tahun') == '2025') ? 'selected' : '' }} >2025</option>
+								</select>
+							</div>
+
+                        </div>
+						
 						<button class="btn btn-primary" type="submit" id="filter" class="filter" name="filter">Filter</button>
 						<button class="btn btn-danger" type="button" id="resetfilter" class="resetfilter" onclick="window.location='{{url("raccount")}}'">Reset</button>
 						<button class="btn btn-warning" type="submit" id="cetak" class="cetak" formtarget="_blank">Cetak</button>
@@ -90,7 +114,7 @@
 						</table> --}}
 
 						<!-- DISINI BATAS AWAL KOOLREPORT-->
-                    <div class="report-content" col-md-12>
+                        <div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
                         use \koolreport\datagrid\DataTables;
 
@@ -105,6 +129,12 @@
                                 "showFooter" => true,
                                 "showFooter" => "bottom",
                                 "columns" => array(
+                                    "PER" => array(
+                                        "label" => "Periode",
+                                    ),
+                                    "YER" => array(
+                                        "label" => "Tahun",
+                                    ),
                                     "ACNO" => array(
                                         "label" => "Account#",
                                     ),
@@ -114,7 +144,7 @@
                                     "AW" => array(
                                         "label" => "Awal",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -123,7 +153,7 @@
                                     "KD" => array(
                                         "label" => "K-Debet",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -132,7 +162,7 @@
                                     "KK" => array(
                                         "label" => "K-Kredit",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -141,7 +171,7 @@
 									"BD" => array(
                                         "label" => "B-Debet",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -150,7 +180,7 @@
 									"BK" => array(
                                         "label" => "B-Kredit",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -159,7 +189,7 @@
 									"MD" => array(
                                         "label" => "M-Debet",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -168,7 +198,7 @@
 									"MK" => array(
                                         "label" => "M-Kredit",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -177,7 +207,7 @@
 									"AK" => array(
                                         "label" => "Akhir",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",

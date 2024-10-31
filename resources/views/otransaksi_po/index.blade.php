@@ -129,7 +129,7 @@
 				name: 'action'
 			    },
 				
-                {data: 'NO_PO', name: 'NO_PO'},
+                {data: 'NO_BUKTI', name: 'NO_BUKTI'},
                 {data: 'TGL', name: 'TGL'},
                 {data: 'NAMAS', name: 'NAMAS'},
                 {data: 'NA_BRG', name: 'NA_BRG'},				

@@ -23,7 +23,7 @@
 			<div class="col-12">
 			<div class="card">
 				<div class="card-body">
-					<form method="POST" action="{{url('rum/jasper-um-report')}}">
+					<form method="POST" action="{{url('jasper-um-report')}}">
 					@csrf
 					<div class="form-group row">
 						<div class="col-md-1">
@@ -83,7 +83,7 @@
 					
 				<!-- PASTE DIBAWAH INI -->
 				<!-- DISINI BATAS AWAL KOOLREPORT-->
-				<div class="report-content" col-md-12>
+				<div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
 					<?php
 					use \koolreport\datagrid\DataTables;
 
@@ -218,91 +218,7 @@
 		$('.date').datepicker({  
 			dateFormat: 'dd-mm-yy'
 		}); 
-		/*
-		function fill_datatable( kodes = '' , gol='',tglDr = '', tglSmp = '' )
-		{
-			var dataTable = $('.datatable').DataTable({
-				dom: '<"row"<"col-4"B>>fltip',
-				lengthMenu: [
-					[ 10, 25, 50, -1 ],
-					[ '10 rows', '25 rows', '50 rows', 'Show all' ]
-				],
-				processing: true,
-				serverSide: true,
-				autoWidth: true,
-				'scrollX': true,
-				'scrollY': '400px',
-				"order": [[ 0, "asc" ]],
-				ajax: 
-				{
-					url: '{{ route('get-um-report') }}',
-					data: {
-						kodes: kodes,
-						gol : gol,
-						tglDr: tglDr,
-						tglSmp: tglSmp
-					}
-				},
-				columns: 
-				[
-					{data: 'DT_RowIndex', orderable: false, searchable: false },
-					{data: 'NO_BUKTI', name: 'NO_BUKTI'},
-					{data: 'TGL', name: 'TGL'},
-					{data: 'NO_PO', name: 'NO_PO'},
-					{data: 'KODES', name: 'KODES'},
-					{data: 'NAMAS', name: 'NAMAS'},
-					{data: 'BACNO', name: 'BACNO'},
-					{data: 'BNAMA', name: 'BNAMA'},						
-					{
-						data: 'TOTAL1',
-						name: 'TOTAL1',
-						render: $.fn.dataTable.render.number( ',', '.', 0, '' )
-					}
-				],
-				
-				columnDefs: [
-				{
-				"className": "dt-center", 
-				"targets": 0
-				},
-				{
-				targets: 2,
-				render: $.fn.dataTable.render.moment( 'DD-MM-YYYY' )
-				},
-				{
-				"className": "dt-right", 
-				"targets": 8
-				}
-				
-				],
-				
-				
-			});
-		}
-		
-		$('#filter').click(function() {
-			var kodes = $('#kodes').val();
-			var gol = $('#gol').val();
-			var tglDr = $('#tglDr').val();
-			var tglSmp = $('#tglSmp').val();
-			
-			if (kodes != '' || (tglDr != '' && tglSmp != ''))
-			{
-				$('.datatable').DataTable().destroy();
-				fill_datatable(kodes,gol, tglDr, tglSmp);
-			}
-		});
-
-		$('#resetfilter').click(function() {
-			var kodes = '';
-			var gol = '';
-			var tglDr = '';
-			var tglSmp = '';
-
-			$('.datatable').DataTable().destroy();
-			fill_datatable(kodes, gol,tglDr, tglSmp);
-		});
-		*/
+	
 	});
 	
 	var dTableBSuplier;

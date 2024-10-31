@@ -63,7 +63,7 @@ class RThutController extends Controller
 			session()->put('filter_tglSampai', $request->tglSmp);
 
 		$query = DB::SELECT("
-			SELECT NO_BUKTI,TGL,NO_PO,KODES,NAMAS,TOTAL,NOTES,GOL from beli WHERE FLAG='TH' $filtertgl $filtergol $filterkodes;
+			SELECT NO_BUKTI,TGL,NO_PO,KODES,NAMAS,TOTAL,NOTES,GOL, ACNOA, NACNOA from beli WHERE FLAG='TH' $filtertgl $filtergol $filterkodes;
 		");
 
 		if($request->has('filter'))

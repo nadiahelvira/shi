@@ -33,7 +33,7 @@ class SoController extends Controller
 	
     function setFlag(Request $request)
     {
-        if ( $request->golz == 'A2' ) {
+        if ( $request->golz == 'Y' ) {
             $this->judul = "Sales Order Barang";
         } 
 			
@@ -55,97 +55,20 @@ class SoController extends Controller
 
 
     // ganti 4
-    // public function browse()
-    // {
-
+    public function browse()
+    {
+/*           $so = DB::table('so')->select('NO_SO', 'TGL', 'KODEC', 'NAMAC',  'ALAMAT', 'KOTA', 'KD_BRG', 'NA_BRG', 'HARGA', 'KG', 'KIRIM', 'SISA' )->where('SLS', 0)->where('GOL', 'Y')->orderBy('KODEC', 'ASC')->get();
+        return response()->json($so);  */ 
 		
-	// 	$so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from so
-	// 	WHERE YEAR (TGL) >= 2023  AND  GOL='A2' AND SLS='0' ORDER BY KODEC ASC; ");
-    //     return response()->json($so); 
-    // }
-
-    ///////////////////////////////////////////////////////
-
-    public function browse(Request $request)
-    {   
-        $this->setFlag($request);
-        $FLAGZ = $this->FLAGZ;
-
-		$no_soz = $request->NO_SO;
-
-		$filter_no_so='';
-		
-         if (!empty($request->NO_SO)) {
-			
-			$filter_no_so = " and NO_SO='".$request->NO_SO."' ";
-		} 
-		
-			$so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from so
-                        WHERE YEAR (TGL) >= 2023  AND  GOL='A2' AND SLS='0' $filter_no_so
-                        ORDER BY KODEC ASC ");
-						
-		if	( empty($so) ) {
-			
-			$so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from so
-                        WHERE YEAR (TGL) >= 2023  AND  GOL='A2' AND SLS='0'
-                        ORDER BY KODEC ASC ");			
-		}
-
-		
-        return response()->json($so);
+		$so = DB::SELECT("SELECT NO_BUKTI,TGL,  KODEC, NAMAC, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from so
+		WHERE YEAR (TGL) >= 2023  AND  GOL='Y' AND SLS='0' AND SISA<>0 ORDER BY KODEC ASC; ");
+        return response()->json($so); 
     }
 
-    ///////////////////////////////////////////////////////
-
-    
-
-    public function browseuang(Request $request)
+    public function browseuang()
     {
-		// $so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA, PERJ AS TOTAL, PERJB AS BAYAR, (PERJ-PERJB) AS SISA  from so
-		// WHERE LNS <> 1 AND  GOL='A2' ORDER BY NO_SO; ");
-
-        // return response()->json($so);
-
-        //////////////////////////////////////////////
-
-        $this->setFlag($request);
-        $FLAGZ = $this->FLAGZ;
-
-		$no_soz = $request->NO_SO;
-
-		$filter_no_so='';
-		
-         if (!empty($request->NO_SO)) {
-			
-			$filter_no_so = " and NO_SO='".$request->NO_SO."' ";
-		} 
-		
-			$so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA  from so
-                        WHERE LNS <> 1 AND  GOL='A2' $filter_no_so
-                        ORDER BY NO_SO ASC ");
-						
-		if	( empty($so) ) {
-			
-			$so = DB::SELECT("SELECT NO_SO,TGL,  KODEC, NAMAC, NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA from so
-                        WHERE LNS <> 1 AND  GOL='A2'
-                        ORDER BY NO_SO ASC ");			
-		}
-
-		
-        return response()->json($so);
-    }
-
-    public function browseisi(Request $request)
-    {
-		$so = DB::SELECT("SELECT NO_SO AS NO_SO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, 0 AS BAYAR 
-                        FROM jual 
-                        WHERE NO_SO ='$request->NO_SO'
-                        
-                        UNION ALL
-						
-                        SELECT NO_SO AS NO_SO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, BAYAR AS BAYAR 
-                        FROM piu  
-                        WHERE NO_SO ='$request->NO_SO' ORDER BY TGL_FAKTUR  ");
+		$so = DB::SELECT("SELECT NO_BUKTI,TGL,  KODEC, NAMAC, PERJ AS TOTAL, PERJB AS BAYAR, (PERJ-PERJB) AS SISA ,NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA from so
+		WHERE LNS <> 1 AND  GOL='Y' ORDER BY NO_BUKTI; ");
 
         return response()->json($so);
     }
@@ -165,7 +88,7 @@ class SoController extends Controller
         //$so = DB::table('so')->select('*')->where('PER', $periode)->where('GOL', 'Y')->orderBy('NO_SO', 'ASC')->get();
         $this->setFlag($request);
 		
-        $so = DB::SELECT("SELECT * from so  where  PER ='$periode' and GOL ='$this->GOLZ'  ORDER BY NO_SO ");
+        $so = DB::SELECT("SELECT * from so  where  PER ='$periode' and GOL ='$this->GOLZ'  ORDER BY NO_BUKTI ");
 	
 
         return Datatables::of($so)
@@ -174,10 +97,10 @@ class SoController extends Controller
                 if (Auth::user()->divisi=="programmer" || Auth::user()->divisi=="owner" || Auth::user()->divisi=="assistant" || Auth::user()->divisi=="penjualan") 
                 {
 
-                    $btnEdit =   ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_SO . ' sudah diposting!\')" href="#" ' : ' href="so/edit/?idx
+                    $btnEdit =   ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_BUKTI . ' sudah diposting!\')" href="#" ' : ' href="so/edit/?idx
 					=' . $row->NO_ID . '&tipx=edit&golz=' . $row->GOL . '&judul=' . $this->judul . '"';
 					
-                    $btnDelete = ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_SO . ' sudah diposting!\')" href="#" ' : ' onclick="return confirm(&quot; Apakah anda yakin ingin hapus? &quot;)" href="so/delete/' . $row->NO_ID . '/?golz=' . $row->GOL . '" ';
+                    $btnDelete = ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_BUKTI . ' sudah diposting!\')" href="#" ' : ' onclick="return confirm(&quot; Apakah anda yakin ingin hapus? &quot;)" href="so/delete/' . $row->NO_ID . '/?golz=' . $row->GOL . '" ';
 
 
                     $btnPrivilege =
@@ -256,23 +179,16 @@ class SoController extends Controller
 
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
-        // $query = DB::table('so')->select('NO_SO')->where('PER', $periode)->orderByDesc('NO_SO')->limit(1)->get();
+        $query = DB::table('so')->select('NO_BUKTI')->where('PER', $periode)->orderByDesc('NO_BUKTI')->limit(1)->get();
         
-        // $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(so.NO_SO, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_SO
-        //                 FROM so
-        //                 WHERE PER='$periode' 
-        //                 ORDER BY NO_SO DESC LIMIT 1 ");
-
-        $query = DB::table('so')->select(DB::raw("TRIM(NO_SO) AS NO_SO"))->where('PER', $periode)->orderByDesc('NO_SO')->limit(1)->get();
-
 		$no_bukti='';
 		
         if ($query != '[]') {
-            $query = substr($query[0]->NO_SO, -4);
+            $query = substr($query[0]->NO_BUKTI, -4);
             $query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
-            $no_bukti = 'SA2' . $tahun . $bulan . '-' . $query;
+            $no_bukti = 'SY' . $tahun . $bulan . '-' . $query;
         } else {
-            $no_bukti = 'SA2' . $tahun . $bulan . '-0001';
+            $no_bukti = 'SY' . $tahun . $bulan . '-0001';
         }
 
 
@@ -283,12 +199,11 @@ class SoController extends Controller
 
         $so = So::create(
             [
-                'NO_SO'         => $no_bukti,
+                'NO_BUKTI'         => $no_bukti,
                 'TGL'              => date('Y-m-d', strtotime($request['TGL'])),
-                'JTEMPO'              => date('Y-m-d', strtotime($request['JTEMPO'])),
                 'PER'              => $periode,
-                'RPRATE'           => '1',
-                'GOL'              => $GOLZ,
+                'FLAG'             => 'SO',
+                'GOL'              => 'Y',
                 'KODEC'            => ($request['KODEC'] == null) ? "" : $request['KODEC'],
                 'NAMAC'            => ($request['NAMAC'] == null) ? "" : $request['NAMAC'],
                 'ALAMAT'            => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
@@ -296,16 +211,12 @@ class SoController extends Controller
                 'KD_BRG'           => ($request['KD_BRG'] == null) ? "" : $request['KD_BRG'],
                 'NA_BRG'           => ($request['NA_BRG'] == null) ? "" : $request['NA_BRG'],
 				
-                'NO_ORDER'           => ($request['NO_ORDER'] == null) ? "" : $request['NO_ORDER'],
-                'PO'           => ($request['PO'] == null) ? "" : $request['PO'],
-				
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
                 'KG'               => (float) str_replace(',', '', $request['KG']),
                 'HARGA'            => (float) str_replace(',', '', $request['HARGA']),
-                'RPHARGA'            => (float) str_replace(',', '', $request['HARGA']),
-                'SISA'             => (float) str_replace(',', '', $request['KG']),
+                'SISA'             => (float) str_replace(',', '', $request['SISA']),
+                'KIRIM'             => (float) str_replace(',', '', $request['KIRIM']),
                 'TOTAL'               => (float) str_replace(',', '', $request['TOTAL']),
-                'RPTOTAL'               => (float) str_replace(',', '', $request['TOTAL']),
                 'USRNM'            => Auth::user()->username,
                 'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
@@ -315,16 +226,11 @@ class SoController extends Controller
 
 
   	    $no_buktix = $no_bukti;
-
-        DB::SELECT("UPDATE so SET  SISA = KG - KIRIM  WHERE  so.NO_SO='$no_buktix';");
 		
-		$so = So::where('NO_SO', $no_buktix )->first();
+		$so = So::where('NO_BUKTI', $no_buktix )->first();
 					 
-        // return redirect('/so?golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ ]);
-
-        return redirect('/so/edit/?idx=' . $so->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&judul=' . $this->judul . '');
-
+        return redirect('/so?golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ ]);
     }
 
     /**
@@ -372,10 +278,10 @@ class SoController extends Controller
 		   	
     	   $buktix = $request->buktix;
 		   
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_SO from so
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from so
 		                 where PER ='$per' and  
-						 and GOL ='$this->GOLZ' and NO_SO = '$buktix'						 
-		                 ORDER BY NO_SO ASC  LIMIT 1" );
+						 and GOL ='$this->GOLZ' and NO_BUKTI = '$buktix'						 
+		                 ORDER BY NO_BUKTI ASC  LIMIT 1" );
 						 
 			
 			if(!empty($bingco)) 
@@ -393,9 +299,9 @@ class SoController extends Controller
 		if ($tipx=='top') {
 			
 
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_SO from so
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from so
 		                 where PER ='$per' and GOL ='$this->GOLZ' 
-		                 ORDER BY NO_SO ASC  LIMIT 1" );
+		                 ORDER BY NO_BUKTI ASC  LIMIT 1" );
 						 
 		
 			if(!empty($bingco)) 
@@ -415,9 +321,9 @@ class SoController extends Controller
 			
     	   $buktix = $request->buktix;
 			
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_SO from so     
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from so     
 		             where PER ='$per' and GOL ='$this->GOLZ' 
-					 and NO_SO < '$buktix' ORDER BY NO_SO DESC LIMIT 1" );
+					 and NO_BUKTI < '$buktix' ORDER BY NO_BUKTI DESC LIMIT 1" );
 			
 
 			if(!empty($bingco)) 
@@ -437,9 +343,9 @@ class SoController extends Controller
 				
       	   $buktix = $request->buktix;
 	   
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_SO from so    
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from so    
 		             where PER ='$per' and GOL ='$this->GOLZ' 
-					 and NO_SO > '$buktix' ORDER BY NO_SO ASC LIMIT 1" );
+					 and NO_BUKTI > '$buktix' ORDER BY NO_BUKTI ASC LIMIT 1" );
 					 
 			if(!empty($bingco)) 
 			{
@@ -455,9 +361,9 @@ class SoController extends Controller
 
 		if ($tipx=='bottom') {
 		  
-    		$bingco = DB::SELECT("SELECT NO_ID, NO_SO from so where PER ='$per'
+    		$bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from so where PER ='$per'
             			and GOL ='$this->GOLZ'     
-		              ORDER BY NO_SO DESC  LIMIT 1" );
+		              ORDER BY NO_BUKTI DESC  LIMIT 1" );
 					 
 			if(!empty($bingco)) 
 			{
@@ -493,7 +399,7 @@ class SoController extends Controller
 				
 		 }
 
-        $no_bukti = $so->NO_SO;
+        $no_bukti = $so->NO_BUKTI;
 				
 		$data = [
             'header'        => $so,
@@ -502,7 +408,7 @@ class SoController extends Controller
  
          
          return view('otransaksi_so.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -537,24 +443,18 @@ class SoController extends Controller
         $so->update(
             [
                 'TGL'              => date('Y-m-d', strtotime($request['TGL'])),
-                'JTEMPO'              => date('Y-m-d', strtotime($request['JTEMPO'])),
                 'KODEC'            => ($request['KODEC'] == null) ? "" : $request['KODEC'],
                 'NAMAC'            => ($request['NAMAC'] == null) ? "" : $request['NAMAC'],
                 'ALAMAT'           => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
                 'KOTA'             => ($request['KOTA'] == null) ? "" : $request['KOTA'],
                 'KD_BRG'           => ($request['KD_BRG'] == null) ? "" : $request['KD_BRG'],
                 'NA_BRG'           => ($request['NA_BRG'] == null) ? "" : $request['NA_BRG'],
-				
-                'NO_ORDER'         => ($request['NO_ORDER'] == null) ? "" : $request['NO_ORDER'],
-                'PO'            => ($request['PO'] == null) ? "" : $request['PO'],
-				
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
                 'KG'               => (float) str_replace(',', '', $request['KG']),
-                'SISA'             => (float) str_replace(',', '', $request['KG']),
+                'SISA'             => (float) str_replace(',', '', $request['SISA']),
+                'KIRIM'             => (float) str_replace(',', '', $request['KIRIM']),
                 'HARGA'            => (float) str_replace(',', '', $request['HARGA']),
                 'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-                'RPHARGA'            => (float) str_replace(',', '', $request['HARGA']),
-                'RPTOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
                 'USRNM'            => Auth::user()->username,
                 'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
@@ -563,15 +463,12 @@ class SoController extends Controller
 
         //  ganti 21
 
-		$no_buktix = $so->NO_SO;
+		$no_buktix = $so->NO_BUKTI;
 				
-		$so = So::where('NO_SO', $no_buktix )->first();
+		$so = So::where('NO_BUKTI', $no_buktix )->first();
 					 
-        // return redirect('/so?golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ ]);
-
-        return redirect('/so/edit/?idx=' . $so->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&judul=' . $this->judul . '');
-
+        return redirect('/so?golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ ]);
 
    }
 
@@ -615,7 +512,7 @@ class SoController extends Controller
 
 		return redirect('/so?golz='.$GOLZ)
 		       ->with(['judul' => $judul, 'golz' => $GOLZ ])
-			   ->with('statusHapus', 'Data '.$so->NO_SO.' berhasil dihapus');
+			   ->with('statusHapus', 'Data '.$so->NO_BUKTI.' berhasil dihapus');
 			   
     }
 
@@ -623,22 +520,22 @@ class SoController extends Controller
 
     public function jssoc(So $so)
     {
-        $no_so = $so->NO_SO;
+        $no_so = $so->NO_BUKTI;
 
         $file     = 'soc';
         $PHPJasperXML = new PHPJasperXML();
         $PHPJasperXML->load_xml_file(base_path() . ('/app/reportc01/phpjasperxml/' . $file . '.jrxml'));
 
         $query = DB::SELECT("
-			SELECT '' AS NO_BUKTI, NO_SO, TGL, KODEC, NAMAC, KD_BRG, NA_BRG, KG, HARGA, TOTAL, NOTES
+			SELECT NO_BUKTI, TGL, KODEC, NAMAC, KD_BRG, NA_BRG, KG, HARGA, TOTAL, NOTES
 			FROM so 
-			WHERE so.NO_SO='$no_so' 
-			ORDER BY NO_SO;
+			WHERE so.NO_BUKTI='$no_so' 
+			ORDER BY NO_BUKTI;
 		");
 
 
         //$xno_so1   = $query->fields["NO_SO"];
-        $xno_so1   = $query[0]->NO_SO;
+        $xno_so1   = $query[0]->NO_BUKTI;
         $xtgl1     = $query[0]->TGL;
         $xkodec1   = $query[0]->KODEC;
         $xnamac1   = $query[0]->NAMAC;
@@ -655,12 +552,12 @@ class SoController extends Controller
 
 
         $query2 = DB::SELECT("
-			SELECT NO_BUKTI, NO_SO, TGL, KODEC, NAMAC, IF ( FLAG='JL' , 'A','B' ) AS FLAG, IF ( FLAG ='UJ', 'U.M', TRUCK ) AS TRUCK, KD_BRG, NA_BRG, KG, 
+			SELECT NO_BUKTI, TGL, KODEC, NAMAC, NO_SO, IF ( FLAG='JL' , 'A','B' ) AS FLAG, IF ( FLAG ='UJ', 'U.M', TRUCK ) AS TRUCK, KD_BRG, NA_BRG, KG, 
 			HARGA, RPTOTAL AS TOTAL, 0 AS BAYAR,  NOTES
 			FROM jual 
 			WHERE jual.NO_SO='$no_so'  UNION ALL 
-			SELECT NO_BUKTI, NO_SO, TGL, KODEC, NAMAC, 'C' AS FLAG, 'BAYAR' AS TRUCK, '' AS KD_BRG, '' AS NA_BRG, 0 AS KG, 
-			0 AS HARGA, TOTAL AS TOTAL, BAYAR, NOTES
+			SELECT NO_BUKTI, TGL, KODEC, NAMAC, NO_SO,  'C' AS FLAG, 'BAYAR' AS TRUCK, '' AS KD_BRG, '' AS NA_BRG, 0 AS KG, 
+			0 AS HARGA, 0 AS TOTAL, BAYAR, NOTES
 			FROM piu 
 			WHERE piu.NO_SO='$no_so' 
 			ORDER BY TGL, NO_BUKTI;

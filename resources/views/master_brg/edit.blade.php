@@ -312,7 +312,17 @@
         //cekBarang($('#KD_BRG').val());
         //(hasilCek==0) ? document.getElementById("entri").submit() : alert('Kode Barang '+$('#KD_BRG').val()+' sudah ada!');
         
-        document.getElementById("entri").submit()
+		hasilCek=0;
+		$tipx = $('#tipx').val();
+				
+        if ( $tipx == 'new' )
+		{
+			cekbarang($('#KD_BRG').val());		
+		}
+		
+
+        (hasilCek==0) ? document.getElementById("entri").submit() : alert('Kode Barang '+$('#KD_BRG').val()+' sudah ada!');
+        //document.getElementById("entri").submit()
 	}
 </script>
 @endsection

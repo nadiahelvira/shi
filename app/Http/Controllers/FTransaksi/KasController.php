@@ -192,13 +192,8 @@ class KasController extends Controller
 
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
-        // $query = DB::table('kas')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
-        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(kas.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI
-                            FROM kas
-                            WHERE PER = '$periode'
-                            AND TYPE ='$FLAGZ'
-                            ORDER BY NO_BUKTI DESC Limit 1");
-                            
+        $query = DB::table('kas')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
+
         // Check apakah No Bukti terakhir NULL
         if ($query != '[]') {
             $query = substr($query[0]->NO_BUKTI, -4);
@@ -227,7 +222,7 @@ class KasController extends Controller
                 'KET'              => ($request['KET'] == null) ? "" : $request['KET'],
                 'JUMLAH'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'USRNM'            => Auth::user()->username,
-                // 'created_by'       => Auth::user()->username,
+                'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
 
             ]
@@ -256,8 +251,8 @@ class KasController extends Controller
                 $detail->NACNO    = ($NACNO[$key] == null) ? "" :  $NACNO[$key];
                 $detail->URAIAN    = ($URAIAN[$key] == null) ? "" :  $URAIAN[$key];
                 $detail->JUMLAH    = (float) str_replace(',', '', $JUMLAH[$key]);
-                $detail->DEBET    = ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
-				$detail->KREDIT    = ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
+                $detail->DEBET    =  ($this->FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$key]) : 0 ;
+                $detail->KREDIT    =  ($this->FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$key]) : 0 ;
                 $detail->save();
             }
         }
@@ -448,7 +443,7 @@ class KasController extends Controller
  
          
          return view('ftransaksi_kas.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -499,7 +494,7 @@ class KasController extends Controller
                 'JUMLAH'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'KET'              => ($request['KET'] == null) ? "" : $request['KET'],
                 'USRNM'            => Auth::user()->username,
-                // 'updated_by'       => Auth::user()->username,
+                'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
 
             ]
@@ -539,9 +534,10 @@ class KasController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        'KREDIT'      => ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        
+                        'DEBET'      =>  ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 ,
+                        'KREDIT'     =>  ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 
+
+					
 						
 						
 						
@@ -562,9 +558,9 @@ class KasController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        'KREDIT'      => ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        
+                        'DEBET'      =>  ($FLAGZ == 'BKM') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 ,
+                        'KREDIT'     =>  ($FLAGZ == 'BKK') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 
+
                     ]
                 );
             }
@@ -639,9 +635,16 @@ class KasController extends Controller
         $PHPJasperXML = new PHPJasperXML();
         $PHPJasperXML->load_xml_file(base_path() . ('/app/reportc01/phpjasperxml/' . $file . '.jrxml'));
 
+		$judul = '';
+		if($kas->TYPE =='BKK'){
+			$judul ='Bukti Kas Keluar';
+		} else {
+			$judul = 'Bukti Kas Masuk';
+		}
+		
         $query = DB::SELECT("
 			SELECT kas.NO_BUKTI,kas.TGL,kas.KET,kas.BNAMA,
-            kasd.REC,kasd.ACNO,kasd.NACNO,kasd.URAIAN,if(kasd.DEBET>=0,kasd.DEBET,kasd.KREDIT) as JUMLAH 
+            kasd.REC,kasd.ACNO,kasd.NACNO,kasd.URAIAN,kasd.JUMLAH as JUMLAH 
 			FROM kas, kasd 
 			WHERE kas.NO_BUKTI=kasd.NO_BUKTI and kas.NO_BUKTI='$no_bukti' 
 			ORDER BY kas.NO_BUKTI;
@@ -659,6 +662,7 @@ class KasController extends Controller
                 'NACNO' => $query[$key]->NACNO,
                 'URAIAN' => $query[$key]->URAIAN,
                 'JUMLAH' => $query[$key]->JUMLAH,
+                'JUDUL' => $judul,
             ));
         }
         $PHPJasperXML->setData($data);

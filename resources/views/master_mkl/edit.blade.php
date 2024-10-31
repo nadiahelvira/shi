@@ -83,7 +83,7 @@
 								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/mkl/edit/?idx=0&tipx=new')}}'" class="btn btn-warning">New</button>
 								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
 								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/mkl/edit/?idx=' .$idx. '&tipx=undo' )}}'" class="btn btn-info">Undo</button> 
-								<button type="button" id='SAVEX' onclick='simpan()' class="btn btn-success" class="fa fa-save"></i>Save</button>
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
@@ -253,7 +253,7 @@
 
      
     var hasilCek;
-	function cekKode(kode) {
+	function cekMkl(kode) {
 		$.ajax({
 			type: "GET",
 			url: "{{url('mkl/cekKode')}}",
@@ -276,7 +276,21 @@
 	function simpan() {
         //cekRefa($('#KA').val());
         //(hasilCek==0) ? document.getElementById("entri").submit() : alert('KA '+$('#KA').val()+' sudah ada!');
-        document.getElementById("entri").submit()
+        
+		hasilCek=0;
+		$tipx = $('#tipx').val();
+				
+        if ( $tipx == 'new' )
+		{
+			cekMkl($('#KODE').val());		
+		}
+		
+
+        (hasilCek==0) ? document.getElementById("entri").submit() : alert('Mkl'+$('#KODE').val()+' sudah ada!');
+        
+		
+		
+		//document.getElementById("entri").submit()
 	}
 </script>
 @endsection

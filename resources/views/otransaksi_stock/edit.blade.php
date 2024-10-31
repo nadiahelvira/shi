@@ -123,7 +123,7 @@
 								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/stock/edit/?idx=0&tipx=new&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
 								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
 								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/stock/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
-								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success"<i class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
@@ -187,7 +187,7 @@
 
 		$tipx = $('#tipx').val();
 		$searchx = $('#CARI').val();
-		
+
 		$('body').on('keydown', 'input, select', function(e) {
 			if (e.key === "Enter") {
 				var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
@@ -206,7 +206,7 @@
 				return false;
 			}
 		});
-
+		
 		
         if ( $tipx == 'new' )
 		{

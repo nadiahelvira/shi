@@ -35,7 +35,6 @@ class BrgController extends Controller
     {
 
         $brg = DB::table('brg')->select('KD_BRG', 'NA_BRG', 'SATUAN')->where('GOL', $request['GOL'])->orderBy('KD_BRG', 'ASC')->get();
-        // $brg = DB::table('brg')->select('KD_BRG', 'NA_BRG', 'SATUAN')->orderBy('KD_BRG', 'ASC')->get();
         return response()->json($brg); 
     
 	}

@@ -19,9 +19,8 @@ class Beli extends Model
 		"FLAG", "GOL", "KD_BRG", "NA_BRG", "SATUAN", "KG", "HARGA", "TOTAL", "RPTOTAL",
 	    "QTY", "LAIN", "SISA", "NOTES", "ACNOA", "NACNOA",  "RPLAIN", "RPSISA", "RPRATE", "RPHARGA", 
 		"ACNOB","NACNOB", "BACNO", "BNAMA", "NO_BANK","AJU", "BL", "EMKL", "JCONT", "SCONT", "TOTAL_KG", 
-		"USRNM", "TG_SMP", "TGL_BL",
+		"USRNM", "TG_SMP", "TGL_BL", "KONTRAK",
          "CETAK", "TGL_CETAK", "created_by", "updated_by",
-         "deleted_by", "TRUCK","BA" , "BP", "BAG", "KA", "REF", "RP", "JUMREF", "KGII", "POTII", "KGBAG", 
-		 "POTONG", "TOTAL", "GUDANG", "KAPAL"
+         "deleted_by"
     ];
 }

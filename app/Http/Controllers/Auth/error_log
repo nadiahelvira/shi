@@ -1,0 +1,1204 @@
+[27-Apr-2024 10:55:16 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[27-Apr-2024 11:24:51 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[27-Apr-2024 11:37:25 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[27-Apr-2024 16:26:24 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[27-Apr-2024 17:27:05 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[27-Apr-2024 19:34:46 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[27-Apr-2024 20:19:00 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[28-Apr-2024 00:00:05 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[28-Apr-2024 01:20:26 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[28-Apr-2024 02:08:23 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[28-Apr-2024 02:34:01 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[28-Apr-2024 03:44:02 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[28-Apr-2024 04:09:02 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[28-Apr-2024 04:27:37 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[28-Apr-2024 05:18:19 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[28-Apr-2024 05:57:14 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[28-Apr-2024 06:47:09 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[28-Apr-2024 07:54:34 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[28-Apr-2024 14:22:03 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[28-Apr-2024 18:47:31 UTC] PHP Fatal error:  Uncaught Error: Class "App\Http\Controllers\Controller" not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[28-Jun-2024 05:07:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[01-Jul-2024 09:23:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[08-Jul-2024 20:11:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[08-Jul-2024 21:13:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[09-Jul-2024 00:42:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[09-Jul-2024 01:03:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[09-Jul-2024 03:48:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[09-Jul-2024 06:00:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[09-Jul-2024 06:12:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[09-Jul-2024 10:24:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[09-Jul-2024 12:10:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[11-Jul-2024 05:51:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[11-Jul-2024 17:08:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[12-Jul-2024 05:05:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[12-Jul-2024 14:22:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[12-Jul-2024 14:22:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[12-Jul-2024 14:22:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[12-Jul-2024 14:23:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[12-Jul-2024 14:23:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[12-Jul-2024 14:24:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[12-Jul-2024 14:24:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[12-Jul-2024 21:01:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[12-Jul-2024 21:01:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[12-Jul-2024 21:01:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[12-Jul-2024 21:01:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[12-Jul-2024 21:01:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[12-Jul-2024 21:01:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[12-Jul-2024 21:01:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[12-Jul-2024 22:01:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[13-Jul-2024 16:30:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[13-Jul-2024 20:04:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[14-Jul-2024 00:32:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[14-Jul-2024 01:28:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[14-Jul-2024 01:39:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[14-Jul-2024 01:45:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[14-Jul-2024 01:48:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[14-Jul-2024 01:51:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[14-Jul-2024 01:53:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[14-Jul-2024 01:54:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[14-Jul-2024 01:57:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[14-Jul-2024 02:00:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[14-Jul-2024 02:05:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[14-Jul-2024 04:09:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[14-Jul-2024 04:28:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[15-Jul-2024 15:15:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[15-Jul-2024 15:15:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[15-Jul-2024 15:15:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 15:15:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[15-Jul-2024 15:15:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Jul-2024 21:22:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[15-Jul-2024 21:26:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[15-Jul-2024 21:26:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[15-Jul-2024 21:26:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Jul-2024 21:26:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 21:26:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 21:26:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 21:26:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 21:26:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Jul-2024 21:26:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Jul-2024 21:26:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[15-Jul-2024 21:26:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[15-Jul-2024 21:26:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[15-Jul-2024 21:27:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[15-Jul-2024 21:28:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[16-Jul-2024 03:46:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[16-Jul-2024 03:46:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[16-Jul-2024 03:46:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[16-Jul-2024 03:46:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[16-Jul-2024 03:47:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[18-Jul-2024 09:02:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[18-Jul-2024 10:54:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[18-Jul-2024 18:27:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[18-Jul-2024 18:28:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[18-Jul-2024 18:29:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[18-Jul-2024 18:33:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[18-Jul-2024 18:34:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[19-Jul-2024 07:03:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[19-Jul-2024 07:13:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[19-Jul-2024 07:18:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[19-Jul-2024 07:24:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[21-Jul-2024 12:17:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[22-Jul-2024 00:20:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[22-Jul-2024 00:25:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[22-Jul-2024 00:36:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[22-Jul-2024 00:41:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[22-Jul-2024 00:46:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[22-Jul-2024 00:51:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[22-Jul-2024 00:56:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[22-Jul-2024 01:07:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:30:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[29-Jul-2024 15:30:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[29-Jul-2024 15:30:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[29-Jul-2024 15:30:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:30:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[29-Jul-2024 15:30:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[29-Jul-2024 15:30:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[29-Jul-2024 15:30:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[29-Jul-2024 15:30:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:30:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[29-Jul-2024 15:30:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[29-Jul-2024 15:39:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:39:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[29-Jul-2024 15:39:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[29-Jul-2024 15:39:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:39:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[29-Jul-2024 15:39:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[29-Jul-2024 15:39:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:39:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[29-Jul-2024 15:39:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[29-Jul-2024 15:39:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:39:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[29-Jul-2024 15:39:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:39:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[29-Jul-2024 15:39:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[29-Jul-2024 15:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[29-Jul-2024 15:39:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[29-Jul-2024 15:39:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[29-Jul-2024 15:39:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[29-Jul-2024 15:40:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[29-Jul-2024 15:40:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[29-Jul-2024 15:40:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[29-Jul-2024 15:40:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[29-Jul-2024 15:40:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[29-Jul-2024 15:40:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Jul-2024 15:41:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[29-Jul-2024 15:41:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[29-Jul-2024 15:41:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[29-Jul-2024 15:41:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[04-Aug-2024 12:32:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[09-Aug-2024 11:50:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[09-Aug-2024 19:47:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[09-Aug-2024 20:33:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[09-Aug-2024 21:30:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[09-Aug-2024 21:52:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[10-Aug-2024 01:18:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[10-Aug-2024 01:55:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[10-Aug-2024 02:16:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[10-Aug-2024 02:52:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[10-Aug-2024 02:52:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[10-Aug-2024 03:45:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[10-Aug-2024 06:16:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[18-Aug-2024 21:43:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[27-Aug-2024 22:31:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[28-Aug-2024 03:44:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[28-Aug-2024 07:14:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[28-Aug-2024 09:01:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[28-Aug-2024 16:49:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[28-Aug-2024 18:34:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[29-Aug-2024 15:34:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[30-Aug-2024 09:41:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[30-Aug-2024 13:31:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[30-Aug-2024 16:50:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[30-Aug-2024 18:30:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[05-Sep-2024 00:33:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[10-Sep-2024 17:31:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[10-Sep-2024 18:32:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[10-Sep-2024 20:20:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[11-Sep-2024 04:20:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[14-Sep-2024 06:07:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[14-Sep-2024 09:14:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[14-Sep-2024 09:43:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[17-Sep-2024 00:31:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[17-Sep-2024 10:22:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[17-Sep-2024 12:57:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[17-Sep-2024 13:14:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[17-Sep-2024 15:02:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[18-Sep-2024 01:04:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[18-Sep-2024 16:27:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[18-Sep-2024 17:27:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[18-Sep-2024 17:41:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[18-Sep-2024 18:35:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[18-Sep-2024 18:43:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[18-Sep-2024 19:48:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[18-Sep-2024 19:55:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[18-Sep-2024 20:52:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[18-Sep-2024 21:21:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[18-Sep-2024 21:33:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[18-Sep-2024 21:52:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[18-Sep-2024 22:36:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[18-Sep-2024 22:49:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[18-Sep-2024 22:50:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[18-Sep-2024 22:50:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[18-Sep-2024 23:34:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[18-Sep-2024 23:37:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[18-Sep-2024 23:49:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[19-Sep-2024 00:08:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[19-Sep-2024 00:39:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[19-Sep-2024 00:46:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[19-Sep-2024 01:46:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[19-Sep-2024 02:10:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[19-Sep-2024 02:42:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[19-Sep-2024 03:02:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[19-Sep-2024 04:01:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[19-Sep-2024 04:25:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[19-Sep-2024 04:30:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[19-Sep-2024 04:55:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[19-Sep-2024 04:59:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[19-Sep-2024 05:19:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[19-Sep-2024 05:49:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[19-Sep-2024 05:57:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[19-Sep-2024 06:40:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[19-Sep-2024 07:12:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[19-Sep-2024 07:36:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[19-Sep-2024 07:47:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[19-Sep-2024 08:18:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[19-Sep-2024 08:35:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[19-Sep-2024 10:07:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[19-Sep-2024 10:59:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[19-Sep-2024 14:07:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[19-Sep-2024 15:07:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[19-Sep-2024 15:12:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[19-Sep-2024 16:29:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[19-Sep-2024 16:53:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[19-Sep-2024 18:15:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[19-Sep-2024 20:17:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[19-Sep-2024 21:14:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[20-Sep-2024 01:08:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[22-Sep-2024 02:22:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[22-Sep-2024 21:59:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[23-Sep-2024 03:44:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[23-Sep-2024 10:55:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[23-Sep-2024 11:36:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[23-Sep-2024 15:18:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[09-Oct-2024 12:34:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[11-Oct-2024 02:56:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[14-Oct-2024 21:31:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[15-Oct-2024 08:56:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[17-Oct-2024 19:29:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[17-Oct-2024 21:54:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[20-Oct-2024 05:05:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[22-Oct-2024 19:18:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[23-Oct-2024 01:27:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[23-Oct-2024 01:52:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[23-Oct-2024 03:51:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[23-Oct-2024 10:39:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[23-Oct-2024 11:03:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[24-Oct-2024 06:47:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[24-Oct-2024 08:02:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[24-Oct-2024 10:19:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[24-Oct-2024 11:12:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[24-Oct-2024 14:26:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationNotificationController.php on line 9
+[24-Oct-2024 14:27:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[24-Oct-2024 14:28:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[24-Oct-2024 14:29:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[24-Oct-2024 14:30:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[24-Oct-2024 14:32:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[24-Oct-2024 14:33:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[24-Oct-2024 14:33:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[24-Oct-2024 14:33:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[24-Oct-2024 14:57:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[24-Oct-2024 15:11:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[24-Oct-2024 17:03:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[24-Oct-2024 18:04:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[24-Oct-2024 23:45:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[27-Oct-2024 19:06:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[28-Oct-2024 00:32:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[28-Oct-2024 00:43:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[28-Oct-2024 05:47:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/LoginController.php on line 9
+[28-Oct-2024 06:37:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[28-Oct-2024 10:21:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmPasswordController.php on line 9
+[28-Oct-2024 11:03:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[29-Oct-2024 04:14:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[29-Oct-2024 21:51:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[29-Oct-2024 23:18:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ForgotPasswordController.php on line 8
+[30-Oct-2024 00:19:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerificationController.php on line 9
+[30-Oct-2024 01:37:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/AuthenticatedSessionController.php on line 11
+[30-Oct-2024 02:25:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/ConfirmablePasswordController.php on line 11
+[30-Oct-2024 06:02:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/VerifyEmailController.php on line 10
+[30-Oct-2024 06:08:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[30-Oct-2024 08:54:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisterController.php on line 12
+[30-Oct-2024 11:40:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/NewPasswordController.php on line 13
+[30-Oct-2024 11:54:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14
+[30-Oct-2024 12:49:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/EmailVerificationPromptController.php on line 9
+[30-Oct-2024 14:55:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/PasswordResetLinkController.php on line 9
+[30-Oct-2024 14:57:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/Auth/RegisteredUserController.php on line 14

@@ -23,6 +23,8 @@ class RPoController extends Controller
 		session()->put('filter_gol', '');
 		session()->put('filter_kodes1', '');
 		session()->put('filter_namas1', '');
+		session()->put('filter_brg1', '');
+		session()->put('filter_nabrg1', '');
 		session()->put('filter_tglDari', date("d-m-Y"));
 		session()->put('filter_tglSampai', date("d-m-Y"));
 
@@ -47,6 +49,11 @@ class RPoController extends Controller
 			{
 				$filterkodes = " and KODES='".$request->kodes."' ";
 			}
+
+			if (!empty($request->brg1))
+			{
+				$filterbrg = " and KD_BRG='".$request->brg1."' ";
+			}
 			
 			if (!empty($request->tglDr) && !empty($request->tglSmp))
 			{
@@ -58,12 +65,14 @@ class RPoController extends Controller
 			session()->put('filter_gol', $request->gol);
 			session()->put('filter_kodes1', $request->kodes);
 			session()->put('filter_namas1', $request->NAMAS);
+			session()->put('filter_brg1', $request->brg1);
+			session()->put('filter_nabrg1', $request->nabrg1);
 			session()->put('filter_tglDari', $request->tglDr);
 			session()->put('filter_tglSampai', $request->tglSmp);
 
 		$query = DB::SELECT("
-			SELECT po.NO_PO, po.TGL, po.KODES, po.NAMAS, po.KD_BRG, po.NA_BRG, po.KG, po.HARGA, po.TOTAL, po.NOTES, po.GOL, po.KIRIM, po.SISA from po
-			$filtertgl $filtergol $filterkodes;
+			SELECT po.NO_BUKTI, po.TGL, po.KODES, po.NAMAS, po.KD_BRG, po.NA_BRG, po.KG, po.HARGA, po.TOTAL, po.NOTES, po.GOL, po.KIRIM, po.SISA, KONTRAK from po
+			$filtertgl $filtergol $filterkodes $filterbrg;
 		");	
 
 		if($request->has('filter'))

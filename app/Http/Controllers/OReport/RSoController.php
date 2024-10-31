@@ -88,7 +88,7 @@ class RSoController extends Controller
 			session()->put('filter_nabrg1', $request->nabrg1);
 			
 		$query = DB::SELECT("
-			SELECT NO_SO,TGL,KODEC,NAMAC,KD_BRG,NA_BRG,KG,HARGA,TOTAL,NOTES,KIRIM,SISA from so $filtertgl $filtergol $filterkodec  $filtersls $filterbrg;
+			SELECT NO_BUKTI,TGL,KODEC,NAMAC,KD_BRG,NA_BRG,KG,HARGA,TOTAL,NOTES,KIRIM,SISA from so $filtertgl $filtergol $filterkodec  $filtersls $filterbrg;
 		"); 
 		
 		if($request->has('filter'))

@@ -33,7 +33,7 @@ class PiuController extends Controller
 	 
     function setFlag(Request $request)
     {
-        if ( $request->flagz == 'PP' && $request->golz == 'A2' ) {
+        if ( $request->flagz == 'B' && $request->golz == 'Y' ) {
             $this->judul = "Pembayaran Barang";
         } 
 		
@@ -52,21 +52,6 @@ class PiuController extends Controller
         $this->setFlag($request);
         // ganti 3
         return view('otransaksi_piu.index')->with(['judul' => $this->judul, 'golz' => $this->GOLZ , 'flagz' => $this->FLAGZ ]);
-    }
-
-    public function browsekartu(Request $request)
-    {
-		$periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
-
-        $piu = DB::SELECT("SELECT NO_BUKTI, NO_SO, DATE_FORMAT(piu.TGL,'%d/%m/%Y') AS TGL, KODEC, NAMAC, URAIAN, BAYAR 
-        FROM piu
-		-- WHERE GOL='$request->GOL' AND PER='$periode' 
-		WHERE 
-        -- PER='$periode' AND 
-        NO_SO=(SELECT max(NO_SO) from so WHERE NO_ID='$request->IDSO')
-        ORDER BY NO_BUKTI; ");
-
-        return response()->json($piu);
     }
 
 
@@ -99,8 +84,6 @@ class PiuController extends Controller
 					=' . $row->NO_ID . '&tipx=edit&flagz=' . $row->FLAG . '&golz=' . $row->GOL . '&judul=' . $this->judul . '"';
 					
                     $btnDelete = ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_BUKTI . ' sudah diposting!\')" href="#" ' : ' onclick="return confirm(&quot; Apakah anda yakin ingin hapus? &quot;)"  href="piu/delete/' . $row->NO_ID . '/?flagz=' . $row->FLAG . '&golz=' . $row->GOL . '" ';
-
-
 
                     $btnPrivilege =
                         '
@@ -162,7 +145,7 @@ class PiuController extends Controller
                 'NO_SO'       => 'required',
                 'TGL'         => 'required',
                 'KODEC'       => 'required',
-                // 'BACNO'       => 'required'
+                'BACNO'       => 'required'
 
             ]
         );
@@ -181,19 +164,19 @@ class PiuController extends Controller
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
 
-		if ( $request->flagz == 'PP' && $request->golz == 'A2' ) {
+		if ( $request->flagz == 'B' && $request->golz == 'Y' ) {
 
             $query = DB::table('piu')->select(DB::raw("TRIM(NO_BUKTI) AS NO_BUKTI"))->where('PER', $periode)
-			         ->where('FLAG', 'PP')->where('GOL', 'A2')->orderByDesc('NO_BUKTI')->limit(1)->get();
+			         ->where('FLAG', 'B')->where('GOL', 'Y')->orderByDesc('NO_BUKTI')->limit(1)->get();
 			
 			if ($query != '[]') {
             
 				$query = substr($query[0]->NO_BUKTI, -4);
 				$query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
-				$no_bukti = 'PA2' . $tahun . $bulan . '-' . $query;
+				$no_bukti = 'PY' . $tahun . $bulan . '-' . $query;
 			
 			} else {
-				$no_bukti = 'PA2' . $tahun . $bulan . '-0001';
+				$no_bukti = 'PY' . $tahun . $bulan . '-0001';
 				}
 		
         } 
@@ -201,7 +184,7 @@ class PiuController extends Controller
 
         $typebayar = substr($request['BNAMA'],0,1);
 		
-		if ( $typebayar == 'B' )
+		if ( $typebayar != 'K' )
         {
 			
 			$bulan	= session()->get('periode')['bulan'];
@@ -218,7 +201,7 @@ class PiuController extends Controller
 			}
 		}
 
-		else if ( $typebayar == 'K' )
+		else 
         {
 			
     		$bulan    = session()->get('periode')['bulan'];
@@ -232,13 +215,6 @@ class PiuController extends Controller
             } else {
                 $no_bukti2 = 'BKM' . $tahun . $bulan . '-0001';
             }
-
-        }
-
-        else if ( $typebayar == '' )
-        {
-			
-    		$no_bukti2='';
 
         }
 
@@ -258,20 +234,42 @@ class PiuController extends Controller
                 'FLAG'             => $FLAGZ,
                 'GOL'               => $GOLZ,
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
-                'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-                'BAYAR'            => (float) str_replace(',', '', $request['BAYAR']),
-                'LAIN'            => (float) str_replace(',', '', $request['LAIN']),
-                'RPRATE'           => '1',
+                'BAYAR'            => (float) str_replace(',', '', $request['TBAYAR']),
                 'USRNM'            => Auth::user()->username,
-                //'created_by'       => Auth::user()->username,
+                'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
 
-        //  ganti 11
-        //$variablell = DB::select('call piuins(?,?)', array($no_bukti, $no_bukti2));
+        // Insert Detail
+        $REC    = $request->input('REC');
+        $NO_FAKTUR    = $request->input('NO_FAKTUR');
+        $TOTAL    = $request->input('TOTAL');
+        $BAYAR    = $request->input('BAYAR');
+        $SISA    = $request->input('SISA');
 
-		$variablell = DB::select('call piuins(?)', array($no_bukti));
+        // Check jika value detail ada/tidak
+        if ($REC) {
+            foreach ($REC as $key => $value) {
+                // Declare new data di Model
+                $detail    = new PiuDetail;
+
+                // Insert ke Database
+                $detail->NO_BUKTI = $no_bukti;
+                $detail->REC    = $REC[$key];
+                $detail->PER    = $periode;
+                $detail->FLAG    = $FLAGZ;
+                $detail->GOL     = $GOLZ;
+                $detail->NO_FAKTUR    = ($NO_FAKTUR[$key] == null) ? "" :  $NO_FAKTUR[$key];
+                $detail->TOTAL    = (float) str_replace(',', '', $TOTAL[$key]);
+                $detail->BAYAR    = (float) str_replace(',', '', $BAYAR[$key]);
+                $detail->SISA    = (float) str_replace(',', '', $SISA[$key]);
+                $detail->save();
+            }
+        }
+
+        //  ganti 11
+        $variablell = DB::select('call piuins(?,?)', array($no_bukti, $no_bukti2));
 
 	    $no_buktix = $no_bukti;
 		
@@ -282,10 +280,8 @@ class PiuController extends Controller
 							AND PIU.NO_BUKTI='$no_buktix';");
 							
 
-		// return redirect('/piu?flagz='.$FLAGZ.'&golz='.$GOLZ)->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
-
-        return redirect('/piu/edit/?idx=' . $piu->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
-        
+		return redirect('/piu?flagz='.$FLAGZ.'&golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
     }
 
 
@@ -460,7 +456,7 @@ class PiuController extends Controller
  
          
          return view('otransaksi_piu.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -488,22 +484,19 @@ class PiuController extends Controller
 
                 'NO_SO'       => 'required',
                 'TGL'         => 'required',
-                'KODEC'       => 'required',
-                // 'BACNO'       => 'required'
+
             ]
         );
 
         // ganti 20
-        //$variablell = DB::select('call piudel(?,?)', array($piu['NO_BUKTI'], '0'));
+        $variablell = DB::select('call piudel(?,?)', array($piu['NO_BUKTI'], '0'));
 
-        $variablell = DB::select('call piudel(?)', array($piu['NO_BUKTI']));
-		
-		
+
 		$this->setFlag($request);
         $FLAGZ = $this->FLAGZ;
         $GOLZ = $this->GOLZ;
-        $judul = $this->judul;
-
+        $judul = $this->judul;	
+        
         $periode = $request->session()->get('periode')['bulan'] . '/' . $request->session()->get('periode')['tahun'];
 
         $piu->update(
@@ -515,20 +508,65 @@ class PiuController extends Controller
                 'BACNO'            => ($request['BACNO'] == null) ? "" : $request['BACNO'],
                 'BNAMA'                => ($request['BNAMA'] == null) ? "" : $request['BNAMA'],
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
-                'BAYAR'            => (float) str_replace(',', '', $request['BAYAR']),
-                'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-                'LAIN'            => (float) str_replace(',', '', $request['LAIN']),
-                'RPRATE'           => '1',
+                'BAYAR'            => (float) str_replace(',', '', $request['TBAYAR']),
                 'USRNM'            => Auth::user()->username,
-                //'updated_by'       => Auth::user()->username,
+                'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
 
-        //  ganti 21
-        //$variablell = DB::select('call piuins(?,?)', array($piu['NO_BUKTI'], 'X'));
 
-		$variablell = DB::select('call piuins(?)', array($piu['NO_BUKTI']));
+        // Update Detail
+        $length = sizeof($request->input('REC'));
+        $NO_ID  = $request->input('NO_ID');
+
+        $REC    = $request->input('REC');
+        $NO_FAKTUR    = $request->input('NO_FAKTUR');
+        $TOTAL    = $request->input('TOTAL');
+        $BAYAR    = $request->input('BAYAR');
+        $SISA    = $request->input('SISA');
+
+        $query = DB::table('piud')->where('NO_BUKTI', $request->NO_BUKTI)->whereNotIn('NO_ID',  $NO_ID)->delete();
+
+        // Update / Insert
+        for ($i = 0; $i < $length; $i++) {
+            // Insert jika NO_ID baru
+            if ($NO_ID[$i] == 'new') {
+                $insert = PiuDetail::create(
+                    [
+                        'NO_BUKTI'   => $request->NO_BUKTI,
+                        'REC'        => $REC[$i],
+                        'PER'        => $periode,
+                        'FLAG'       => 'PY',
+                        'GOL'        => 'Y',
+                        'NO_FAKTUR'  => ($NO_FAKTUR[$i] == null) ? "" :  $NO_FAKTUR[$i],
+                        'TOTAL'      => (float) str_replace(',', '', $TOTAL[$i]),
+                        'BAYAR'      => (float) str_replace(',', '', $BAYAR[$i]),
+                        'SISA'       => (float) str_replace(',', '', $SISA[$i]),
+                   
+                    ]
+                );
+            } else {
+                // Update jika NO_ID sudah ada
+                $upsert = PiuDetail::updateOrCreate(
+                    [
+                        'NO_BUKTI'  => $request->NO_BUKTI,
+                        'NO_ID'     => (int) str_replace(',', '', $NO_ID[$i])
+                    ],
+
+                    [
+                        'REC'        => $REC[$i],
+                        'NO_FAKTUR'  => ($NO_FAKTUR[$i] == null) ? "" :  $NO_FAKTUR[$i],
+                        'TOTAL'      => (float) str_replace(',', '', $TOTAL[$i]),
+                        'BAYAR'      => (float) str_replace(',', '', $BAYAR[$i]),
+                        'SISA'       => (float) str_replace(',', '', $SISA[$i]),
+                    ]
+                );
+            }
+        }
+
+        //  ganti 21
+        $variablell = DB::select('call piuins(?,?)', array($piu['NO_BUKTI'], 'X'));
 
 	    $no_buktix = $piu->NO_BUKTI;
 		
@@ -540,11 +578,9 @@ class PiuController extends Controller
 							AND PIU.NO_BUKTI='$no_buktix';");
 							
 							
-        // return redirect('/piu/edit/?idx=' . $piu->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
-		// return redirect('/piu?flagz='.$FLAGZ.'&golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
-			   
-        return redirect('/piu/edit/?idx=' . $piu->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
+        //return redirect('/piu/edit/?idx=' . $piu->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&flagz=' . $this->FLAGZ . '&judul=' . $this->judul . '');
+		return redirect('/piu?flagz='.$FLAGZ.'&golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ]);
 
 
     }
@@ -575,14 +611,10 @@ class PiuController extends Controller
             return redirect()->route('piu')
                 ->with('status', 'Maaf Periode sudah ditutup!')
                 ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ]);
-
-                
 				
         }
 		
-        //$variablell = DB::select('call piudel(?,?)', array($piu['NO_BUKTI'], '1'));
-		
-		$variablell = DB::select('call piudel(?)', array($piu['NO_BUKTI']));
+        $variablell = DB::select('call piudel(?,?)', array($piu['NO_BUKTI'], '1'));
 
         // ganti 23
         $deletePiu = Piu::find($piu->NO_ID);

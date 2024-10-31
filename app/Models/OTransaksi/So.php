@@ -19,8 +19,8 @@ class So extends Model
 //ganti 3
     protected $fillable = 
     [
-        "NO_SO", "TGL", "PER","KODEC", "NAMAC", "ALAMAT", "KOTA", "NO_ORDER", "FLAG", "GOL", "KD_BRG", "NA_BRG", "QTY", "KG", 'SISA', "HARGA", "TOTAL", "NOTES", 
-        "FLAG", "GOL", "USRNM", "TG_SMP", "KODET", "NAMAT","created_by", "updated_by", "NO_ORDER", "PO",
-		"deleted_by", "RPRATE", "RPHARGA", "RPTOTAL", "JTEMPO"
+        "NO_BUKTI", "TGL", "PER","KODEC", "NAMAC", "ALAMAT", "KOTA", "NO_ORDER", "FLAG", "GOL", "KD_BRG", "NA_BRG", "QTY", "KG", "SISA", "HARGA", "TOTAL", "NOTES", 
+        "FLAG", "GOL", "USRNM", "TG_SMP", "KODET", "NAMAT","created_by", "updated_by",
+		"deleted_by", "KIRIM"
     ];
 }

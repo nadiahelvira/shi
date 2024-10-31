@@ -122,8 +122,8 @@ class MklController extends Controller
             [
                 'KODE'         => ($request['KODE']==null) ? "" : $request['KODE'],	
                 'NAMA'         => ($request['NAMA']==null) ? "" : $request['NAMA'],		
-				'USRNM'        => Auth::user()->username,
-				'TG_SMP'       => Carbon::now()
+				// 'USRNM'        => Auth::user()->username,
+				// 'TG_SMP'       => Carbon::now()
             ]
         );
 
@@ -317,8 +317,8 @@ class MklController extends Controller
             [
               
                 'NAMA'          => ($request['NAMA']==null) ? "" : $request['NAMA'],		
-				'USRNM'          => Auth::user()->username,
-				'TG_SMP'         => Carbon::now()
+				// 'USRNM'          => Auth::user()->username,
+				// 'TG_SMP'         => Carbon::now()
             ]
         );
 //  ganti 21

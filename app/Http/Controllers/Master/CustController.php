@@ -30,12 +30,11 @@ class CustController extends Controller
     // ganti 4
     public function browse(Request $request)
     {
-        $gol = 'A2';
+        $gol = 'Y';
         if($request->GOL){
             $gol = $request->GOL;
         }
         $cust = DB::table('cust')->select('KODEC', 'NAMAC', 'ALAMAT', 'KOTA')->where('GOL', $gol)->orderBy('KODEC', 'ASC')->get();
-        // $cust = DB::table('cust')->select('KODEC', 'NAMAC', 'ALAMAT', 'KOTA')->orderBy('KODEC', 'ASC')->get();
         return response()->json($cust);
     }
 
@@ -132,9 +131,10 @@ class CustController extends Controller
             [
                 'KODEC'         => ($request['KODEC'] == null) ? "" : $request['KODEC'],
                 'NAMAC'         => ($request['NAMAC'] == null) ? "" : $request['NAMAC'],
+                'NAMAC_LM'    => ($request['NAMAC_LM'] == null) ? "" : $request['NAMAC_LM'],
                 'ALAMAT'           => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
                 'KOTA'            => ($request['KOTA'] == null) ? "" : $request['KOTA'],
-                'GOL'           => ($request['GOL'] == null) ? "" : $request['GOL'],
+                'GOL'           => 'Y',
                 'TELPON1'       => ($request['TELPON1'] == null) ? "" : $request['TELPON1'],
                 'FAX'            => ($request['FAX'] == null) ? "" : $request['FAX'],
                 'AKT'            => ($request['AKT'] == null) ? "" : $request['AKT'],				
@@ -363,6 +363,7 @@ class CustController extends Controller
             [
 
                 'NAMAC'         => $request['NAMAC'],
+                'NAMAC_LM'           => ($request['NAMAC_LM'] == null) ? "" : $request['NAMAC_LM'],
                 'ALAMAT'           => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
                 'KOTA'            => ($request['KOTA'] == null) ? "" : $request['KOTA'],
                 'TELPON1'       => ($request['TELPON1'] == null) ? "" : $request['TELPON1'],

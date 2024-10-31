@@ -251,11 +251,11 @@
 	}
 	
 
-    var hasilCek;
-	function cekKode(kode) {
+	var hasilCek;
+	function cekGdg(kode) {
 		$.ajax({
 			type: "GET",
-			url: "{{url('gdg/cekKode')}}",
+			url: "{{url('gdg/cekgdg')}}",
             async: false,
 			data: ({ KODE: kode, }),
 			success: function(data) {
@@ -266,16 +266,24 @@
                 }
 			},
 			error: function() {
-				alert('Error cekKode occured');
+				alert('Error cek Gudang occured');
 			}
 		});
 		return hasilCek;
 	}
-    
+
 	function simpan() {
-        //cekRefa($('#KA').val());
-        //(hasilCek==0) ? document.getElementById("entri").submit() : alert('KA '+$('#KA').val()+' sudah ada!');
-        document.getElementById("entri").submit()
+        hasilCek=0;
+		$tipx = $('#tipx').val();
+				
+        if ( $tipx == 'new' )
+		{
+			cekGdg($('#KODE').val());		
+		}
+		
+
+        (hasilCek==0) ? document.getElementById("entri").submit() : alert('Gudang '+$('#KODE').val()+' sudah ada!');
 	}
+
 </script>
 @endsection

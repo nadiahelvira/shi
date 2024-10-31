@@ -72,7 +72,7 @@ class RUjController extends Controller
 		$query = DB::SELECT("
 		    SELECT NO_BUKTI,TGL,NO_SO,KODEC,NAMAC,TOTAL,BACNO,BNAMA,NOTES,GOL 
 		    from jual 
-		    where FLAG='UJ' $filtertgl $filtergol $filterkodec;
+		    where FLAG='UM' $filtertgl $filtergol $filterkodec;
 		");
 		
 		if($request->has('filter'))

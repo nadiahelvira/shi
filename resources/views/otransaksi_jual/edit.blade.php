@@ -52,15 +52,8 @@
                                     placeholder="Masukkan Bukti#" value="{{$header->NO_BUKTI}}" readonly style="width:140px">
                                 </div>
 								
-								<div class="col-md-1" align="right">								
-                                    <label for="GDG" class="form-label">GDG</label>
-                                </div>
-                                <div class="col-md-1 input-group" >
-                                  <input type="text" class="form-control GDG" onclick="select()" id="GDG" name="GDG" placeholder=""value="{{$header->GDG}}" style="text-align: left" >
-                                </div>
 								
-								
-								<div class="col-md-2"></div>
+								<div class="col-md-4"></div>
 					
 								<div class="col-md-3 input-group">
 
@@ -77,31 +70,44 @@
                                     <label for="TGL" class="form-label">Tanggal</label>
                                 </div>
                                 <div class="col-md-2">
-                                   <input class="form-control date" onclick="select()" id="TGL" name="TGL" data-date-format="dd-mm-yyyy" type="text" autocomplete="off" value="{{date('d-m-Y',strtotime($header->TGL))}}" style="width:140px">
+                                   <input class="form-control date" id="TGL" name="TGL" data-date-format="dd-mm-yyyy" type="text" autocomplete="off" value="{{date('d-m-Y',strtotime($header->TGL))}}" style="width:140px">
                                 </div>
+
                             </div>
-        
+ 
                             <div class="form-group row">
 								<div class="col-md-1" align="right">
-									<label style="color:red">*</label>									
+									<label style="color:red;font-size:20px">* </label>
                                     <label for="NO_SO" class="form-label">SO#</label>
                                 </div>
                                 <div class="col-md-2 input-group" >
-                                  <input type="text" class="form-control NO_SO" id="NO_SO" onblur="browseSo()" name="NO_SO" placeholder="Masukkan SO"value="{{$header->NO_SO}}" style="text-align: left" >
-        						</div>
-								
-								<div class="col-md-2" align="right">
+                                  <input type="text" class="form-control NO_SO" id="NO_SO" name="NO_SO" placeholder="Masukkan So"value="{{$header->NO_SO}}" style="text-align: left" readonly >
                                 </div>
-								
+                                
+                            </div>
+							
+							<div class="form-group row">
                                 <div class="col-md-1" align="right">
                                     <label for="KODEC" class="form-label">Customer#</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control KODEC" id="KODEC" name="KODEC" placeholder="Masukkan Customer#" value="{{$header->KODEC}}" readonly>
+                                    <input type="text" class="form-control KODEC" id="KODEC" name="KODEC" placeholder="Masukkan Customer#" value="{{$header->KODEC}}" readonly style="width:140px">
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NAMAC" id="NAMAC" name="NAMAC" placeholder="Nama" value="{{$header->NAMAC}}" readonly>
+                                </div>
+                            </div>
+							
+							 <div class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label for="ALAMAT" class="form-label">Alamat</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control ALAMAT" id="ALAMAT" name="ALAMAT" placeholder="Masukkan Alamat" value="{{$header->ALAMAT}}" readonly>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control KOTA" id="KOTA" name="KOTA" placeholder="Kota" value="{{$header->KOTA}}" readonly>
                                 </div>
                             </div>
 
@@ -112,179 +118,102 @@
                                 <div class="col-md-2">
                                     <input type="text" class="form-control KD_BRG" id="KD_BRG" name="KD_BRG" placeholder="Masukkan Barang" value="{{$header->KD_BRG}}" readonly style="width:140px">
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NA_BRG" id="NA_BRG" name="NA_BRG" placeholder="-" value="{{$header->NA_BRG}}" readonly>
                                 </div>
-								
-                                <div class="col-md-1" align="right">
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control ALAMAT" id="ALAMAT" name="ALAMAT" placeholder="Masukkan Alamat" value="{{$header->ALAMAT}}" readonly>
-                                </div>
-								
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control KOTA" id="KOTA" name="KOTA" placeholder="Kota" value="{{$header->KOTA}}" readonly>
-                                </div>
                             </div>
+                        
+
+                        
+							
+                            <div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label for="TRUCK" class="form-label">Truck</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control TRUCK" id="TRUCK" name="TRUCK" placeholder="Masukkan Truck" value="{{$header->TRUCK}}" style="width:140px">
+                                </div>
+
+						    
+                                <div class="col-md-1" align="right">
+                                    <label for="GUDANG" class="form-label">Gudang</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control GUDANG" id="GUDANG" name="GUDANG" placeholder="Masukkan Gudang"  value="{{$header->GUDANG}}" style="width:140px" readonly >
+                                </div>
+
+						    </div>
 							
 							<div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
 								<div class="col-md-1" align="right">
                                     <label for="KG" class="form-label">KG</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control KG" id="KG" name="KG" placeholder="Masukkan KG" value="{{ number_format( $header->KG, 2, '.', ',') }}" style="text-align: right; width:140px">
+                                    <input type="text"  onkeyup="hitung()" class="form-control KG" id="KG" name="KG" placeholder="Masukkan Kg" value="{{ number_format($header->KG, 2, '.', ',') }}" style="text-align: right; width:140px" >
                                 </div>
-								
-                                <div class="col-md-1"align="right">
-                                    <label for="SISA" class="form-label">Sisa</label>
+                           
+								<div class="col-md-1" align="right">
+                                    <label class="form-label">Harga</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control SISA" id="SISA" name="SISA" placeholder="Masukkan SISA" value="{{ number_format( $header->SISA, 0, '.', ',') }}" style="text-align: right" >
-                                </div>
-								
-                                <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-                                    <input type="text" class="form-control RPRATE" onclick="select()" id="RPRATE" name="RPRATE" placeholder="RPRATE" value="{{ number_format($header->RPRATE, 0, '.', ',') }}" style="text-align: right; width:50px" >
+                                    <input type="text" onkeyup="hitung()"  class="form-control HARGA" id="HARGA" name="HARGA" placeholder="Masukkan Harga" onclick="select()" onkeyup="hitung()" value="{{ number_format($header->HARGA, 2, '.', ',') }}" style="text-align: right; width:140px">
                                 </div>
                             </div>
 							
-							<div class="form-group row">
-                           
-								<div class="col-md-1" align="right">
-									<label class="form-label">Harga</label>
-								</div>
-								<div class="col-md-2">
-									<input type="text" class="form-control HARGA" id="HARGA" name="HARGA" placeholder="Masukkan Harga" onclick="select()" onkeyup="hitung()" value="{{ number_format($header->HARGA, 2, '.', ',') }}" style="text-align: right; width:140px">
-								</div>
-                           
-								<div class="col-md-1" align="right">
-									<label for="TOTAL" class="form-label">Total</label>
-								</div>
-								<div class="col-md-3">
-									<input type="text" class="form-control TOTAL" id="TOTAL" name="TOTAL" placeholder="TOTAL" value="{{ number_format( $header->TOTAL, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
-								</div>
-								
-                                <!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-                                    <label for="BA" class="form-label">BA</label>
-                                </div>
-                                <div {{($flagz == 'JL') ? '' : 'hidden' }}class="col-md-1" align="left">
-                                    <input type="text" class="form-control BA" id="BA" name="BA" placeholder="BA" value="{{ number_format($header->BA, 2, '.', ',') }}" style="text-align: right; width:140px" >
-                                </div> -->
-								
-                                <!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-                                    <label for="BM" class="form-label">BM</label>
-                                </div>
-                                <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="left">
-                                    <input type="text" class="form-control BM" id="BM" name="BM" placeholder="BM" value="{{ number_format($header->BM, 2, '.', ',') }}" style="text-align: right; width:100px" >
-                                </div> -->
-
-                                <!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1"align="right">
-                                    <label for="BP" class="form-label">Bp</label>
-                                </div>
-                                <div class="col-md-1">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control BP" id="BP" name="BP" placeholder="Masukkan BP" value="{{ number_format( $header->BP, 0, '.', ',') }}" style="text-align: right" >
-                                </div> -->
-                            </div>
+		
                                 
 							<div class="form-group row">
-
-								<div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-									<label for="TRUCK" class="form-label">Truck</label>
-								</div>
-								<div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-2" align="left">
-									<input type="text" class="form-control TRUCK" onclick="select()" id="TRUCK" name="TRUCK" placeholder="-" value="{{$header->TRUCK}}">
-								</div>
-								
 								<div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
                                     <label for="QTY" class="form-label">Bag</label>
                                 </div>
                                 <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-2">
-                                    <input type="text"  class="form-control QTY" onclick="select()" id="QTY" name="QTY" placeholder="Masukkan Bag" value="{{ number_format($header->QTY, 2, '.', ',') }}" style="text-align: right; width:140px" >
+                                    <input type="text"  class="form-control QTY" id="QTY" name="QTY" placeholder="Masukkan Bag" value="{{ number_format($header->QTY, 2, '.', ',') }}" style="text-align: right; width:140px" >
                                 </div>
-								
-								<!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-                                    <label for="KA" class="form-label">KA</label>
+                           
+                                <div class="col-md-1" align="right">
+                                    <label for="TOTAL" class="form-label">Total</label>
                                 </div>
-                                <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="left">
-                                    <input type="text" class="form-control KA" id="KA" name="KA" placeholder="KA" value="{{ number_format($header->KA, 2, '.', ',') }}" style="text-align: right; width:140px" >
-                                </div> -->
-								
-                                <!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-1" align="right">
-                                    <label for="REF" class="form-label">REF</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control TOTAL" id="TOTAL" name="TOTAL" placeholder="TOTAL" value="{{ number_format( $header->TOTAL, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
                                 </div>
-                                <div {{($flagz == 'JL') ? '' : 'hidden' }} class="col-md-2" align="left">
-                                    <input type="text" class="form-control REF" id="REF" name="REF" placeholder="REF" value="{{ number_format($header->REF, 2, '.', ',') }}" style="text-align: right; width:140px" >
-                                </div> -->
-								
-								
-                                <!-- <div class="col-md-1"align="right">
-                                    <label for="RP" class="form-label">Rp</label>
-                                </div>
-                                <div class="col-md-1">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control RP" id="RP" name="RP" placeholder="Masukkan RP" value="{{ number_format( $header->RP, 0, '.', ',') }}" style="text-align: right" >
-                                </div> -->
 							</div>
-							
-                            <!-- <div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
-								
-                                <div class="col-md-1"align="right">
-                                    <label for="JUMREF" class="form-label">Jum Ref</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control JUMREF" id="JUMREF" name="JUMREF" placeholder="Masukkan JUMREF" value="{{ number_format( $header->JUMREF, 0, '.', ',') }}" style="text-align: right" >
-                                </div>
-								
-                                <div class="col-md-1"align="right">
-                                    <label for="KG1" class="form-label">Kg II</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control KG1" id="KG1" name="KG1" placeholder="Masukkan KG1" value="{{ number_format( $header->KG1, 0, '.', ',') }}" style="text-align: right" >
-                                </div>
-								
-                                <div class="col-md-1"align="right">
-                                    <label for="POT2" class="form-label">Pot. II</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control POT2" id="POT2" name="POT2" placeholder="Masukkan POT2" value="{{ number_format( $header->POT2, 0, '.', ',') }}" style="text-align: right" >
-                                </div>
+  
+                           
 
-						    </div> -->
-							
-							<div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
+							<div class="form-group row">
 								<div class="col-md-1" align="right">
-                                    <label for="GUDANG" class="form-label">Gudang</label>
+                                    <label for="NOTES" class="form-label">Notes</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control GUDANG" onclick="select()" id="GUDANG" name="GUDANG" placeholder="Masukkan Gudang"  value="{{$header->GUDANG}}">
-                                </div>
-								
-								<!-- <div class="col-md-1" align="right">
-                                    <label for="NOTES" class="form-label">Kapal</label>
-                                </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" placeholder="Masukkan Notes"  value="{{$header->NOTES}}">
-                                </div> -->
+                                </div>
                             </div>
 							
-
-							<div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
-								<div class="col-md-1" align="right">
-                                    <label for="NOTES" class="form-label">Keterangan</label>
+                            <div {{($flagz == 'JL') ? '' : 'hidden' }} class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label class="form-label">Dpp</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control NOTES" onclick="select()" id="NOTES" name="NOTES" placeholder="Masukkan Notes"  value="{{$header->NOTES}}">
+                                <div class="col-md-2">
+                                    <input type="text"  class="form-control DPP" id="DPP" name="DPP" placeholder="Masukkan DPP" value="{{ number_format( $header->DPP, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
                                 </div>
-                            </div>					
+                                <div class="col-md-1" align="right">
+                                    <label class="form-label">PPN</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control PPN" onkeyup="hitung()" id="PPN" name="PPN" placeholder="Masukkan Ppn" value="{{ number_format( $header->PPN, 2, '.', ',') }}" style="text-align: right; width:140px" >
+                                </div>
+                            </div>							
 
                             <div {{($flagz == 'TP') ? '' : 'hidden' }} class="form-group row">
                                 <div class="col-md-1" align="right">
                                     <label for="ACNOB" class="form-label">Acc#</label>
                                 </div>
                                 <div class="col-md-2 input-group" >
-                                  <input type="text" class="form-control ACNOB" onclick="select()" id="ACNOB" name="ACNOB" placeholder="Masukkan Acc#" value="{{$header->ACNOB}}" style="text-align: left" readonly >
+                                  <input type="text" class="form-control ACNOB" id="ACNOB" name="ACNOB" placeholder="Masukkan Acc#" value="{{$header->ACNOB}}" style="text-align: left" readonly >
         							
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control NACNOB" onclick="select()" id="NACNOB" name="NACNOB" placeholder="-" value="{{$header->NACNOB}}" readonly >
+                                    <input type="text" class="form-control NACNOB" id="NACNOB" name="NACNOB" placeholder="-" value="{{$header->NACNOB}}" readonly >
                                 </div>
 							</div>
 
@@ -293,32 +222,38 @@
                                     <label for="BACNO" class="form-label">Bank#</label>
                                 </div>
                                 <div class="col-md-2 input-group" >
-                                  <input type="text" class="form-control BACNO" onclick="select()" id="BACNO" name="BACNO" placeholder="Bank#" value="{{$header->BACNO}}" style="text-align: left" readonly >
+                                  <input type="text" class="form-control BACNO" id="BACNO" name="BACNO" placeholder="Bank#" value="{{$header->BACNO}}" style="text-align: left" readonly >
         						
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control BNAMA" onclick="select()" id="BNAMA" name="BNAMA" placeholder="-" value="{{ $header->BNAMA }}" readonly>
+                                    <input type="text" class="form-control BNAMA" id="BNAMA" name="BNAMA" placeholder="-" value="{{ $header->BNAMA }}" readonly>
                                 </div>
+
+                               <div class="col-md-2">
+                                    <input type="text" class="form-control NO_BANK" id="NO_BANK" name="NO_BANK" placeholder="-" value="{{ $header->NO_BANK }}" readonly>
+                                </div>
+                                
+                                                                
 							</div>
 							
                     </div>
 						    
 						<div class="mt-3 col-md-12 form-group row">
 							<div class="col-md-4">
-								<button type="button" id='TOPX'  onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
-								<button type="button" id='PREVX' onclick="location.href='{{url('/jual/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
-								<button type="button" id='NEXTX' onclick="location.href='{{url('/jual/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
-								<button type="button" id='BOTTOMX' onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
+								<button type="button" hidden id='TOPX'  onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
+								<button type="button" hidden id='PREVX' onclick="location.href='{{url('/jual/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
+								<button type="button" hidden id='NEXTX' onclick="location.href='{{url('/jual/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
+								<button type="button" hidden id='BOTTOMX' onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
 							</div>
 							<div class="col-md-5">
-								<button type="button" id='NEWX' onclick="location.href='{{url('/jual/edit/?idx=0&tipx=new&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
-								<button type="button" id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
-								<button type="button" id='UNDOX' onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
-								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
+								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/jual/edit/?idx=0&tipx=new&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
+								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
+								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/jual/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success"<i class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
-								<button type="button" id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
+								<button type="button" hidden id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
 								<button type="button" id='CLOSEX'  onclick="location.href='{{url('/jual?flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-secondary">Close</button>
 							</div>
 						</div>
@@ -485,7 +420,7 @@
 
 		$tipx = $('#tipx').val();
 		$searchx = $('#CARI').val();
-		
+
 		$('body').on('keydown', 'input, select', function(e) {
 			if (e.key === "Enter") {
 				var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
@@ -504,7 +439,7 @@
 				return false;
 			}
 		});
-
+		
 		
         if ( $tipx == 'new' )
 		{
@@ -542,29 +477,29 @@
 			$('#TOTAL').val(numberWithCommas(TOTALX));
 		    $("#TOTAL").autoNumeric('update');
 
-			//var PPNX = parseFloat($('#PPN').val().replace(/,/g, ''));
-			//var DPPX = parseFloat($('#DPP').val().replace(/,/g, ''));
+			var PPNX = parseFloat($('#PPN').val().replace(/,/g, ''));
+			var DPPX = parseFloat($('#DPP').val().replace(/,/g, ''));
 
 				
-			//if ( PPNX != '0.00' )
-			//{
-			//	DPPX = TOTALX * 100/111;
-		    //	$('#DPP').val(numberWithCommas(DPPX));
-		    //    $("#DPP").autoNumeric('update');				
+			if ( PPNX != '0.00' )
+			{
+				DPPX = TOTALX * 100/111;
+		    	$('#DPP').val(numberWithCommas(DPPX));
+		        $("#DPP").autoNumeric('update');				
 				
-			//	PPNX = TOTALX - DPPX;
-		    //	$('#PPN').val(numberWithCommas(PPNX));
-		    //    $("#PPN").autoNumeric('update');	
+				PPNX = TOTALX - DPPX;
+		    	$('#PPN').val(numberWithCommas(PPNX));
+		        $("#PPN").autoNumeric('update');	
 	
-			//}
-			//else
-			//{
-            //    DPPX = TOTALX;
-		    //	$('#DPP').val(numberWithCommas(DPPX));
-		    //    $("#DPP").autoNumeric('update');	
+			}
+			else
+			{
+                DPPX = TOTALX;
+		    	$('#DPP').val(numberWithCommas(DPPX));
+		        $("#DPP").autoNumeric('update');	
 				
 				
-			//}
+			}
 			
 			
 			
@@ -572,106 +507,93 @@
 			
 		}				
 
-		/////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////
 
-
-		var dTableBSo;
-		var rowidSo;
+ 		var dTableBSo;
 		loadDataBSo = function(){
-		
 			$.ajax(
 			{
 				type: 'GET',    
-				url: "{{url('so/browse')}}",
-				async : false,
-				data: {
-						'NO_SO': $("#NO_SO").val(),
-					
-				},
+				url: '{{url('so/browse')}}',
 				success: function( response )
-
 				{
 					resp = response;
-					
-					
-					if ( resp.length > 1 )
-					{	
-							if(dTableBSo){
-								dTableBSo.clear();
-							}
-							for(i=0; i<resp.length; i++){
-								
-								dTableBSo.row.add([
-									'<a href="javascript:void(0);" onclick="chooseSo(\''+resp[i].NO_SO+'\', \''+resp[i].KODEC+'\', \''+resp[i].NAMAC+'\', \''+resp[i].TGL+'\', \''+resp[i].KOTA+'\' , \''+resp[i].KD_BRG+'\' , \''+resp[i].NA_BRG+'\' , \''+resp[i].HARGA+'\', \''+resp[i].KG+'\', \''+resp[i].KIRIM+'\', \''+resp[i].SISA+'\'  )">'+resp[i].NO_SO+'</a>',
-									resp[i].NAMAC,
-									resp[i].TGL,
-									resp[i].KOTA,
-									resp[i].NA_BRG,
-									resp[i].HARGA,	
-									resp[i].KG,
-									resp[i].KIRIM,
-									resp[i].SISA,
-								]);
-							}
-							dTableBSo.draw();
-					
+					if(dTableBSo){
+						dTableBSo.clear();
 					}
-					else
-					{
-						$("#NO_SO").val(resp[0].NO_SO);
-						$("#KODEC").val(resp[0].KODEC);
-						$("#NAMAC").val(resp[0].NAMAC);
-						$("#ALAMAT").val(resp[0].ALAMAT);
-						$("#KOTA").val(resp[0].KOTA);
-						$("#KD_BRG").val(resp[0].KD_BRG);
-						$("#NA_BRG").val(resp[0].NA_BRG);
-						$("#HARGA").val(resp[0].HARGA);
-						$("#KG").val(resp[0].KG);
-						$("#KIRIM").val(resp[0].KIRIM);
-						$("#SISA").val(resp[0].SISA);
+					for(i=0; i<resp.length; i++){
+						
+						dTableBSo.row.add([
+							'<a href="javascript:void(0);" onclick="chooseSo(\''+resp[i].NO_BUKTI+'\',  \''+resp[i].KODEC+'\', \''+resp[i].NAMAC+'\', \''+resp[i].TGL+'\', \''+resp[i].KOTA+'\' , \''+resp[i].KD_BRG+'\' , \''+resp[i].NA_BRG+'\' , \''+resp[i].HARGA+'\', \''+resp[i].KG+'\', \''+resp[i].KIRIM+'\', \''+resp[i].SISA+'\'    )">'+resp[i].NO_BUKTI+'</a>',
+							resp[i].NAMAC,
+							resp[i].TGL,
+							resp[i].KOTA,
+							resp[i].NA_BRG,
+							resp[i].HARGA,	
+							resp[i].KG,
+							resp[i].KIRIM,
+							resp[i].SISA,							
+							
+						]);
 					}
+					dTableBSo.draw();
 				}
 			});
 		}
 		
 		dTableBSo = $("#table-bso").DataTable({
-			
+			columnDefs: [
+				{
+                    className: "dt-right", 
+					targets:  [5,6,7,8],
+					render: $.fn.dataTable.render.number( ',', '.', 2, '' )
+				}
+			],
 		});
-
-		browseSo = function(rid){
-			rowidSo = rid;
-			$("#NAMAC").val("");			
+		
+		browseSo = function(){
 			loadDataBSo();
-	
-			
-			if ( $("#NAMAC").val() == '' ) {				
-					$("#browseSoModal").modal("show");
-			}	
+			$("#browseSoModal").modal("show");
 		}
 		
-		chooseSo = function(NO_SO,KODEC,NAMAC,ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KIRIM, SISA ){
-			$("#NO_SO").val(NO_SO);
+		chooseSo = function(NO_BUKTI,KODEC,NAMAC,ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA ){
+			$("#NO_SO").val(NO_BUKTI);
 			$("#KODEC").val(KODEC);
 			$("#NAMAC").val(NAMAC);
 			$("#ALAMAT").val(ALAMAT);
 			$("#KOTA").val(KOTA);
 			$("#KD_BRG").val(KD_BRG);
 			$("#NA_BRG").val(NA_BRG);			
-			$("#SISA").val(SISA);	
-			$("#HARGA").val(HARGA);		
+		//	$("#KG").val(SISA);	
+			$("#HARGA").val(HARGA);	
+
 			$("#browseSoModal").modal("hide");
+			hitung();
+			
 		}
 		
-		
-		/* $("#NO_SO0").onblur(function(e){
+		$("#NO_SO").keypress(function(e){
+
 			if(e.keyCode == 46){
 				e.preventDefault();
-				browseRak(0);
+				
+				$flagz = $('#flagz').val();
+				
+				if ( $flagz == 'JL' ) {
+					browseSo();
+					
+				} else {
+					
+					browseSox();
+
+                }					
+				
+				
 			}
-		});  */
-
-
-
+			
+		}); 
+		
+		
 		/////////////////////////////////////////////////////////////////
 		
 		var dTableBSox;
@@ -775,12 +697,12 @@
 		}
 		
 		chooseGdg = function(KODE,NAMA){
-			$("#GDG").val(NAMA);			
+			$("#GUDANG").val(KODE);			
 			$("#browseGdgModal").modal("hide");
 		}
 		
 		
-		$("#GDG").keypress(function(e){
+		$("#GUDANG").keypress(function(e){
 			if(e.keyCode == 46){
 				e.preventDefault();
 				browseGdg();
@@ -928,6 +850,11 @@
 				alert("SO# Harus diisi.");
 			}
 			
+			if ( $('#ACNOB').val()=='' ) 
+            {			
+			    check = '1';
+				alert("Account Harus diisi.");
+			}
 			
 			if ( tgl.substring(3,5) != bulanPer ) 
 			{
@@ -960,8 +887,8 @@
 	
 	function ganti() {
 		
-		mati();
-		// hidup();
+		 //mati();
+		hidup();
 	}
 	
 	function batal() {
@@ -1000,8 +927,7 @@
 		   
 			$("#NO_BUKTI").attr("readonly", true);		   
 			$("#TGL").attr("readonly", false);
-			
-
+			$("#NO_SO").attr("readonly", true);
 			$("#KODEC").attr("readonly", true);
 			$("#NAMAC").attr("readonly", true);
 			$("#ALAMAT").attr("readonly", true);
@@ -1017,8 +943,6 @@
 
 			$("#TRUCK").attr("readonly", false);
 			$("#GDG").attr("readonly", true);
-			$("#GUDANG").attr("readonly", false);
-			$("#NOTES").attr("readonly", false);
 
 
 	        var flagz = $('#flagz').val();
@@ -1028,14 +952,7 @@
 			    $("#TOTAL").attr("readonly", false);
 			}
 			
-			$tipx = $('#tipx').val();
-		
-			
-			if ( $tipx != 'new' )
-			{
-				$("#NO_SO").attr("readonly", true);		
-				$("#NO_SO").removeAttr('onblur');		
-			}
+		  
 		
 		
 	}
@@ -1081,10 +998,6 @@
 
 		$("#TRUCK").attr("readonly", true);
 		$("#GDG").attr("readonly", true);
-		$("#GUDANG").attr("readonly", true);
-		$("#NOTES").attr("readonly", true);
-		$("#SISA").attr("readonly", true);
-		$("#RPRATE").attr("readonly", true);
 
 		
 	}
@@ -1110,27 +1023,32 @@
 		 $('#PPN').val("0.00");
 		 
 
-		 $('#TRUCK').val("");
-		 $('#NOTES').val("");	
-		 $('#GDG').val("");		
-		 $('#GUDANG').val("");	
+		 $('#TRUCK').val("");	
+		 $('#GDG').val("");	
 		 $('#ACNOB').val("");	
 		 $('#NACNOB').val("");
 		 $('#BACNO').val("");	
-		 $('#BNAMA').val("");		 
-		 $('#RPRATE').val("1");	
+		 $('#BNAMA').val("");
 		 
 
-		//var flagz = $('#flagz').val();
+		var flagz = $('#flagz').val();
 		    
-		//	if ( flagz =='JL'  ){
+			if ( flagz =='JL'  ){
 
-		//	    $('#ACNOB').val('411101');					
-		//	    $('#NACNOB').val('PENJUALAN');					
+			    $('#ACNOB').val('411101');					
+			    $('#NACNOB').val('PENJUALAN');					
 				
-		//	}
+			}
 
-		 
+			if ( flagz =='UM'  ){
+
+			    $('#ACNOB').val('212101');					
+			    $('#NACNOB').val('UANG MUKA PENJUALAN');					
+				
+			}
+			
+			
+			
 		
 	}
 	

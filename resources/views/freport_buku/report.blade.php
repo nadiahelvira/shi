@@ -113,7 +113,7 @@
 								</tr>
 							</tfoot>
 						</table> --}}
-						<div class="report-content" col-md-12>
+						<div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
                         use \koolreport\datagrid\DataTables;
 						
@@ -128,47 +128,65 @@
                                 "showFooter" => true,
                                 "showFooter" => "bottom",
                                 "columns" => array(
-                                    "TGL" => array(
-                                        "label" => "TGL",
-                                    ),
                                     "NO_BUKTI" => array(
-                                        "label" => "NO BUKTI",
+                                        "label" => "Bukti#",
+                                    ),
+                                    "TGL" => array(
+                                        "label" => "Tanggal",
+                                    ),
+                                    "BACNO" => array(
+                                        "label" => "Account#",
+                                    ),
+                                    "BNAMA" => array(
+                                        "label" => "-",
+                                    ),
+                                    "ACNO" => array(
+                                        "label" => "Acno#",
+                                    ),
+                                    "NACNO" => array(
+                                        "label" => "-",
+                                    ),
+                                    "KODE" => array(
+                                        "label" => "Kode#",
+                                    ),
+                                    "NAMA" => array(
+                                        "label" => "Nama",
                                     ),
                                     "URAIAN" => array(
-                                        "label" => "URAIAN",
-                                        "footerText" => "<b>GRAND TOTAL :</b>",
+                                        "label" => "Uraian",
+                                        "footerText" => "<b>Grand Total :</b>",
                                     ),
-									// "AWAL" => array(
-                                    //     "label" => "AWAL",
-                                    //     "type" => "number",
-                                    //     "decimals" => 0,
-                                    //     "decimalPoint" => ".",
-                                    //     "thousandSeparator" => ",",
-                                    //     "footer" => "sum",
-                                    //     "footerText" => "<b>@value</b>",
-                                    // ),
-                                    "DEBET" => array(
-                                        "label" => "DEBET",
+									"AWAL" => array(
+                                        "label" => "Awal",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
+                                        "decimalPoint" => ".",
+                                        "thousandSeparator" => ",",
+                                        "footer" => "sum",
+                                        "footerText" => "<b>@value</b>",
+                                    ),
+                                    "DEBET" => array(
+                                        "label" => "Debet",
+                                        "type" => "number",
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
                                         "footerText" => "<b>@value</b>",
                                     ),
                                     "KREDIT" => array(
-                                        "label" => "KREDIT",
+                                        "label" => "Kredit",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
                                         "footerText" => "<b>@value</b>",
                                     ),
                                     "SALDO" => array(
-                                        "label" => "SALDO",
+                                        "label" => "Saldo",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         //"footer" => "sum",
@@ -185,12 +203,7 @@
                                     "columnDefs"=>array(
                                         array(
                                             "className" => "dt-right", 
-                                            "targets" => [3,4,5],
-                                        ),
-
-										array(
-                                            "className" => "dt-center", 
-                                            "targets" => [0,1],
+                                            "targets" => [7,8,9,10],
                                         ),
                                     ),
                                     "order" => [],

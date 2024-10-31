@@ -30,8 +30,8 @@
 								<label><strong>Gol :</strong></label>
 								
 								<select name="gol" id="gol" class="form-control gol">
-									<option value="A2" {{ session()->get('filter_gol')=='A2' ? 'selected': ''}}>A2</option>
-									<option value="A2" {{ session()->get('filter_gol')=='A2' ? 'selected': ''}}>A2</option>
+									<option value="Y" {{ session()->get('filter_gol')=='Y' ? 'selected': ''}}>Y</option>
+									<option value="Z" {{ session()->get('filter_gol')=='Z' ? 'selected': ''}}>Z</option>
 								</select>
 							</div>
 							<div class="col-md-2">						
@@ -83,7 +83,7 @@
 						
                     <!-- PASTE DIBAWAH INI -->
                     <!-- DISINI BATAS AWAL KOOLREPORT-->
-                    <div class="report-content" col-md-12>
+                    <div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
                         use \koolreport\datagrid\DataTables;
 

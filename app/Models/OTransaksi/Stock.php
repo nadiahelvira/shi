@@ -17,6 +17,6 @@ class Stock extends Model
     [
         "NO_BUKTI", "TGL", "PER", "FLAG", "KD_BRG", "NA_BRG", "NOTES", "KG", 
 		"USRNM", "TG_SMP","created_by", "updated_by",
-		"deleted_by"
+		"deleted_by", "GOL"
     ];
 }

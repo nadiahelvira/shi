@@ -164,14 +164,7 @@ class BankController extends Controller
 
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
-        // $query = DB::table('bank')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
-       
-        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(bank.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI
-                            FROM bank
-                            WHERE PER = '$periode'
-                            AND TYPE ='$FLAGZ'
-                            ORDER BY NO_BUKTI DESC Limit 1");
-
+        $query = DB::table('bank')->select('NO_BUKTI')->where('PER', $periode)->where('TYPE', $this->FLAGZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
 
         if ($query != '[]') {
             $query = substr($query[0]->NO_BUKTI, -4);
@@ -201,7 +194,7 @@ class BankController extends Controller
                 'TYPE'             => $FLAGZ,
                 'JUMLAH'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'USRNM'            => Auth::user()->username,
-                // 'created_by'       => Auth::user()->username,
+                'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
@@ -229,8 +222,8 @@ class BankController extends Controller
                 $detail->NACNO    = ($NACNO[$key] == null) ? "" :  $NACNO[$key];
                 $detail->URAIAN    = ($URAIAN[$key] == null) ? "" :  $URAIAN[$key];
                 $detail->JUMLAH    = (float) str_replace(',', '', $JUMLAH[$key]);
-                $detail->DEBET    = ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
-				$detail->KREDIT    = ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$key] ) : (float) str_replace(',', '', '0' );
+                $detail->DEBET    =  ($this->FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$key]) : 0 ;
+                $detail->KREDIT    =  ($this->FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$key]) : 0 ;
                 $detail->save();
             }
         }
@@ -395,7 +388,7 @@ class BankController extends Controller
  
          
          return view('ftransaksi_bank.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 	
     
 	} 
@@ -444,7 +437,7 @@ class BankController extends Controller
                 'KET'              => ($request['KET'] == null) ? "" : $request['KET'],
                 'JUMLAH'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'USRNM'            => Auth::user()->username,
-                // 'updated_by'       => Auth::user()->username,
+                'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
@@ -479,8 +472,8 @@ class BankController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        'KREDIT'      => ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'DEBET'      =>  ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 ,
+                        'KREDIT'     =>  ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 
                     ]
                 );
             } else {
@@ -497,8 +490,8 @@ class BankController extends Controller
                         'NACNO'      => ($NACNO[$i] == null) ? "" : $NACNO[$i],
                         'URAIAN'     => ($URAIAN[$i] == null) ? "" : $URAIAN[$i],
                         'JUMLAH'     => (float) str_replace(',', '', $JUMLAH[$i]),
-                        'DEBET'      => ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
-                        'KREDIT'     => ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i] ) : (float) str_replace(',', '', '0' ),
+                        'DEBET'      =>  ($FLAGZ == 'BBM') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 ,
+                        'KREDIT'     =>  ($FLAGZ == 'BBK') ? (float) str_replace(',', '', $JUMLAH[$i]) : 0 
                     ]
                 );
             }
@@ -569,9 +562,18 @@ class BankController extends Controller
         $PHPJasperXML = new PHPJasperXML();
         $PHPJasperXML->load_xml_file(base_path() . ('/app/reportc01/phpjasperxml/' . $file . '.jrxml'));
 
+		$judul = '';
+		if($bank->TYPE =='BBK'){
+			$judul ='Bukti Bank Keluar';
+		} else {
+			$judul = 'Bukti Bank Masuk';
+		}
+		
+
+
         $query = DB::SELECT("
 			SELECT bank.NO_BUKTI,bank.TGL,bank.KET,bank.BNAMA,
-            bankd.REC,bankd.ACNO,bankd.NACNO,bankd.URAIAN,if(bankd.DEBET>=0,bankd.DEBET,bankd.KREDIT) as JUMLAH 
+            bankd.REC,bankd.ACNO,bankd.NACNO,bankd.URAIAN,bankd.JUMLAH as JUMLAH
 			FROM bank, bankd 
 			WHERE bank.NO_BUKTI=bankd.NO_BUKTI and bank.NO_BUKTI='$no_bukti' 
 			ORDER BY bank.NO_BUKTI;
@@ -589,6 +591,7 @@ class BankController extends Controller
                 'NACNO' => $query[$key]->NACNO,
                 'URAIAN' => $query[$key]->URAIAN,
                 'JUMLAH' => $query[$key]->JUMLAH,
+                'JUDUL' => $judul,
             ));
         }
         $PHPJasperXML->setData($data);

@@ -1,0 +1,222 @@
+[07-Apr-2024 22:45:55 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[08-Apr-2024 19:46:26 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[12-Apr-2024 10:02:40 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Apr-2024 01:13:01 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Apr-2024 01:33:35 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[14-Apr-2024 21:18:06 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[22-Apr-2024 22:05:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Apr-2024 13:40:10 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[11-May-2024 15:39:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[11-May-2024 15:39:33 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[14-May-2024 05:57:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-May-2024 09:34:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 03:10:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 03:11:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 03:11:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 03:11:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 03:18:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:42:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:42:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:42:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:42:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:43:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[28-Jun-2024 23:48:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 00:49:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 00:49:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 00:51:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 23:29:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 23:30:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 23:30:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jun-2024 23:35:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[03-Jul-2024 17:57:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[10-Jul-2024 05:02:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[15-Jul-2024 15:15:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[17-Jul-2024 07:38:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[19-Jul-2024 07:50:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[23-Jul-2024 04:23:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[31-Jul-2024 01:29:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[04-Aug-2024 10:49:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[08-Aug-2024 04:09:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[11-Aug-2024 01:20:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[11-Aug-2024 02:55:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[21-Aug-2024 10:19:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[23-Aug-2024 11:48:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[05-Sep-2024 04:44:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Sep-2024 13:50:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Sep-2024 13:58:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Sep-2024 16:28:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Sep-2024 18:54:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[13-Sep-2024 19:48:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[08-Oct-2024 10:50:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[12-Oct-2024 21:39:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[18-Oct-2024 23:20:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[19-Oct-2024 01:19:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[19-Oct-2024 01:42:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[19-Oct-2024 14:39:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[19-Oct-2024 18:45:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[23-Oct-2024 11:06:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[25-Oct-2024 19:48:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7
+[26-Oct-2024 06:20:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/januar13/public_html/pagoda/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Kernel.php on line 7

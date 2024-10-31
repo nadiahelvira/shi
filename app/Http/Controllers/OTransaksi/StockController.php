@@ -184,7 +184,8 @@ class StockController extends Controller
                 'NO_BUKTI'         => $no_bukti,
                 'TGL'              => date('Y-m-d', strtotime($request['TGL'])),
                 'PER'              => $periode,
-                'FLAG'             => 'KY',
+                'FLAG'             => $FLAGZ,
+                'GOL'               => $GOLZ,
                // 'TYPE'             => ($request['TYPE'] == null) ? "" : $request['TYPE'],
                 'KD_BRG'            => ($request['KD_BRG'] == null) ? "" : $request['KD_BRG'],
                 'NA_BRG'            => ($request['NA_BRG'] == null) ? "" : $request['NA_BRG'],
@@ -379,7 +380,7 @@ class StockController extends Controller
  
          
          return view('otransaksi_stock.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -403,6 +404,13 @@ class StockController extends Controller
         );
 
         // ganti 20
+		
+		$this->setFlag($request);
+        $FLAGZ = $this->FLAGZ;
+        $GOLZ = $this->GOLZ;
+        $judul = $this->judul;
+		
+		
         $variablell = DB::select('call stockbdel(?)', array($stock['NO_BUKTI']));
 
         $stock->update(
@@ -413,6 +421,8 @@ class StockController extends Controller
                // 'TYPE'             => ($request['TYPE'] == null) ? "" : $request['TYPE'],
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
                 'KG'               => (float) str_replace(',', '', $request['KG']),
+                'FLAG'             => $FLAGZ,
+                'GOL'               => $GOLZ,
                 'USRNM'            => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]

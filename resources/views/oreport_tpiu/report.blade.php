@@ -103,7 +103,7 @@
 					
                     <!-- PASTE DIBAWAH INI -->
                     <!-- DISINI BATAS AWAL KOOLREPORT-->
-                    <div class="report-content" col-md-12>
+                    <div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
                         use \koolreport\datagrid\DataTables;
 
@@ -269,89 +269,7 @@
 		$('.date').datepicker({  
 			dateFormat: 'dd-mm-yy'
 		}); 
-		/*
-		function fill_datatable( kodec = '' ,gol='', tglDr = '', tglSmp = '' )
-		{
-			var dataTable = $('.datatable').DataTable({
-				dom: '<"row"<"col-4">>fltip',
-				lengthMenu: [
-					[ 10, 25, 50, -1 ],
-					[ '10 rows', '25 rows', '50 rows', 'Show all' ]
-				],
-				processing: true,
-				serverSide: true,
-				autoWidth: true,
-				'scrollX': true,
-				'scrollY': '400px',
-				"order": [[ 0, "asc" ]],
-				ajax: 
-				{
-					url: '{{ route('get-tpiu-report') }}',
-					data: {
-						kodec: kodec,
-						gol: gol,
-						tglDr: tglDr,
-						tglSmp: tglSmp
-					}
-				},
-				columns: 
-				[
-					{data: 'DT_RowIndex', orderable: false, searchable: false },
-					{data: 'NO_BUKTI', name: 'NO_BUKTI'},
-					{data: 'TGL', name: 'TGL'},
-					{data: 'NO_SO', name: 'NO_SO'},
-					{data: 'KODEC', name: 'KODEC'},
-					{data: 'NAMAC', name: 'NAMAC'},
-					{
-						data: 'TOTAL',
-						name: 'TOTAL',
-						render: $.fn.dataTable.render.number( ',', '.', 0, '' )
-					},
-					{data: 'NOTES', name: 'NOTES'},
-				],
-				
-				columnDefs: [
-				{
-				"className": "dt-center", 
-				"targets": 0
-				},
-				{
-				targets: 2,
-				render: $.fn.dataTable.render.moment( 'DD-MM-YYYY' )
-				},
-				{
-				"className": "dt-right", 
-				"targets": 6
-				}
-				
-				],
-				
-			});
-		}
 		
-		$('#filter').click(function() {
-			var kodec = $('#kodec').val();
-			var gol = $('#gol').val();
-			var tglDr = $('#tglDr').val();
-			var tglSmp = $('#tglSmp').val();
-			
-			if (kodec != '' || (tglDr != '' && tglSmp != ''))
-			{
-				$('.datatable').DataTable().destroy();
-				fill_datatable(kodec, gol,tglDr, tglSmp);
-			}
-		});
-
-		$('#resetfilter').click(function() {
-			var kodec = '';
-			var gol = '';
-			var tglDr = '';
-			var tglSmp = '';
-
-			$('.datatable').DataTable().destroy();
-			fill_datatable(kodec, gol,tglDr, tglSmp);
-		});
-		*/
 
 	});
 	

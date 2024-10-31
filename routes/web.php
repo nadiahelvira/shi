@@ -8,15 +8,9 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->midd
 // Chart Dashboard
 Route::get('/chart', 'App\Http\Controllers\ChartController@chart')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant']);
 Route::get('/cheatsheet', 'App\Http\Controllers\CheatsheetController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer']);
-
 //User Edit
-
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->middleware(['auth']);
 Route::post('/profile/update', 'App\Http\Controllers\ProfileController@update')->middleware(['auth']);
-Route::post('/profile/setting/update', 'App\Http\Controllers\ProfileController@updateSetting')->middleware(['auth']);
-
-////////
-
 
 // Periode
 Route::post('/periode', 'App\Http\Controllers\PeriodeController@index')->middleware(['auth'])->name('periode');
@@ -174,7 +168,6 @@ Route::get('/rpo', 'App\Http\Controllers\OReport\RPoController@report')->middlew
     // GET PO
     Route::get('/po/browse', 'App\Http\Controllers\OTransaksi\PoController@browse')->middleware(['auth'])->name('po/browse');
     Route::get('/po/browseuang', 'App\Http\Controllers\OTransaksi\PoController@browseuang')->middleware(['auth'])->name('po/browseuang');
-    Route::get('/po/browseisi', 'App\Http\Controllers\OTransaksi\PoController@browseisi')->middleware(['auth'])->name('po/browseisi');
     Route::get('/po/browsed', 'App\Http\Controllers\OTransaksi\PoController@browsed')->middleware(['auth'])->name('po/browsed');
     Route::get('/get-po', 'App\Http\Controllers\OTransaksi\PoController@getPo')->middleware(['auth'])->name('get-po');
     Route::get('/get-po-report', 'App\Http\Controllers\OReport\RPoController@getPoReport')->middleware(['auth'])->name('get-po-report');
@@ -196,7 +189,6 @@ Route::get('/rso', 'App\Http\Controllers\OReport\RSoController@report')->middlew
     Route::get('/so/browse', 'App\Http\Controllers\OTransaksi\SoController@browse')->middleware(['auth'])->name('so/browse');
     Route::get('/so/browseuang', 'App\Http\Controllers\OTransaksi\SoController@browseuang')->middleware(['auth'])->name('so/browseuang');
     Route::get('/so/browsed', 'App\Http\Controllers\OTransaksi\SodController@browse')->middleware(['auth'])->name('sod/browse');
-    Route::get('/so/browseisi', 'App\Http\Controllers\OTransaksi\SoController@browseisi')->middleware(['auth'])->name('so/browseisi');
     Route::get('/get-so-report', 'App\Http\Controllers\OReport\RSoController@getSoReport')->middleware(['auth'])->name('get-so-report');
     Route::post('/jasper-so-report', 'App\Http\Controllers\OReport\RSoController@jasperSoReport')->middleware(['auth']);
     Route::get('/jssoc/{so:NO_ID}', 'App\Http\Controllers\OTransaksi\SoController@jssoc')->middleware(['auth']);
@@ -213,9 +205,8 @@ Route::post('/beli/store', 'App\Http\Controllers\OTransaksi\BeliController@store
 Route::get('/rbeli', 'App\Http\Controllers\OReport\RBeliController@report')->middleware(['auth'])->name('rbeli');
     // GET BELI
     Route::get('/beli/browse', 'App\Http\Controllers\OTransaksi\BeliController@browse')->middleware(['auth'])->name('beli/browse');
+    Route::get('/beli/browsebl', 'App\Http\Controllers\OTransaksi\BeliController@browsebl')->middleware(['auth'])->name('beli/browsebl');
     Route::get('/beli/browseuang', 'App\Http\Controllers\OTransaksi\BeliController@browseuang')->middleware(['auth'])->name('beli/browseuang');
-    Route::get('/beli/browsekartu', 'App\Http\Controllers\OTransaksi\BeliController@browsekartu')->middleware(['auth'])->name('beli/browsekartu');
-    Route::get('/beli/browsekartu2', 'App\Http\Controllers\OTransaksi\BeliController@browsekartu2')->middleware(['auth'])->name('beli/browsekartu2');
     Route::get('/get-beli', 'App\Http\Controllers\OTransaksi\BeliController@getBeli')->middleware(['auth'])->name('get-beli');
     Route::get('/get-beli-report', 'App\Http\Controllers\OReport\RBeliController@getBeliReport')->middleware(['auth'])->name('get-beli-report');
     Route::post('jasper-beli-report', 'App\Http\Controllers\OReport\RBeliController@jasperBeliReport')->middleware(['auth']);
@@ -225,6 +216,7 @@ Route::post('/beli/update/{beli}', 'App\Http\Controllers\OTransaksi\BeliControll
 Route::get('/beli/delete/{beli}', 'App\Http\Controllers\OTransaksi\BeliController@destroy')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner'])->name('beli.delete');
 Route::get('/beli/repost/{beli}', 'App\Http\Controllers\OTransaksi\BeliController@repost')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,pembelian'])->name('beli.repost');
 Route::get('/jsbelic/{beli:NO_ID}', 'App\Http\Controllers\OTransaksi\BeliController@jsbelic')->middleware(['auth']);
+    
 
 // Operational Terima
 Route::get('/terima', 'App\Http\Controllers\OTransaksi\TerimaController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,penjualan'])->name('terima');
@@ -256,12 +248,10 @@ Route::get('/rjual', 'App\Http\Controllers\OReport\RJualController@report')->mid
     Route::get('/jual/browse', 'App\Http\Controllers\OTransaksi\JualController@browse')->middleware(['auth'])->name('jual/browse');
     Route::get('/jual/browseuang', 'App\Http\Controllers\OTransaksi\JualController@browseuang')->middleware(['auth'])->name('jual/browseuang');
     Route::get('/jual/browseum', 'App\Http\Controllers\OTransaksi\JualController@browseum')->middleware(['auth'])->name('jual/browseum');
-	Route::get('/jual/print/{jual:NO_ID}','App\Http\Controllers\OTransaksi\JualController@cetak')->middleware(['auth']);
+	 Route::get('/jual/print/{jual:NO_ID}','App\Http\Controllers\OTransaksi\JualController@cetak')->middleware(['auth']);
     Route::get('/get-jual-report', 'App\Http\Controllers\OReport\RJualController@getJualReport')->middleware(['auth'])->name('get-jual-report');
     Route::post('/jasper-jual-report', 'App\Http\Controllers\OReport\RJualController@jasperJualReport')->middleware(['auth']);
-	Route::get('/jual/browsekartu', 'App\Http\Controllers\OTransaksi\JualController@browsekartu')->middleware(['auth'])->name('jual/browsekartu');
-    Route::get('/jual/browsekartu2', 'App\Http\Controllers\OTransaksi\JualiController@browsekartu2')->middleware(['auth'])->name('jual/browsekartu2');
-    
+	
 // Dynamic Jual
 Route::get('/jual/edit', 'App\Http\Controllers\OTransaksi\JualController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,penjualan'])->name('jual.edit');
 Route::post('/jual/update/{jual}', 'App\Http\Controllers\OTransaksi\JualController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,penjualan'])->name('jual.update');
@@ -292,9 +282,7 @@ Route::get('/rhut', 'App\Http\Controllers\OReport\RHutController@report')->middl
    // Route::get('/hut/print/{hut:NO_ID}','App\Http\Controllers\OTransaksi\HutController@cetak')->middleware(['auth']);
     Route::get('/get-hut-report', 'App\Http\Controllers\OReport\RHutController@getHutReport')->middleware(['auth'])->name('get-hut-report');
     Route::post('/jasper-hut-report', 'App\Http\Controllers\OReport\RHutController@jasperHutReport')->middleware(['auth']);
-    Route::get('/hut/browsekartu', 'App\Http\Controllers\OTransaksi\HutController@browsekartu')->middleware(['auth'])->name('hut/browsekartu');
-
-    // Dynamic Hut
+// Dynamic Hut
 Route::get('/hut/edit', 'App\Http\Controllers\OTransaksi\HutController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,pembelian'])->name('hut.edit');
 Route::post('/hut/update/{hut}', 'App\Http\Controllers\OTransaksi\HutController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,pembelian'])->name('hut.update');
 Route::get('/hut/delete/{hut}', 'App\Http\Controllers\OTransaksi\HutController@destroy')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,pembelian'])->name('hut.delete');
@@ -318,9 +306,7 @@ Route::get('/rpiu', 'App\Http\Controllers\OReport\RPiuController@report')->middl
     Route::get('/get-piu-report', 'App\Http\Controllers\OReport\RPiuController@getPiuReport')->middleware(['auth']);
     Route::post('jasper-piu-report', 'App\Http\Controllers\OReport\RPiuController@jasperPiuReport')->middleware(['auth']);
     Route::get('/jasper-piu-trans/{piu:NO_ID}', 'App\Http\Controllers\OTransaksi\PiuController@jasperPiuTrans')->middleware(['auth']);
-    Route::get('/piu/browsekartu', 'App\Http\Controllers\OTransaksi\PiuController@browsekartu')->middleware(['auth'])->name('piu/browsekartu');
-
-    // Dynamic Piu
+// Dynamic Piu
 Route::get('/piu/edit', 'App\Http\Controllers\OTransaksi\PiuController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant'])->name('piu.edit');
 Route::post('/piu/update/{piu}', 'App\Http\Controllers\OTransaksi\PiuController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant'])->name('piu.update');
 Route::get('/piu/delete/{piu}', 'App\Http\Controllers\OTransaksi\PiuController@destroy')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant'])->name('piu.delete');
@@ -335,6 +321,30 @@ Route::get('/rsisapiu', 'App\Http\Controllers\OReport\RKartupController@sisa')->
 Route::get('/get-piu-sisa', 'App\Http\Controllers\OReport\RKartupController@getPiuSisa')->middleware(['auth']);
 Route::post('/jasper-piusisa-report', 'App\Http\Controllers\OReport\RKartupController@jasperPiuSisaReport')->middleware(['auth']);
 
+
+
+Route::get('/rthut', 'App\Http\Controllers\OReport\RThutController@report')->middleware(['auth'])->name('rthut');
+Route::post('jasper-thut-report', 'App\Http\Controllers\OReport\RThutController@jasperThutReport')->middleware(['auth']);
+
+
+
+
+// Operational BL
+Route::get('/bl', 'App\Http\Controllers\OTransaksi\BlController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('bl');
+Route::post('/bl/store', 'App\Http\Controllers\OTransaksi\BlController@store')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('bl/store');
+Route::get('/rbl', 'App\Http\Controllers\FReport\RBlController@report')->middleware(['auth'])->name('rbl');
+    // GET BL
+    Route::get('/get-bl', 'App\Http\Controllers\OTransaksi\BlController@getBl')->middleware(['auth'])->name('get-bl');
+    Route::get('/get-bl-report', 'App\Http\Controllers\FReport\RBlController@getBlReport')->middleware(['auth'])->name('get-bl-report');
+    Route::post('rbl/jasper-bl-report', 'App\Http\Controllers\FReport\RBlController@jasperBlReport')->middleware(['auth']);
+    Route::get('/bl/jasper-bl-trans/{bl:NO_ID}', 'App\Http\Controllers\OTransaksi\BlController@jasperBlTrans')->middleware(['auth']);
+
+// Dynamic BL
+Route::get('/bl/edit', 'App\Http\Controllers\OTransaksi\BlController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('bl.edit');
+Route::post('/bl/update/{bl}', 'App\Http\Controllers\OTransaksi\BlController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('bl.update');
+Route::get('/bl/delete/{bl}', 'App\Http\Controllers\OTransaksi\BlController@destroy')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('bl.delete');
+
+////////////////////////////////////////////////////////////////////////
 
 // Operational Memo
 Route::get('/memo', 'App\Http\Controllers\FTransaksi\MemoController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,accounting'])->name('memo');
@@ -391,53 +401,6 @@ Route::post('rbuku/jasper-buku-report', 'App\Http\Controllers\FReport\RBukuContr
 Route::get('/postingsls/index', 'App\Http\Controllers\OTransaksi\PostingSLSController@index')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant']);
 Route::get('/get-post-sls', 'App\Http\Controllers\OTransaksi\PostingSLSController@getPostSLS')->middleware(['auth']);
 Route::post('/postingsls/posting', 'App\Http\Controllers\OTransaksi\PostingSLSController@posting')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant']);
-
-
-
-// Operational Kartu PO
-Route::get('/kartupo', 'App\Http\Controllers\OTransaksi\KartupoController@index')->middleware(['auth'])->name('kartupo');
-Route::post('/kartupo/store', 'App\Http\Controllers\OTransaksi\KartupoController@store')->middleware(['auth'])->name('kartupo/store');
-Route::get('/kartupo/create', 'App\Http\Controllers\OTransaksi\KartupoController@create')->middleware(['auth'])->name('kartupo/create');
-Route::get('/kartupo/createdatabkk', 'App\Http\Controllers\OTransaksi\KartupoController@createdatabkk')->middleware(['auth'])->name('kartupo/createdatabkk');
-Route::get('/kartupo/edit', 'App\Http\Controllers\OTransaksi\KartupoController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,gudang,assistant,pembelian'])->name('kartupo.edit');
-Route::post('/kartupo/update/{kartupo}', 'App\Http\Controllers\OTransaksi\KartupoController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,gudang,assistant,pembelian'])->name('kartupo.update');
-Route::get('/get-kartupo', 'App\Http\Controllers\OTransaksi\KartupoController@getKartupo')->middleware(['auth'])->name('get-kartupo');
-Route::get('/kartupo/delete/{kartupo}', 'App\Http\Controllers\OTransaksi\KartupoController@destroy')->middleware(['auth'])->name('kartupo.delete');
-
-Route::get('/kartupo/browsebkk1', 'App\Http\Controllers\OTransaksi\KartupoController@browsebkk1')->middleware(['auth'])->name('kartupo/browsebkk1');
-Route::get('/kartupo/browsebkk2', 'App\Http\Controllers\OTransaksi\KartupoController@browsebkk2')->middleware(['auth'])->name('kartupo/browsebkk2');
-Route::get('/kartupo/browse_kas_pms', 'App\Http\Controllers\OTransaksi\KartupoController@browse_kas_pms')->middleware(['auth'])->name('kartupo/browse_kas_pms');
-Route::post('/kartupo/storedatabkk', 'App\Http\Controllers\OTransaksi\KartupoController@storedatabkk')->middleware(['auth'])->name('kartupo/storedatabkk');
-
-Route::get('kartupo/index-posting', 'App\Http\Controllers\OTransaksi\KartupoController@index_posting')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,penjualan']);
-Route::get('/kartupo/browsewilayah', 'App\Http\Controllers\OTransaksi\KartupoController@browsewilayah')->middleware(['auth'])->name('kartupo/browsewilayah');
-
-Route::get('/kartupo/cetak/{kartupo:NO_ID}', 'App\Http\Controllers\OTransaksi\KartupoController@cetak')->middleware(['auth']);
-Route::get('/kartupo/posting', 'App\Http\Controllers\OTransaksi\KartupoController@posting')->middleware(['auth']);
-
-
-// Operational Kartu SO
-Route::get('/kartuso', 'App\Http\Controllers\OTransaksi\KartusoController@index')->middleware(['auth'])->name('kartuso');
-Route::post('/kartuso/store', 'App\Http\Controllers\OTransaksi\KartusoController@store')->middleware(['auth'])->name('kartuso/store');
-Route::get('/kartuso/create', 'App\Http\Controllers\OTransaksi\KartusoController@create')->middleware(['auth'])->name('kartuso/create');
-Route::get('/kartuso/createdatabkk', 'App\Http\Controllers\OTransaksi\KartusoController@createdatabkk')->middleware(['auth'])->name('kartuso/createdatabkk');
-Route::get('/kartuso/edit', 'App\Http\Controllers\OTransaksi\KartusoController@edit')->middleware(['auth'])->middleware(['checkDivisi:programmer,gudang,assistant,pembelian'])->name('kartuso.edit');
-Route::post('/kartuso/update/{kartuso}', 'App\Http\Controllers\OTransaksi\KartusoController@update')->middleware(['auth'])->middleware(['checkDivisi:programmer,gudang,assistant,pembelian'])->name('kartuso.update');
-Route::get('/get-kartuso', 'App\Http\Controllers\OTransaksi\KartusoController@getKartuso')->middleware(['auth'])->name('get-kartuso');
-Route::get('/kartuso/delete/{kartuso}', 'App\Http\Controllers\OTransaksi\KartusoController@destroy')->middleware(['auth'])->name('kartuso.delete');
-
-Route::get('/kartuso/browsebkk1', 'App\Http\Controllers\OTransaksi\KartusoController@browsebkk1')->middleware(['auth'])->name('kartuso/browsebkk1');
-Route::get('/kartuso/browsebkk2', 'App\Http\Controllers\OTransaksi\KartusoController@browsebkk2')->middleware(['auth'])->name('kartuso/browsebkk2');
-Route::get('/kartuso/browse_kas_pms', 'App\Http\Controllers\OTransaksi\KartusoController@browse_kas_pms')->middleware(['auth'])->name('kartuso/browse_kas_pms');
-Route::post('/kartuso/storedatabkk', 'App\Http\Controllers\OTransaksi\KartusoController@storedatabkk')->middleware(['auth'])->name('kartuso/storedatabkk');
-
-Route::get('kartuso/index-posting', 'App\Http\Controllers\OTransaksi\KartusoController@index_posting')->middleware(['auth'])->middleware(['checkDivisi:programmer,owner,assistant,penjualan']);
-Route::get('/kartuso/browsewilayah', 'App\Http\Controllers\OTransaksi\KartusoController@browsewilayah')->middleware(['auth'])->name('kartuso/browsewilayah');
-
-Route::get('/kartuso/cetak/{kartuso:NO_ID}', 'App\Http\Controllers\OTransaksi\KartusoController@cetak')->middleware(['auth']);
-Route::get('/kartuso/posting', 'App\Http\Controllers\OTransaksi\KartusoController@posting')->middleware(['auth']);
-
-/////////////////////////////////////////////////////////////
 
 
 require __DIR__.'/auth.php';

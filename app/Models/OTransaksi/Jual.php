@@ -20,10 +20,10 @@ class Jual extends Model
     protected $fillable = 
     [
         "NO_BUKTI","TGL", "NO_SO", "PER","KODEC", "NAMAC", "TRUCK", "SOPIR", "ALAMAT", "KOTA", "FLAG", 
-		"GOL", "KD_BRG", "NA_BRG", "SATUAN", "DPP", "PPN","GDG",
+		"GOL", "KD_BRG", "NA_BRG", "SATUAN", "DPP", "PPN","GUDANG",
 		"QTY", "KG", "HARGA", "TOTAL", "RPTOTAL", "RPSISA",  "NOTES", "ACNOA","NACNOA","ACNOB","NACNOB", 
 	    "BACNO", "BNAMA", "NO_BANK", "USRNM", "TG_SMP","created_by", "updated_by",
-		"deleted_by", "SISA"
+		"deleted_by"
        
     ];
 }

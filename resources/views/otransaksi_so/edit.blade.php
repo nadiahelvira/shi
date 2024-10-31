@@ -33,7 +33,7 @@
         
                             <div class="form-group row">
                                 <div class="col-md-1" align="right">
-                                    <label for="NO_SO" class="form-label">Bukti#</label>
+                                    <label for="NO_BUKTI" class="form-label">Bukti#</label>
                                 </div>
 								
                                 <input type="text" class="form-control NO_ID" id="NO_ID" name="NO_ID"
@@ -44,23 +44,16 @@
 
 								
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control NO_SO" id="NO_SO" name="NO_SO"
-                                    placeholder="Masukkan Nomor Bukti" value="{{$header->NO_SO}}" readonly style="width:140px">
+                                    <input type="text" class="form-control NO_BUKTI" id="NO_BUKTI" name="NO_BUKTI"
+                                    placeholder="Masukkan Nomor Bukti" value="{{$header->NO_BUKTI}}" readonly style="width:140px">
                                 </div>
 								
 								
-                                <div class="col-md-1"  align="left">
+                                <div class="col-md-1"  align="right">
                                     <label for="TGL" class="form-label">Tanggal</label>
                                 </div>
                                 <div class="col-md-2">
-								  <input class="form-control date" onclick="select()" id="TGL" name="TGL" data-date-format="dd-mm-yyyy" type="text" autocomplete="off" value="{{date('d-m-Y',strtotime($header->TGL))}}" style="width:140px">
-                                </div>
-								
-								<div class="col-md-1"  align="right">
-                                    <label for="JTEMPO" class="form-label">Jtempo</label>
-                                </div>
-                                <div class="col-md-2">
-								  <input class="form-control date" onclick="select()" id="JTEMPO" name="JTEMPO" data-date-format="dd-mm-yyyy" type="text" autocomplete="off" value="{{date('d-m-Y',strtotime($header->JTEMPO))}}" style="width:140px">
+								  <input class="form-control date" id="TGL" name="TGL" data-date-format="dd-mm-yyyy" type="text" autocomplete="off" value="{{date('d-m-Y',strtotime($header->TGL))}}" style="width:140px">
                                 </div>
 								
 								<div class="col-md-3"></div>
@@ -85,11 +78,25 @@
         						  <button type="button" class="btn btn-primary" onclick="browseCustomer()"><i class="fa fa-search"></i></button>
          							
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NAMAC" id="NAMAC" name="NAMAC" placeholder="Nama Customer" value="{{$header->NAMAC}}" readonly>
                                 </div>
-								
-								<div class="col-md-1" align="right">
+                            </div>
+							
+							<div class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label for="ALAMAT" class="form-label">Alamat</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control ALAMAT" id="ALAMAT" name="ALAMAT" placeholder="Alamat Customer" value="{{$header->ALAMAT}}" readonly>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control KOTA" id="KOTA" name="KOTA" placeholder="Kota Customer"  value="{{$header->KOTA}}" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-1" align="left">
 									<label style="color:red;font-size:20px">* </label>
                                     <label for="KD_BRG" class="form-label">Barang#</label>
                                 </div>
@@ -98,52 +105,20 @@
         						  <button type="button" class="btn btn-primary" onclick="browseBarang()"><i class="fa fa-search"></i></button>
          							
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NA_BRG" id="NA_BRG" name="NA_BRG" placeholder="Masukkan Nama Barang" value="{{$header->NA_BRG}}" readonly>
                                 </div>
                             </div>
+                            
+
 							
-							<div class="form-group row">
+                            <div class="form-group row">
                                 <div class="col-md-1" align="right">
-                                    <label for="ALAMAT" class="form-label">Alamat</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="text" class="form-control ALAMAT" id="ALAMAT" name="ALAMAT" placeholder="Alamat Customer" value="{{$header->ALAMAT}}" readonly>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control KOTA" id="KOTA" name="KOTA" placeholder="Kota Customer"  value="{{$header->KOTA}}" readonly>
-                                </div>
-								
-								<div class="col-md-1" align="right">
                                     <label for="KG" class="form-label">Kg</label>
                                 </div>
                                 <div class="col-md-2">
                                     <input type="text" onclick="select()" onkeyup="hitung()" class="form-control KG" id="KG" name="KG" placeholder="Masukkan KG" value="{{ number_format( $header->KG, 2, '.', ',') }}" style="text-align: right; width:140px">
                                 </div>
-								
-								<div class="col-md-1" align="center">
-                                    <label for="SISA" class="form-label">Sisa</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control SISA" id="SISA" name="SISA" placeholder="" value="{{ number_format( $header->SISA, 2, '.', ',') }}" style="text-align: right; width:140px">
-                                </div>
-                            </div>
-							
-							<div class="form-group row">
-                                <div class="col-md-1" align="right">
-                                    <label for="NO_ORDER" class="form-label">Order</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control NO_ORDER" onclick="select()" id="NO_ORDER" name="NO_ORDER" placeholder="" value="{{$header->NO_ORDER}}" >
-                                </div>
-								
-								<div class="col-md-1" align="right">
-                                    <label for="PO" class="form-label">PO</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control PO" onclick="select()" id="PO" name="PO" placeholder="" value="{{$header->PO}}" >
-                                </div>
-								
                                 <div class="col-md-1" align="right">
                                     <label for="HARGA" class="form-label">Harga</label>
                                 </div>
@@ -153,44 +128,59 @@
                                 </div>
                             </div>
 							
+                            <div class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label for="KIRIM" class="form-label">Kirim</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control KIRIM" id="KIRIM" name="KIRIM" placeholder="" value="{{ number_format( $header->KIRIM, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
+                                </div>
+                                <div class="col-md-1" align="right">
+                                    <label for="SISA" class="form-label">Sisa</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" onclick="select()" onkeyup="hitung()" class="form-control SISA" id="SISA" name="SISA" placeholder=""
+									value="{{ number_format( $header->SISA, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
+                                </div>
+                            </div>
+							
 							<div class="form-group row">
+                                <div class="col-md-1" align="right">
+                                    <label for="TOTAL" class="form-label">Total</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control TOTAL" id="TOTAL" name="TOTAL" placeholder="Masukkan Total" 
+									value="{{ number_format( $header->TOTAL, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
+                                </div>
                                 <div class="col-md-1" align="right">
                                     <label for="NOTES" class="form-label">Notes</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control NOTES" onclick="select()" id="NOTES" name="NOTES" placeholder="Masukkan Notes" value="{{$header->NOTES}}" >
-                                </div>
-								
-                                <div class="col-md-2" align="right">
-                                    <label for="TOTAL" class="form-label">Total</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control TOTAL" onclick="select()" id="TOTAL" name="TOTAL" placeholder="Masukkan Total" 
-									value="{{ number_format( $header->TOTAL, 2, '.', ',') }}" style="text-align: right; width:140px" readonly>
+                                    <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" placeholder="Masukkan Notes" value="{{$header->NOTES}}" >
                                 </div>
                             </div>
 							
+						
                         </div>
 
 
 						        
 						<div class="mt-3 col-md-12 form-group row">
 							<div class="col-md-4">
-								<button type="button" id='TOPX'  onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=top&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
-								<button type="button" id='PREVX' onclick="location.href='{{url('/so/edit/?idx='.$header->NO_ID.'&tipx=prev&golz='.$golz.'&buktix='.$header->NO_SO )}}'" class="btn btn-outline-primary">Prev</button>
-								<button type="button" id='NEXTX' onclick="location.href='{{url('/so/edit/?idx='.$header->NO_ID.'&tipx=next&golz='.$golz.'&buktix='.$header->NO_SO )}}'" class="btn btn-outline-primary">Next</button>
-								<button type="button" id='BOTTOMX' onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=bottom&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
+								<button type="button" hidden id='TOPX'  onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=top&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
+								<button type="button" hidden id='PREVX' onclick="location.href='{{url('/so/edit/?idx='.$header->NO_ID.'&tipx=prev&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
+								<button type="button" hidden id='NEXTX' onclick="location.href='{{url('/so/edit/?idx='.$header->NO_ID.'&tipx=next&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
+								<button type="button" hidden id='BOTTOMX' onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=bottom&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
 							</div>
 							<div class="col-md-5">
-								<button type="button" id='NEWX' onclick="location.href='{{url('/so/edit/?idx=0&tipx=new&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
-								<button type="button" id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
-								<button type="button" id='UNDOX' onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=undo&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
-								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
-								<!-- <button type="button" id='PRINTX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Print</button> -->
+								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/so/edit/?idx=0&tipx=new&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
+								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
+								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/so/edit/?idx=' .$idx. '&tipx=undo&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success"<i class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
-								<button type="button" id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
+								<button type="button" hidden id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
 								<button type="button" id='CLOSEX'  onclick="location.href='{{url('/so?golz='.$golz.'' )}}'" class="btn btn-outline-secondary">Close</button>
 							</div>
 						</div>
@@ -302,7 +292,8 @@
 				return false;
 			}
 		});
-		
+
+
         if ( $tipx == 'new' )
 		{
 			 baru();			
@@ -318,6 +309,8 @@
 		$("#KG").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
 		$("#HARGA").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
 		$("#TOTAL").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
+		$("#KIRIM").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
+		$("#SISA").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
 
 		
 		$('body').on('click', '.btn-delete', function() {
@@ -337,7 +330,13 @@
 		
             var TOTALX = HARGAX * KGX;
 			$('#TOTAL').val(numberWithCommas(TOTALX));	
-		    $("#TOTAL").autoNumeric('update');	
+		    $("#TOTAL").autoNumeric('update');
+
+			var KIRIMX = parseFloat($('#KIRIM').val().replace(/,/g, ''));
+		
+            var SISAX = KGX - KIRIMX ;
+			$('#SISA').val(numberWithCommas(SISAX));	
+		    $("#SISA").autoNumeric('update');			
 		
 		
 		}		
@@ -405,7 +404,7 @@
 				type: 'GET',    
 				url: "{{url('brg/browse')}}",
 				data: {
-					'GOL': 'A2',
+					'GOL': 'Y',
 				},
 				success: function( response )
 				{
@@ -503,23 +502,18 @@
 		 hidup();
 	
 	}
-
-// 	function cetak() {
-		
-   
-//    }
 	
 	function ganti() {
 		
-		mati();
-		//hidup();
+		 //mati();
+		hidup();
 	}
 	
 	function batal() {
 		
-		// alert($header[0]->NO_SO);
+		// alert($header[0]->NO_BUKTI);
 		
-		 //$('#NO_SO').val($header[0]->NO_SO);	
+		 //$('#NO_BUKTI').val($header[0]->NO_BUKTI);	
 		 mati();
 	
 	}
@@ -540,7 +534,6 @@
 	    $("#EDITX").attr("disabled", true);
 	    $("#UNDOX").attr("disabled", false);
 	    $("#SAVEX").attr("disabled", false);
-	    $("#PRINTX").attr("disabled", false);
 		
 	    $("#HAPUSX").attr("disabled", true);
 	    //$("#CLOSEX").attr("disabled", true);
@@ -550,9 +543,8 @@
 		
 	    $("#PLUSX").attr("hidden", false)
 		   
-			$("#NO_SO").attr("readonly", true);		   
+			$("#NO_BUKTI").attr("readonly", true);		   
 			$("#TGL").attr("readonly", false);
-			$("#JTEMPO").attr("readonly", false);
 			$("#KODES").attr("readonly", true);
 			$("#NAMAS").attr("readonly", true);
 			$("#ALAMAT").attr("readonly", true);
@@ -562,11 +554,10 @@
 			$("#KG").attr("readonly", false);
 			$("#HARGA").attr("readonly", false);
 			$("#TOTAL").attr("readonly", true);
+			$("#KIRIM").attr("readonly", true);
 			$("#SISA").attr("readonly", true);
 								
 			$("#NOTES").attr("readonly", false);
-			$("#NO_ORDER").attr("readonly", false);
-			$("#PO").attr("readonly", false);
 
 		
 	}
@@ -587,7 +578,6 @@
 	    $("#SAVEX").attr("disabled", true);
 	    $("#HAPUSX").attr("disabled", false);
 	    $("#CLOSEX").attr("disabled", false);
-	    $("#PRINTX").attr("disabled", false);
 
 		$("#CARI").attr("readonly", false);	
 	    $("#SEARCHX").attr("disabled", false);
@@ -595,10 +585,9 @@
 		
 	    $("#PLUSX").attr("hidden", true)
 		
-	    $(".NO_SO").attr("readonly", true);	
+	    $(".NO_BUKTI").attr("readonly", true);	
 		
 		$("#TGL").attr("readonly", true);
-		$("#JTEMPO").attr("readonly", true);
 		$("#KODEC").attr("readonly", true);
 		$("#NAMAC").attr("readonly", true);
 		$("#ALAMAT").attr("readonly", true);
@@ -607,12 +596,11 @@
 		$("#NA_BRG").attr("readonly", true);		
 		$("#KG").attr("readonly", true);
 		$("#HARGA").attr("readonly", true);		
-		$("#TOTAL").attr("readonly", true);		
+		$("#TOTAL").attr("readonly", true);	
+		$("#KIRIM").attr("readonly", true);		
 		$("#SISA").attr("readonly", true);		
 				
 		$("#NOTES").attr("readonly", true);
-		$("#NO_ORDER").attr("readonly", true);
-		$("#PO").attr("readonly", true);
 
 		
 
@@ -622,7 +610,7 @@
 
 	function kosong() {
 				
-		 $('#NO_SO').val("+");	
+		 $('#NO_BUKTI').val("+");	
 	//	 $('#TGL').val("");	
 		 $('#KODEC').val("");	
 		 $('#NAMAC').val("");	
@@ -633,13 +621,23 @@
 		 $('#KG').val("0");
 		 $('#HARGA').val("0");	
 		 $('#TOTAL').val("0");
+		 $('#KIRIM').val("0");	
+		 $('#SISA').val("0");
 		 $('#NOTES').val("");	
+
+		$golz = $('#golz').val();
+		
+        if ( $golz == 'Y' )
+		{
+		   $('#KD_BRG').val("DPGDM");	
+		   $('#NA_BRG').val("DELE PAGODA MERAH");			
+		}	
 
 		
 	}
 	
 	function hapusTrans() {
-		let text = "Hapus Transaksi "+$('#NO_SO').val()+"?";
+		let text = "Hapus Transaksi "+$('#NO_BUKTI').val()+"?";
 		if (confirm(text) == true) 
 		{
 			window.location ="{{url('/so/delete/'.$header->NO_ID .'/?&golz=' .$golz.'' )}}";

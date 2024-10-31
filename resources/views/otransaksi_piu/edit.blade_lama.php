@@ -393,7 +393,7 @@
 				type: 'GET', 		
 				url: '{{url('so/browseuang')}}',
 				data: {
-					'GOL': 'A2',
+					'GOL': 'Y',
 				},
 				success: function( response )
 				{

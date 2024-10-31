@@ -87,21 +87,10 @@
                                     <label for="NO_PO" class="form-label">PO#</label>
                                 </div>
 
-								<div class="col-md-2 input-group" >
+                                 <div class="col-md-2 input-group" >
 									<input type="text" class="form-control NO_PO" id="NO_PO" name="NO_PO" placeholder="Masukkan PO"value="{{$header->NO_PO}}" style="text-align: left" readonly >
 
-								</div>
-                            </div>
-
-							<div class="form-group row">
-                                <div class="col-md-1"align="right">
-									<label style="color:red">*</label>									
-                                    <label for="NOTES" class="form-label">Uraian</label>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" value="{{$header->NOTES}}" placeholder="Masukkan Notes" >
-                                </div>
-        
+                                 </div>
                             </div>
 
 							
@@ -112,7 +101,7 @@
                                 <div class="col-md-2">
                                     <input type="text" class="form-control KODES" id="KODES" name="KODES" placeholder="Masukkan Suplier#" value="{{$header->KODES}}"readonly>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NAMAS" id="NAMAS" name="NAMAS" placeholder="-" value="{{$header->NAMAS}}" readonly>
                                 </div>
                             </div>
@@ -127,6 +116,17 @@
                                 <div class="col-md-4">
                                     <input type="text" class="form-control BNAMA" id="BNAMA" name="BNAMA" placeholder="-" value="{{$header->BNAMA}}" readonly>
                                 </div>
+                            </div>
+
+							<div class="form-group row">
+                                <div class="col-md-1"align="right">
+									<label style="color:red">*</label>									
+                                    <label for="NOTES" class="form-label">Notes</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" value="{{$header->NOTES}}" placeholder="Masukkan Notes" >
+                                </div>
+        
                             </div>
 							
 							
@@ -166,10 +166,6 @@
 										
 										<td>
 										    <input name="BAYAR[]" onclick="select()" onblur="hitung()" value="{{$detail->BAYAR}}" id="BAYAR{{$no}}" type="text" style="text-align: right"  class="form-control BAYAR">
-										</td>                        
-										
-										<td>
-										    <input name="LAIN[]" onclick="select()" onblur="hitung()" value="{{$detail->LAIN}}" id="LAIN{{$no}}" type="text" style="text-align: right"  class="form-control LAIN">
 										</td>
 										
 										<td>
@@ -194,7 +190,6 @@
                                     <td></td>
                                     <td></td>
                                     <td><input class="form-control TBAYAR  text-light font-weight-bold" style="text-align: right"  id="TBAYAR" name="TBAYAR" value="{{$header->BAYAR}}" readonly></td>
-                                    <td></td>
                                     <td></td>
                                 </tfoot>
                             </table>
@@ -378,7 +373,6 @@
 		for (i = 0; i <= jumlahdata; i++) {
 			$("#TOTAL" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
 			$("#BAYAR" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-			$("#LAIN" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
 			$("#SISA" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
 		}	
 
@@ -462,9 +456,6 @@
 //////////////////////////////////////////////////////////////
 
 		
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-		
  	var dTableBPo;
 		loadDataBPo = function(){
 			$.ajax(
@@ -483,7 +474,7 @@
 					for(i=0; i<resp.length; i++){
 						
 						dTableBPo.row.add([
-							'<a href="javascript:void(0);" onclick="choosePo(\''+resp[i].NO_PO+'\',  \''+resp[i].KODES+'\', \''+resp[i].NAMAS+'\' , \''+resp[i].TOTAL+'\' , \''+resp[i].BAYAR+'\' , \''+resp[i].SISA+'\'                )">'+resp[i].NO_PO+'</a>',
+							'<a href="javascript:void(0);" onclick="choosePo(\''+resp[i].NO_BUKTI+'\',  \''+resp[i].KODES+'\', \''+resp[i].NAMAS+'\' , \''+resp[i].TOTAL+'\' , \''+resp[i].BAYAR+'\' , \''+resp[i].SISA+'\'                )">'+resp[i].NO_BUKTI+'</a>',
 							resp[i].KODES,
 							resp[i].NAMAS,
 							Intl.NumberFormat('en-US').format(resp[i].TOTAL),
@@ -512,14 +503,11 @@
 			$("#browsePoModal").modal("show");
 		}
 		
-		choosePo = function(NO_PO,KODES,NAMAS, TOTAL, BAYAR, SISA ){
-			$("#NO_PO").val(NO_PO);
+		choosePo = function(NO_BUKTI,KODES,NAMAS, TOTAL, BAYAR, SISA ){
+			$("#NO_PO").val(NO_BUKTI);
 			$("#KODES").val(KODES);
 			$("#NAMAS").val(NAMAS);		
 			$("#browsePoModal").modal("hide");
-			
-			getBeli(NO_PO);
-			hitung();
 		}
 		
 		$("#NO_PO").keypress(function(e){
@@ -730,55 +718,6 @@
 
 			
 	}
-	
-	
-	function getBeli(NO_PO)
-	{
-
-		var mulai = (idrow==baris) ? idrow-1 : idrow;
-		
-		$.ajax(
-			{
-				type: 'GET',    
-				url: "{{url('po/browse')}}",
-				data: {
-					NO_PO: NO_PO,
-				},
-				success: function( resp )
-				{
-					var html = '';
-					for(i=0; i<resp.length; i++){
-						html+=`<tr>
-                                    <td><input name='REC[]' id='REC${i}' value=${resp[i].REC+1} type='text' class='REC form-control' onkeypress='return tabE(this,event)' readonly></td>
-                                    <td><input name='NO_FAKTUR[]' data-rowid=${i} id='NO_FAKTUR${i}' value="${resp[i].NO_FAKTUR}" type='text' class='form-control NO_FAKTUR'  readonly ></td>
-                                    <td><input name='TOTAL[]' onblur="hitung()" id='TOTAL${i}' value="0" type='text' style='text-align: right' class='form-control TOTAL text-primary' required></td>
-                                    <td><input name='BAYAR[]' onblur="hitung()" id='BAYAR${i}' value="0" type='text' style='text-align: right' class='form-control BAYAR text-primary' required></td>
-                                    <td><input name='LAIN[]' onblur="hitung()" id='LAIN${i}' value="0" type='text' style='text-align: right' class='form-control LAIN text-primary' required></td>
-                                    <td><input name='SISA[]' onblur="hitung()" id='SISA${i}' value="0" type='text' style='text-align: right' class='form-control SISA text-primary' required></td>							
-                                    <td><button type='button' class='btn btn-sm btn-circle btn-outline-danger btn-delete' onclick=''> <i class='fa fa-fw fa-trash'></i> </button></td>
-                                </tr>`;
-					}
-					$('#detailPegawai').html(html);
-					$(".TOTAL").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".TOTAL").autoNumeric('update');
-					
-					$(".BAYAR").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".BAYAR").autoNumeric('update');
-					
-					$(".LAIN").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".LAIN").autoNumeric('update');
-					
-					$(".SISA").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".SISA").autoNumeric('update');
-					idrow=resp.length;
-					baris=resp.length;
-					
-					nomor();
-				}
-			});
-	}
-	
-	
 		
     function nomor() {
 		var i = 1;
@@ -796,14 +735,12 @@
 			let z = $(this).closest('tr');
 			var TOTALX = parseFloat(z.find('.TOTAL').val().replace(/,/g, ''));
 			var BAYARX = parseFloat(z.find('.BAYAR').val().replace(/,/g, ''));
-			var LAINX = parseFloat(z.find('.LAIN').val().replace(/,/g, ''));
 		
-            var SISAX  = TOTALX - BAYARX - LAINX;
+            var SISAX  = TOTALX - BAYARX;
 			z.find('.SISA').val(SISAX);
 
 		    z.find('.TOTAL').autoNumeric('update');			
 		    z.find('.BAYAR').autoNumeric('update');			
-		    z.find('.LAIN').autoNumeric('update');			
 		    z.find('.SISA').autoNumeric('update');
 		
             TBAYAR +=BAYARX;				

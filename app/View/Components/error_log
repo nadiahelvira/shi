@@ -1,0 +1,469 @@
+[04-Apr-2024 23:34:54 UTC] PHP Fatal error:  Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[12-Apr-2024 14:31:14 UTC] PHP Fatal error:  Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[12-Apr-2024 14:31:16 UTC] PHP Fatal error:  Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[13-Apr-2024 08:34:59 UTC] PHP Fatal error:  Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[13-Apr-2024 08:35:01 UTC] PHP Fatal error:  Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[25-Apr-2024 06:23:48 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[25-Apr-2024 09:17:29 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Apr-2024 13:42:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Apr-2024 13:42:47 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[11-May-2024 15:39:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[11-May-2024 15:39:07 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[11-May-2024 15:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[11-May-2024 15:39:34 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[13-May-2024 14:22:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[13-May-2024 14:41:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[31-May-2024 14:06:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[31-May-2024 14:08:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[31-May-2024 14:09:38 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[31-May-2024 14:09:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[31-May-2024 14:09:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[31-May-2024 21:25:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[04-Jun-2024 20:35:27 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[04-Jun-2024 21:27:56 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[12-Jun-2024 10:14:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[12-Jun-2024 10:14:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[12-Jun-2024 10:15:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[12-Jun-2024 10:15:46 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 07:58:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Jun-2024 07:58:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 07:58:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Jun-2024 07:59:09 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 08:00:49 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Jun-2024 08:02:19 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 08:02:28 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 08:02:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Jun-2024 08:02:55 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Jun-2024 08:04:52 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Jun-2024 23:36:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[17-Jun-2024 19:06:40 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\View\Component" not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[27-Jun-2024 06:07:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[27-Jun-2024 10:12:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[27-Jun-2024 10:14:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[27-Jun-2024 10:14:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[27-Jun-2024 10:14:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[27-Jun-2024 10:15:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[27-Jun-2024 12:21:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:10:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:10:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:11:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:11:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:11:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 03:18:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 23:42:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 23:42:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 23:43:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Jun-2024 23:49:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 00:49:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 00:49:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 00:49:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 00:51:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 16:22:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 23:30:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 23:30:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 23:30:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 23:33:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jun-2024 23:35:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[30-Jun-2024 10:37:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[30-Jun-2024 10:46:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[02-Jul-2024 08:51:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[02-Jul-2024 14:50:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[03-Jul-2024 14:42:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:05:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[03-Jul-2024 23:05:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:06:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[03-Jul-2024 23:06:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:06:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:06:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[03-Jul-2024 23:06:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:06:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[03-Jul-2024 23:06:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[03-Jul-2024 23:06:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[07-Jul-2024 23:21:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[09-Jul-2024 00:57:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[10-Jul-2024 11:23:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[10-Jul-2024 11:23:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[15-Jul-2024 15:15:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[15-Jul-2024 21:26:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[15-Jul-2024 21:26:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[15-Jul-2024 21:26:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[15-Jul-2024 21:26:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[15-Jul-2024 21:26:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[29-Jul-2024 15:30:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[29-Jul-2024 15:30:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[04-Aug-2024 05:29:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[07-Aug-2024 12:04:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[07-Aug-2024 12:41:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[10-Aug-2024 03:00:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[10-Aug-2024 04:40:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[05-Sep-2024 04:40:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[05-Sep-2024 04:41:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Sep-2024 08:10:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Sep-2024 11:11:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Sep-2024 11:29:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Sep-2024 14:33:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[16-Sep-2024 14:53:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[16-Sep-2024 23:42:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[17-Sep-2024 11:35:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[18-Sep-2024 03:23:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[18-Sep-2024 23:27:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[02-Oct-2024 17:52:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[20-Oct-2024 01:26:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[20-Oct-2024 03:56:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[24-Oct-2024 08:23:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[24-Oct-2024 10:52:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[25-Oct-2024 00:30:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[25-Oct-2024 00:48:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7
+[25-Oct-2024 02:37:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[25-Oct-2024 07:22:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[25-Oct-2024 15:02:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/GuestLayout.php on line 7
+[28-Oct-2024 12:23:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\View\Component' not found in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/View/Components/AppLayout.php on line 7

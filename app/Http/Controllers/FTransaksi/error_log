@@ -1,0 +1,28 @@
+[19-Oct-2024 07:37:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/MemoController.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/MemoController.php on line 18
+[20-Oct-2024 03:59:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/BankController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/BankController.php on line 16
+[24-Oct-2024 15:42:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php on line 17
+[26-Oct-2024 01:49:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php on line 17
+[28-Oct-2024 00:47:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/MemoController.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/MemoController.php on line 18
+[30-Oct-2024 05:52:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/BankController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/BankController.php on line 16
+[30-Oct-2024 13:41:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function App\Http\Controllers\FTransaksi\base_path() in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Http/Controllers/FTransaksi/KasController.php on line 17

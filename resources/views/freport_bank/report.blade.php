@@ -93,8 +93,9 @@
 						
                     <!-- PASTE DIBAWAH INI -->
                     <!-- DISINI BATAS AWAL KOOLREPORT-->
-                    <div class="report-content" col-md-12>
+                    <div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
+                        
                         use \koolreport\datagrid\DataTables;
 
                         if($hasil)
@@ -133,7 +134,7 @@
                                     "DEBET" => array(
                                         "label" => "Debet",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -142,7 +143,7 @@
                                     "KREDIT" => array(
                                         "label" => "Kredit",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",
@@ -151,7 +152,7 @@
                                     "SALDO" => array(
                                         "label" => "Saldo",
                                         "type" => "number",
-                                        "decimals" => 0,
+                                        "decimals" => 2,
                                         "decimalPoint" => ".",
                                         "thousandSeparator" => ",",
                                         "footer" => "sum",

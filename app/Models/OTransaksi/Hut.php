@@ -21,6 +21,6 @@ class Hut extends Model
     [
         "NO_BUKTI", "POSTED", "TGL", "BAYAR", "NO_PO", "NOTES", "PER","KODES", "NAMAS", "BACNO", "BNAMA","GOL", "FLAG", "NO_BANK",
 		"USRNM", "TG_SMP", "CETAK", "TGL_CETAK", "created_by", "updated_by",
-		"deleted_by", "TOTAL", "LAIN"
+		"deleted_by"
     ];
 }

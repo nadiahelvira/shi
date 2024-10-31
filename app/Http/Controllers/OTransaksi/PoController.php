@@ -27,11 +27,11 @@ class PoController extends Controller
 	
     function setFlag(Request $request)
     {
-        if ( $request->golz == 'A1' ) {
+        if ( $request->golz == 'Y' ) {
             $this->judul = "Purchase Order Barang";
         } 
 
-        if ( $request->golz == 'A2' ) {
+        if ( $request->golz == 'Z' ) {
             $this->judul = "Purchase Order Non";
         } 
 		
@@ -56,100 +56,25 @@ class PoController extends Controller
     // ganti 4
     public function browse(Request $request)
     {
-        // $po = DB::table('po')->select('NO_PO', 'TGL', 'KODES', 'NAMAS', 'ALAMAT', 'KOTA', 'KD_BRG', 'NA_BRG', 'HARGA', 'KG', 'KIRIM', 'SISA', 'TOTAL')
-        // ->where('SLS', 0)->where('GOL', A2 )->orderBy('KODES', 'ASC');
+        //$po = DB::table('po')->select('NO_BUKTI', 'TGL', 'KODES', 'NAMAS', 'ALAMAT', 'KOTA', 'KD_BRG', 'NA_BRG', 'HARGA', 'KG', 'KIRIM', 'SISA', 'TOTAL')->where('SLS', 0)
+		//					 ->where('GOL', $request->GOL )->orderBy('KODES', 'ASC');
+							 
+		$po = DB::SELECT("SELECT NO_BUKTI,TGL, KODES, NAMAS, ALAMAT, KOTA, KD_BRG, NA_BRG, KG, HARGA, KIRIM, SISA, TOTAL, KONTRAK from po
+							WHERE  SLS=0 and GOL='$request->GOL' and DATEDIFF(NOW(),po.TGL) < 730 ORDER BY KODES; ");
 		
-        // if (!empty($request->KODES)) {
-		// 	$po = $po->where( 'KODES', $request->KODES );
-        // }
+        if (!empty($request->KODES)) {
+			$po = $po->where( 'KODES', $request->KODES );
+        }
 		
-        // return response()->json($po->get());
-
-        //////////////////////////////////////////////////////////
-
-        $this->setFlag($request);
-        $FLAGZ = $this->FLAGZ;
-
-		$no_poz = $request->NO_PO;
-
-		$filter_no_po='';
-		
-         if (!empty($request->NO_PO)) {
-			
-			$filter_no_po = " and NO_PO='".$request->NO_PO."' ";
-		} 
-		
-			$po = DB::SELECT("SELECT NO_PO, TGL, KODES, NAMAS, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from po
-                        WHERE YEAR (TGL) >= 2023  AND  GOL='A2' AND SLS='0' $filter_no_po
-                        ORDER BY KODES ASC ");
-						
-		if	( empty($po) ) {
-			
-			$po = DB::SELECT("SELECT NO_PO, TGL, KODES, NAMAS, ALAMAT, KOTA, KD_BRG, NA_BRG, HARGA, KG, KIRIM, SISA from po
-                        WHERE YEAR (TGL) >= 2023  AND  GOL='A2' AND SLS='0'
-                        ORDER BY KODES ASC ");			
-		}
-
-		
-        return response()->json($po);
+        //return response()->json($po->get());
+		return response()->json($po);
     }
 
 
     public function browseuang(Request $request)
     {
-		// $po = DB::SELECT("SELECT NO_PO,TGL,  KODES, NAMAS, PERB AS TOTAL, PERBB AS BAYAR, (PERB-PERBB) AS SISA  from po
-		// WHERE ( PERB-PERBB ) <> 0 AND  GOL='A2' ORDER BY NO_PO; ");
-
-        // return response()->json($po);
-
-
-
-        $this->setFlag($request);
-        $FLAGZ = $this->FLAGZ;
-
-		$no_poz = $request->NO_PO;
-
-		$filter_no_po='';
-		
-         if (!empty($request->NO_PO)) {
-			
-			$filter_no_po = " and NO_PO='".$request->NO_PO."' ";
-		} 
-		
-			$po = DB::SELECT("SELECT NO_PO,TGL,  KODES, NAMAS, NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA  from po
-                        WHERE LNS <> 1 AND  GOL='A2' $filter_no_po
-                        ORDER BY NO_PO ASC ");
-						
-		if	( empty($po) ) {
-			
-			$po = DB::SELECT("SELECT NO_PO,TGL,  KODES, NAMAS, NA_BRG, HARGA, KG, KIRIM, SISA AS XSISA from po
-                        WHERE LNS <> 1 AND  GOL='A2'
-                        ORDER BY NO_PO ASC ");			
-		}
-
-		
-        return response()->json($po);
-    }
-
-
-
-    public function browseisi(Request $request)
-    {
-		// $po = DB::SELECT("SELECT NO_PO AS NO_PO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, 0 AS BAYAR FROM beli WHERE NO_PO ='$request->NO_PO' UNION ALL
-		// 				  SELECT NO_PO AS NO_PO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, BAYAR AS BAYAR FROM HUT  WHERE NO_PO ='$request->NO_PO' ORDER BY NO_FAKTUR  ");
-
-        // return response()->json($po);
-        
-
-        $po = DB::SELECT("SELECT NO_PO AS NO_PO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, 0 AS BAYAR 
-                        FROM beli 
-                        WHERE NO_PO ='$request->NO_PO' 
-                        
-                        UNION ALL
-						
-                        SELECT NO_PO AS NO_PO, NO_BUKTI AS NO_FAKTUR, TGL AS TGL_FAKTUR, TOTAL, BAYAR AS BAYAR 
-                        FROM hut  
-                        WHERE NO_PO ='$request->NO_PO' ORDER BY TGL_FAKTUR  ");
+		$po = DB::SELECT("SELECT NO_BUKTI,TGL,  KODES, NAMAS, PERB AS TOTAL, PERBB AS BAYAR, (PERB-PERBB) AS SISA  from po
+		WHERE LNS <> 1 AND  GOL='$request->GOL' ORDER BY NO_BUKTI; ");
 
         return response()->json($po);
     }
@@ -169,7 +94,7 @@ class PoController extends Controller
         $GOLZ = $this->GOLZ;
         $judul = $this->judul;
 				
-        $po = DB::SELECT("SELECT * from po  where  PER ='$periode' and GOL ='$this->GOLZ'   ORDER BY NO_PO ");
+        $po = DB::SELECT("SELECT * from po  where  PER ='$periode' and GOL ='$this->GOLZ'   ORDER BY NO_BUKTI ");
 	
 
         // ganti 6
@@ -180,10 +105,10 @@ class PoController extends Controller
                 if (Auth::user()->divisi=="programmer" || Auth::user()->divisi=="owner" || Auth::user()->divisi=="assistant" || Auth::user()->divisi=="pembelian") 
                 {
 					
-                    $btnEdit =   ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_PO . ' sudah diposting!\')" href="#" ' : ' href="po/edit/?idx
+                    $btnEdit =   ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_BUKTI . ' sudah diposting!\')" href="#" ' : ' href="po/edit/?idx
 					=' . $row->NO_ID . '&tipx=edit&golz=' . $row->GOL . '&judul=' . $this->judul . '"';
 					
-                    $btnDelete = ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_PO . ' sudah diposting!\')" href="#" ' : ' onclick="return confirm(&quot; Apakah anda yakin ingin hapus? &quot;)" href="po/delete/' . $row->NO_ID . '/?golz=' . $row->GOL . '" ';
+                    $btnDelete = ($row->POSTED == 1) ? ' onclick= "alert(\'Transaksi ' . $row->NO_BUKTI . ' sudah diposting!\')" href="#" ' : ' onclick="return confirm(&quot; Apakah anda yakin ingin hapus? &quot;)" href="po/delete/' . $row->NO_ID . '/?golz=' . $row->GOL . '" ';
 
                     $btnPrivilege =
                         '
@@ -270,30 +195,29 @@ class PoController extends Controller
         $tahun    = substr(session()->get('periode')['tahun'], -2);
 
 		
-		if ( $GOLZ == 'A1' ) {
+		if ( $GOLZ == 'Y' ) {
 	
-			$query = DB::table('po')->select(DB::raw("TRIM(NO_PO) AS NO_PO"))->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
+			$query = DB::table('po')->select('NO_BUKTI')->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
 			
 			if ($query != '[]') {
-				$query = substr($query[0]->NO_PO, -4);
+				$query = substr($query[0]->NO_BUKTI, -4);
 				$query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
 				$no_bukti = 'PY' . $tahun . $bulan . '-' . $query;
 			} else {
 				$no_bukti= 'PY' . $tahun . $bulan . '-0001';
 			}
 
-		} else if ( $GOLZ == 'A2' ) {
+		} else if ( $GOLZ == 'Z' ) {
 
-			$query = DB::table('po')->select(DB::raw("TRIM(NO_PO) AS NO_PO"))->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_PO')->limit(1)->get();
+			$query = DB::table('po')->select('NO_BUKTI')->where('PER', $periode)->where('GOL', $GOLZ)->orderByDesc('NO_BUKTI')->limit(1)->get();
 
 			if ($query != '[]') {
-				$query = substr($query[0]->NO_PO, -4);
+				$query = substr($query[0]->NO_BUKTI, -4);
 				$query = str_pad($query + 1, 4, 0, STR_PAD_LEFT);
-				$no_bukti = 'PA2' . $tahun . $bulan . '-' . $query;
+				$no_bukti = 'PZ' . $tahun . $bulan . '-' . $query;
 			} else {
-				$no_bukti= 'PA2' . $tahun . $bulan . '-0001';
+				$no_bukti= 'PZ' . $tahun . $bulan . '-0001';
 			}
-			//dd($no_bukti);       
 
 		}
 		
@@ -303,9 +227,8 @@ class PoController extends Controller
 
         $po = Po::create(
             [
-                'NO_PO'         	=> $no_bukti,
+                'NO_BUKTI'         => $no_bukti,
                 'TGL'              => date('Y-m-d', strtotime($request['TGL'])),
-                'JTEMPO'              => date('Y-m-d', strtotime($request['JTEMPO'])),
                 'PER'              => $periode,
                 'KODES'            => ($request['KODES'] == null) ? "" : $request['KODES'],
                 'NAMAS'            => ($request['NAMAS'] == null) ? "" : $request['NAMAS'],
@@ -313,25 +236,13 @@ class PoController extends Controller
                 'KOTA'             => ($request['KOTA'] == null) ? "" : $request['KOTA'],
                 'GOL'               => $GOLZ,
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
+                'KONTRAK'            => ($request['KONTRAK'] == null) ? "" : $request['KONTRAK'],
                 'KD_BRG'           => ($request['KD_BRG'] == null) ? "" : $request['KD_BRG'],
                 'NA_BRG'           => ($request['NA_BRG'] == null) ? "" : $request['NA_BRG'],
                 'KG'               => (float) str_replace(',', '', $request['KG']),
-                'SISA'             => (float) str_replace(',', '', $request['SISA']),
+                'SISA'             => (float) str_replace(',', '', $request['KG']),
                 'HARGA'            => (float) str_replace(',', '', $request['HARGA']),
                 'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-				
-                'RPHARGA'            => (float) str_replace(',', '', $request['HARGA']),
-                'RPTOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-				
-				'KODEC'            => ($request['KODEC'] == null) ? "" : $request['KODES'],
-                'NAMAC'            => ($request['NAMAC'] == null) ? "" : $request['NAMAS'],
-                'ALAMAT2'           => ($request['ALAMAT2'] == null) ? "" : $request['ALAMAT2'],
-                'KOTA2'             => ($request['KOTA2'] == null) ? "" : $request['KOTA2'],
-                'NO_SO'           => ($request['NO_SO'] == null) ? "" : $request['NO_SO'],
-                'TGL_SO'           => date('Y-m-d', strtotime($request['TGL_SO'])),
-                'KD_BRG2'           => ($request['KD_BRG2'] == null) ? "" : $request['KD_BRG2'],
-                'NA_BRG2'           => ($request['NA_BRG2'] == null) ? "" : $request['NA_BRG2'],
-				
                 'USRNM'            => Auth::user()->username,
                 'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
@@ -341,13 +252,11 @@ class PoController extends Controller
         //  ganti 11
 
 	    $no_buktix = $no_bukti;
-
-        DB::SELECT("UPDATE po SET  SISA = KG - KIRIM  WHERE  po.NO_PO='$no_buktix';");
 		
-		$po = Po::where('NO_PO', $no_buktix )->first();
+		$po = Po::where('NO_BUKTI', $no_buktix )->first();
 					 
-		// return redirect('/po?golz='.$GOLZ)->with(['judul' => $judul, 'golz' => $GOLZ ]);
-        return redirect('/po/edit/?idx=' . $po->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&judul=' . $this->judul . '');
+		return redirect('/po?golz='.$GOLZ)
+	   ->with(['judul' => $judul, 'golz' => $GOLZ ]);
 
     }
 
@@ -395,10 +304,10 @@ class PoController extends Controller
 		   	
     	   $buktix = $request->buktix;
 		   
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_PO from po
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from po
 		                 where PER ='$per' and  
-						 and GOL ='$this->GOLZ' and NO_PO = '$buktix'						 
-		                 ORDER BY NO_PO ASC  LIMIT 1" );
+						 and GOL ='$this->GOLZ' and NO_BUKTI = '$buktix'						 
+		                 ORDER BY NO_BUKTI ASC  LIMIT 1" );
 						 
 			
 			if(!empty($bingco)) 
@@ -416,9 +325,9 @@ class PoController extends Controller
 		if ($tipx=='top') {
 			
 
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_PO from po
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from po
 		                 where PER ='$per' and GOL ='$this->GOLZ' 
-		                 ORDER BY NO_PO ASC  LIMIT 1" );
+		                 ORDER BY NO_BUKTI ASC  LIMIT 1" );
 						 
 		
 			if(!empty($bingco)) 
@@ -438,9 +347,9 @@ class PoController extends Controller
 			
     	   $buktix = $request->buktix;
 			
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_PO from po     
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from po     
 		             where PER ='$per' and GOL ='$this->GOLZ' 
-					 and NO_PO < '$buktix' ORDER BY NO_PO DESC LIMIT 1" );
+					 and NO_BUKTI < '$buktix' ORDER BY NO_BUKTI DESC LIMIT 1" );
 			
 
 			if(!empty($bingco)) 
@@ -460,9 +369,9 @@ class PoController extends Controller
 				
       	   $buktix = $request->buktix;
 	   
-		   $bingco = DB::SELECT("SELECT NO_ID, NO_PO from po    
+		   $bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from po    
 		             where PER ='$per' and GOL ='$this->GOLZ' 
-					 and NO_PO > '$buktix' ORDER BY NO_PO ASC LIMIT 1" );
+					 and NO_BUKTI > '$buktix' ORDER BY NO_BUKTI ASC LIMIT 1" );
 					 
 			if(!empty($bingco)) 
 			{
@@ -478,9 +387,9 @@ class PoController extends Controller
 
 		if ($tipx=='bottom') {
 		  
-    		$bingco = DB::SELECT("SELECT NO_ID, NO_PO from po
+    		$bingco = DB::SELECT("SELECT NO_ID, NO_BUKTI from po
 						where PER ='$per' and GOL ='$this->GOLZ'     
-		              ORDER BY NO_PO DESC  LIMIT 1" );
+		              ORDER BY NO_BUKTI DESC  LIMIT 1" );
 					 
 			if(!empty($bingco)) 
 			{
@@ -516,7 +425,7 @@ class PoController extends Controller
 				
 		 }
 
-        $no_bukti = $po->NO_PO;
+        $no_bukti = $po->NO_BUKTI;
 				
 		$data = [
             'header'        => $po,
@@ -524,8 +433,8 @@ class PoController extends Controller
         ];
  
          
-        return view('otransaksi_po.edit', $data)
-        ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'judul'=> $this->judul ]);
+         return view('otransaksi_po.edit', $data)
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'golz' =>$this->GOLZ, 'judul' => $this->judul ]);
 			 
     
       
@@ -568,31 +477,18 @@ class PoController extends Controller
         $po->update(
             [
                 'TGL'              => date('Y-m-d', strtotime($request['TGL'])),
-                'JTEMPO'           => date('Y-m-d', strtotime($request['JTEMPO'])),
                 'KODES'            => ($request['KODES'] == null) ? "" : $request['KODES'],
                 'NAMAS'               => ($request['NAMAS'] == null) ? "" : $request['NAMAS'],
                 'ALAMAT'            => ($request['ALAMAT'] == null) ? "" : $request['ALAMAT'],
                 'KOTA'               => ($request['KOTA'] == null) ? "" : $request['KOTA'],
                 'KD_BRG'           => ($request['KD_BRG'] == null) ? "" : $request['KD_BRG'],
                 'NA_BRG'           => ($request['NA_BRG'] == null) ? "" : $request['NA_BRG'],
+                'KONTRAK'            => ($request['KONTRAK'] == null) ? "" : $request['KONTRAK'],
                 'NOTES'            => ($request['NOTES'] == null) ? "" : $request['NOTES'],
                 'KG'               => (float) str_replace(',', '', $request['KG']),
-                'SISA'             => (float) str_replace(',', '', $request['SISA']),
+                'SISA'             => (float) str_replace(',', '', $request['KG']),
                 'HARGA'            => (float) str_replace(',', '', $request['HARGA']),
                 'TOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-				
-                'RPHARGA'            => (float) str_replace(',', '', $request['HARGA']),
-                'RPTOTAL'            => (float) str_replace(',', '', $request['TOTAL']),
-				
-				'KODEC'            => ($request['KODEC'] == null) ? "" : $request['KODEC'],
-                'NAMAC'            => ($request['NAMAC'] == null) ? "" : $request['NAMAC'],
-                'ALAMAT2'            => ($request['ALAMAT2'] == null) ? "" : $request['ALAMAT2'],
-                'KOTA2'               => ($request['KOTA2'] == null) ? "" : $request['KOTA2'],
-                'NO_SO'           => ($request['NO_SO'] == null) ? "" : $request['NO_SO'],
-                'TGL_SO'           => ($request['TGL_SO'] == null) ? "" : $request['TGL_SO'],
-                'KD_BRG2'           => ($request['KD_BRG2'] == null) ? "" : $request['KD_BRG2'],
-                'NA_BRG2'           => ($request['NA_BRG2'] == null) ? "" : $request['NA_BRG2'],
-				
                 'USRNM'            => Auth::user()->username,
                 'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
@@ -604,15 +500,14 @@ class PoController extends Controller
 
         //  ganti 21
 		
-		$no_buktix = $po->NO_PO;
+		$no_buktix = $po->NO_BUKTI;
 		
 		
-		$po = Po::where('NO_PO', $no_buktix )->first();
+		$po = Po::where('NO_BUKTI', $no_buktix )->first();
 					 
-		// return redirect('/po?golz='.$GOLZ)
-		//        ->with(['judul' => $judul, 'golz' => $GOLZ ]);
+		return redirect('/po?golz='.$GOLZ)
+		       ->with(['judul' => $judul, 'golz' => $GOLZ ]);
 
-        return redirect('/po/edit/?idx=' . $po->NO_ID . '&tipx=edit&golz=' . $this->GOLZ . '&judul=' . $this->judul . '');
 		
 		
     }
@@ -656,7 +551,7 @@ class PoController extends Controller
 
 		return redirect('/po?golz='.$GOLZ)
 		       ->with(['judul' => $judul, 'golz' => $GOLZ, 'flagz' => $FLAGZ ])
-			   ->with('statusHapus', 'Data '.$po->NO_PO.' berhasil dihapus');
+			   ->with('statusHapus', 'Data '.$po->NO_BUKTI.' berhasil dihapus');
 
     }
 
@@ -666,20 +561,20 @@ class PoController extends Controller
 
     public function jspoc(Po $po)
     {
-        $no_po = $po->NO_PO;
+        $no_po = $po->NO_BUKTI;
 
         $file     = 'poc';
         $PHPJasperXML = new PHPJasperXML();
         $PHPJasperXML->load_xml_file(base_path() . ('/app/reportc01/phpjasperxml/' . $file . '.jrxml'));
 
         $query = DB::SELECT("
-			SELECT NO_PO,  TGL, KODES, NAMAS, KD_BRG, NA_BRG, KG, HARGA, TOTAL, NOTES
+			SELECT NO_BUKTI,  TGL, KODES, NAMAS, KD_BRG, NA_BRG, KG, HARGA, TOTAL, NOTES
 			FROM po 
-			WHERE po.NO_PO='$no_po' 
-			ORDER BY NO_PO;
+			WHERE po.NO_BUKTI='$no_po' 
+			ORDER BY NO_BUKTI;
 		");
 
-        $xno_po1   = $query[0]->NO_PO;
+        $xno_po1   = $query[0]->NO_BUKTI;
         $xtgl1     = $query[0]->TGL;
         $xkodes1   = $query[0]->KODES;
         $xnamas1   = $query[0]->NAMAS;
@@ -695,14 +590,14 @@ class PoController extends Controller
 
 
         $query2 = DB::SELECT("
-			SELECT NO_BUKTI, NO_PO, TGL, KODES, NAMAS, if(ALAMAT='','NOT-FOUND.png',ALAMAT) as ALAMAT, IF ( FLAG='BL' , 'A','B' ) AS FLAG, AJU, BL, EMKL, TRUCK, KD_BRG, NA_BRG, KG, RPHARGA AS HARGA, RPTOTAL AS TOTAL, 0 AS BAYAR,  NOTES
+			SELECT NO_BUKTI, TGL, KODES, NAMAS, if(ALAMAT='','NOT-FOUND.png',ALAMAT) as ALAMAT, NO_PO,  IF ( FLAG='BL' , 'A','B' ) AS FLAG, AJU, BL, EMKL, KD_BRG, NA_BRG, KG, RPHARGA AS HARGA, RPTOTAL AS TOTAL, 0 AS BAYAR,  NOTES
 			FROM beli 
 			WHERE beli.NO_PO='$no_po'  UNION ALL 
-			SELECT NO_BUKTI, NO_PO, TGL, KODES, NAMAS, if(ALAMAT='','NOT-FOUND.png',ALAMAT) as ALAMAT, 'C' AS FLAG, '' AS AJU, '' AS BL, '' AS EMKL, '' AS TRUCK, '' AS KD_BRG, '' AS NA_BRG, 0 AS KG, 
-			0 AS HARGA, TOTAL AS TOTAL, BAYAR, NOTES
+			SELECT NO_BUKTI, TGL, KODES, NAMAS, if(ALAMAT='','NOT-FOUND.png',ALAMAT) as ALAMAT,  NO_PO,  'C' AS FLAG, '' AS AJU, '' AS BL, '' AS EMKL,  '' AS KD_BRG, '' AS NA_BRG, 0 AS KG, 
+			0 AS HARGA, 0 AS TOTAL, BAYAR, NOTES
 			FROM hut 
 			WHERE hut.NO_PO='$no_po' 
-			ORDER BY TGL, NO_BUKTI;
+			ORDER BY TGL, FLAG, NO_BUKTI;
 		");
 
         $data = [];
@@ -717,7 +612,6 @@ class PoController extends Controller
                 'AJU'    => $query2[$key]->AJU,
                 'BL'       => $query2[$key]->BL,
                 'EMKL'    => $query2[$key]->EMKL,
-                'TRUCK'    => $query2[$key]->TRUCK,
                 'KG'       => $query2[$key]->KG,
                 'HARGA'    => $query2[$key]->HARGA,
                 'TOTAL'    => $query2[$key]->TOTAL,

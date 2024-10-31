@@ -19,6 +19,7 @@ class Cust extends Model
 // ganti 3
     protected $fillable = 
     [
-        "KODEC", "NAMAC", "ALAMAT", "KOTA", 'GOL', "TELPON1", "FAX", "HP", "KONTAK", "NPWP", "EMAIL", "KET", "BANK", "BANK_CAB", "BANK_KOTA", "BANK_NAMA", "BANK_REK", "LIM", "HARI", "USRNM", "TG_SMP"
+        "KODEC", "NAMAC", "ALAMAT", "KOTA", 'GOL', "TELPON1", "FAX", "HP", "KONTAK", "NPWP", 
+		"EMAIL", "KET", "BANK", "BANK_CAB", "BANK_KOTA", "BANK_NAMA", "BANK_REK", "LIM", "HARI", "USRNM", "TG_SMP", "NAMAC_LM"
     ];
 }

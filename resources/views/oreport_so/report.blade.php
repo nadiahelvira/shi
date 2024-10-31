@@ -66,7 +66,7 @@
 					<button class="btn btn-warning" type="submit" id="cetak" class="cetak" formtarget="_blank">Cetak</button>
 					</form>
 					<div style="margin-bottom: 15px;"></div>
-                    <div class="report-content" col-md-12>
+                    <div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
                         <?php
                         use \koolreport\datagrid\DataTables;
 
@@ -81,7 +81,7 @@
                                 "showFooter" => true,
                                 "showFooter" => "bottom",
                                 "columns" => array(
-                                    "NO_SO" => array(
+                                    "NO_BUKTI" => array(
                                         "label" => "SO#",
                                     ),
                                     "TGL" => array(

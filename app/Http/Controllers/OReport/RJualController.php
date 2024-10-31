@@ -29,6 +29,7 @@ class RJualController extends Controller
 		session()->put('filter_tglSampai', date("d-m-Y"));
 		session()->put('filter_brg1', '');
 		session()->put('filter_nabrg1', '');
+		session()->put('filter_kdgd1', '');
 	
         return view('oreport_jual.report')->with(['kodec' => $kodec])->with(['hasil' => []]);
     }
@@ -60,6 +61,11 @@ class RJualController extends Controller
 				$filterbrg = " and KD_BRG='".$request->brg1."' ";
 			}
 
+			if (!empty($request->kdgd1))
+			{
+				$filtergudang = " and GUDANG='".$request->kdgd1."' ";
+			}
+
 
 			session()->put('filter_gol', $request->gol);
 			session()->put('filter_kodec1', $request->kodec);
@@ -68,10 +74,12 @@ class RJualController extends Controller
 			session()->put('filter_tglSampai', $request->tglSmp);
 			session()->put('filter_brg1', $request->brg1);
 			session()->put('filter_nabrg1', $request->nabrg1);
+			session()->put('filter_kdgd1', $request->kdgd1);
 			session()->put('filter_no_so1', $request->no_so1);
 			
 		$query = DB::SELECT("
-			SELECT NO_BUKTI,TGL,NO_SO,TRUCK, KODEC,NAMAC,KD_BRG,NA_BRG,KG, QTY, HARGA,TOTAL, DPP, PPN, GDG, NOTES from jual WHERE FLAG='JL' $filtertgl  $filterkodec  $filterbrg ;
+			SELECT NO_BUKTI,TGL,NO_SO,TRUCK, KODEC,NAMAC,KD_BRG,NA_BRG,KG, QTY, HARGA,TOTAL, 
+			DPP, PPN, GUDANG, NOTES from jual WHERE FLAG='JL' $filtertgl  $filterkodec  $filterbrg $filtergudang;
 		");
       
 		if($request->has('filter'))
@@ -95,10 +103,11 @@ class RJualController extends Controller
 				'KD_BRG' => $query[$key]->KD_BRG,
 				'NA_BRG' => $query[$key]->NA_BRG,
 				'NA_BRG' => $query[$key]->NA_BRG,
-				'GDG' => $query[$key]->GDG,
+				'GDG' => $query[$key]->GUDANG,
 				'DPP' => $query[$key]->DPP,
 				'PPN' => $query[$key]->PPN,
 				'TOTAL' => $query[$key]->TOTAL,
+				'HARGA' => $query[$key]->HARGA,
 				'NOTES' => $query[$key]->NOTES,
 
 			));

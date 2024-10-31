@@ -75,20 +75,33 @@
                             <th scope="col" style="text-align: center">Bukti#</th>
                             <th scope="col" style="text-align: center">Tgl</th>
                             <th scope="col" style="text-align: center">So#</th>
-                            <th scope="col" style="text-align: center">Truck</th>
-							     
+                            <th {{($flagz == 'JL') ? '' : 'hidden' }}  
+							     scope="col" style="text-align: center">Truck</th>
                             <th scope="col" style="text-align: center">Customer</th>
 
-                            <th scope="col" style="text-align: center">Barang</th>
-								
+                            <th {{($flagz == 'JL') ? '' : 'hidden' }} 
+								scope="col" style="text-align: center">Barang</th>
                          
-							<th scope="col" style="text-align: center">Kg</th>
-								
+							<th {{($flagz == 'JL') ? '' : 'hidden' }} 
+								scope="col" style="text-align: center">Kg</th>
+
+                            <th {{($flagz == 'JL') ? '' : 'hidden' }} 
+                                scope="col" style="text-align: center">Bag</th>
+
+							<th {{($flagz == 'JL') ? '' : 'hidden' }} 
+								scope="col" style="text-align: center">Harga</th>
                             
-							<th scope="col" style="text-align: center">Total</th>
-							<th scope="col" style="text-align: center">Gudang</th>							
-                            <th scope="col" style="text-align: center">Truck</th>
-									
+							<th scope="col" style="text-align: center">Total/th>
+
+							<th {{($flagz == 'JL') ? '' : 'hidden' }} 
+								scope="col" style="text-align: center">DPP</th>
+
+							<th {{($flagz == 'JL') ? '' : 'hidden' }} 
+							    scope="col" style="text-align: center">PPN</th>
+                            <th {{($flagz == 'JL') ? '' : 'hidden' }}  
+								scope="col" style="text-align: center">Gudang</th>							
+                            <th {{($flagz == 'JL') ? '' : 'hidden' }}  
+								scope="col" style="text-align: center">Truck</th>	
                             <th scope="col" style="text-align: center">Notes</th>
                             <th scope="col" style="text-align: center">User</th>
                         </tr>
@@ -136,8 +149,12 @@
                 {data: 'NAMAC', name: 'NAMAC'},
                 {data: 'NA_BRG', name: 'NA_BRG'},
                 {data: 'KG', name: 'KG', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
+                {data: 'QTY', name: 'QTY', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
+                {data: 'HARGA', name: 'HARGA', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
                 {data: 'TOTAL', name: 'TOTAL', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
-                {data: 'GDG', name: 'GUDANG'},				
+                {data: 'DPP', name: 'DPP', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
+                {data: 'PPN', name: 'PPN', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},
+                {data: 'GUDANG', name: 'GUDANG'},				
                 {data: 'TRUCK', name: 'TRUCK'},
                 {data: 'NOTES', name: 'NOTES'},
                 {data: 'USRNM', name: 'USRNM'},
@@ -151,7 +168,7 @@
                 },			
                 {
                     "className": "dt-right", 
-                    "targets": [9,10]
+                    "targets": [9,10,11,12]
                 },			
                 {
                   targets: 3,
@@ -166,9 +183,24 @@
         dom: "<'row'<'col-md-6'><'col-md-6'>>" +
             "<'row'<'col-md-2'l><'col-md-6 test_btn m-auto'><'col-md-4'f>>" +
             "<'row'<'col-md-12't>><'row'<'col-md-12'ip>>",
-			stateSave:true,
+			      stateSave:true,
 
      });
+
+
+        if ( '{{$flagz}}' == 'JL' ) {
+          
+          dataTable.columns([7,8,9,11,12,13,14]).visible(true);
+          
+        }
+        else
+        {
+          
+          dataTable.columns([7,8,9,11,12,13,14]).visible(false);
+          
+        }
+
+
 
        $("div.test_btn").html('<a class="btn btn-lg btn-md btn-success" href="{{url('jual/edit?flagz='.$flagz.'&golz='.$golz.'&idx=0&tipx=new')}}"> <i class="fas fa-plus fa-sm md-3" ></i></a>');
 

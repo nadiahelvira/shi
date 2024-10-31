@@ -87,21 +87,10 @@
                                     <label for="NO_PO" class="form-label">PO#</label>
                                 </div>
 
-								<div class="col-md-2 input-group" >
-									<input type="text" onclick="select()" onblur="browsePo(); ambil_beliy()" class="form-control NO_PO" id="NO_PO" name="NO_PO" placeholder="Masukkan PO"value="{{$header->NO_PO}}" style="text-align: left" >
+                                 <div class="col-md-2 input-group" >
+									<input type="text" class="form-control NO_PO" id="NO_PO" name="NO_PO" placeholder="Masukkan PO"value="{{$header->NO_PO}}" style="text-align: left" readonly >
 
-								</div>
-                            </div>
-
-							<div class="form-group row">
-                                <div class="col-md-1"align="right">
-									<label style="color:red">*</label>									
-                                    <label for="NOTES" class="form-label">Uraian</label>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" value="{{$header->NOTES}}" placeholder="Masukkan Notes" >
-                                </div>
-        
+                                 </div>
                             </div>
 
 							
@@ -112,7 +101,7 @@
                                 <div class="col-md-2">
                                     <input type="text" class="form-control KODES" id="KODES" name="KODES" placeholder="Masukkan Suplier#" value="{{$header->KODES}}"readonly>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <input type="text" class="form-control NAMAS" id="NAMAS" name="NAMAS" placeholder="-" value="{{$header->NAMAS}}" readonly>
                                 </div>
                             </div>
@@ -129,34 +118,17 @@
                                 </div>
                             </div>
 
-
 							<div class="form-group row">
-
-                                <div class="col-md-1" align="right">
-                                    <label for="TOTAL" class="form-label">Total</label>
+                                <div class="col-md-1"align="right">
+									<label style="color:red">*</label>									
+                                    <label for="NOTES" class="form-label">Notes</label>
                                 </div>
-                                <div class="col-md-2" align="left">
-                                    <input type="text" onclick="select()"  onblur ='ambil_belix()' class="form-control TOTAL" id="TOTAL" name="TOTAL" placeholder="TOTAL" value="{{ number_format($header->TOTAL, 2, '.', ',') }}" style="text-align: right; width:140px" required>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control NOTES" id="NOTES" name="NOTES" value="{{$header->NOTES}}" placeholder="Masukkan Notes" >
                                 </div>
-
-                                <div class="col-md-1" align="right">
-                                    <label for="BAYAR"  class="form-label">Bayar</label>
-                                </div>
-                                <div class="col-md-2" align="left">
-                                    <input type="text" onclick="select()"  onblur ='ambil_belix()' class="form-control BAYAR" id="BAYAR" name="BAYAR" placeholder="BAYAR" value="{{ number_format($header->BAYAR, 2, '.', ',') }}" style="text-align: right; width:140px" required>
-                                </div>
-
-                                <div class="col-md-1" align="right">
-                                    <label for="LAIN" class="form-label">Lain</label>
-                                </div>
-                                <div class="col-md-2" align="left">
-                                    <input type="text" onclick="select()"  onblur ='ambil_belix()' class="form-control LAIN" id="LAIN" name="LAIN" placeholder="LAIN" value="{{ number_format($header->LAIN, 2, '.', ',') }}" style="text-align: right; width:140px" required>
-                                </div>
-								
+        
                             </div>
-
-
-
+							
 							
                             <table id="datatable" class="table table-striped table-border">
                                 <thead>
@@ -164,55 +136,67 @@
 										<th width="100px" style="text-align:center">No.</th>
                                         <th width="200px" style="text-align:center">
 								        	<label style="color:red;font-size:20px">* </label>
-                                            <label for="BACNO" class="form-label">Bukti#</label>
+                                            <label for="BACNO" class="form-label">Faktur#</label>
 										</th>
-                                        <th width="200px" style="text-align:right">Tgl</th>
-                                        <th width="200px" style="text-align:right">Total</th>
+                                       <th width="200px" style="text-align:right">Total</th>
                                         <th width="200px" style="text-align:right">Bayar</th>
+                                        <th width="200px" style="text-align:right">Sisa</th>
                                         <th></th>										
                                     </tr>
                                 </thead>
         
-								<tbody id="detailBeli">
-								<?php $no=0 ?>	
+								<tbody>
+								<?php $no=0 ?>
+								@foreach ($detail as $detail)		
                                     <tr>
                                         <td>
-                                            <input name="REC[]" id="REC0" type="text" class="form-control REC" value="" readonly required>
+                                            <input type="hidden" name="NO_ID[]{{$no}}" id="NO_ID" type="text" value="{{$detail->NO_ID}}" 
+                                            class="form-control NO_ID" onkeypress="return tabE(this,event)" readonly>
+											
+                                            <input name="REC[]" id="REC{{$no}}" type="text" value="{{$detail->REC}}" class="form-control REC" onkeypress="return tabE(this,event)" readonly style="text-align:center">
                                         </td>
                                         <td>
-                                            <input name="NO_FAKTUR[]" id="NO_FAKTUR0" type="text" class="form-control NO_FAKTUR" value="" readonly required>
+                                            <input name="NO_FAKTUR[]" id="NO_FAKTUR{{$no}}" type="text" class="form-control NO_FAKTUR" value="{{$detail->NO_FAKTUR}}" readonly required>
                                         </td>
-                                        <td>
-                                            <input name="TGL_FAKTUR[]" id="TGL_FAKTUR0" type="text" class="form-control TGL_FAKTUR" value="" readonly required>
-                                        </td>
+
+
 										<td>
-										    <input name="XTOTAL[]" value="0" id="XTOTAL0" type="text" style="text-align: right"  class="form-control XTOTAL" readonly>
+										    <input name="TOTAL[]" onclick="select()" onblur="hitung()" value="{{$detail->TOTAL}}" id="TOTAL{{$no}}" type="text" style="text-align: right"  class="form-control TOTAL" readonly>
 										</td>                         
 										
 										<td>
-										    <input name="XBAYAR[]" value="0" id="XBAYAR0" type="text" style="text-align: right"  class="form-control XBAYAR" readonly>
-										</td>                        
+										    <input name="BAYAR[]" onclick="select()" onblur="hitung()" value="{{$detail->BAYAR}}" id="BAYAR{{$no}}" type="text" style="text-align: right"  class="form-control BAYAR">
+										</td>
 										
-                                       
+										<td>
+										    <input name="SISA[]" onclick="select()" onblur="hitung()" value="{{$detail->SISA}}" id="SISA{{$no}}" type="text" style="text-align: right"  class="form-control SISA" readonly>
+										</td>
+                                        
+										
+										<td>
+										
+                                            <button type="button" class="btn btn-sm btn-circle btn-outline-danger btn-delete" onclick="">
+                                                <i class="fa fa-fw fa-trash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
 								
+								<?php $no++; ?>
+								@endforeach
                                 </tbody>
 
 								<tfoot>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td><input class="form-control TSISA  text-black font-weight-bold" style="text-align: right"  id="TSISA" name="TSISA" value="0" readonly></td>
-                                    <td></td>
+                                    <td><input class="form-control TBAYAR  text-light font-weight-bold" style="text-align: right"  id="TBAYAR" name="TBAYAR" value="{{$header->BAYAR}}" readonly></td>
                                     <td></td>
                                 </tfoot>
                             </table>
 							
-							<!---------
                             <div class="col-md-2 row">
                                 <button type="button" onclick="tambah()" class="btn btn-sm btn-success"><i class="fas fa-plus fa-sm md-3"></i> </button>
                             </div>
-							---------->
 							
                         </div>
 
@@ -220,20 +204,20 @@
 						        
 						<div class="mt-3 col-md-12 form-group row">
 							<div class="col-md-4">
-								<button type="button" id='TOPX'  onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
-								<button type="button" id='PREVX' onclick="location.href='{{url('/hut/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
-								<button type="button" id='NEXTX' onclick="location.href='{{url('/hut/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
-								<button type="button" id='BOTTOMX' onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
+								<button type="button" hidden id='TOPX'  onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=top&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Top</button>
+								<button type="button" hidden id='PREVX' onclick="location.href='{{url('/hut/edit/?idx='.$header->NO_ID.'&tipx=prev&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Prev</button>
+								<button type="button" hidden id='NEXTX' onclick="location.href='{{url('/hut/edit/?idx='.$header->NO_ID.'&tipx=next&flagz='.$flagz.'&golz='.$golz.'&buktix='.$header->NO_BUKTI )}}'" class="btn btn-outline-primary">Next</button>
+								<button type="button" hidden id='BOTTOMX' onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=bottom&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-primary">Bottom</button>
 							</div>
 							<div class="col-md-5">
-								<button type="button" id='NEWX' onclick="location.href='{{url('/hut/edit/?idx=0&tipx=new&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
-								<button type="button" id='EDITX' onclick='hidup(); ambil_beliy();' class="btn btn-secondary">Edit</button>                    
-								<button type="button" id='UNDOX' onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
-								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success" class="fa fa-save"></i>Save</button>
+								<button type="button" hidden id='NEWX' onclick="location.href='{{url('/hut/edit/?idx=0&tipx=new&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-warning">New</button>
+								<button type="button" hidden id='EDITX' onclick='hidup()' class="btn btn-secondary">Edit</button>                    
+								<button type="button" hidden id='UNDOX' onclick="location.href='{{url('/hut/edit/?idx=' .$idx. '&tipx=undo&flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-info">Undo</button>  
+								<button type="button" id='SAVEX' onclick='simpan()'   class="btn btn-success"<i class="fa fa-save"></i>Save</button>
 
 							</div>
 							<div class="col-md-3">
-								<button type="button" id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
+								<button type="button" hidden id='HAPUSX'  onclick="hapusTrans()" class="btn btn-outline-danger">Hapus</button>
 								<button type="button" id='CLOSEX'  onclick="location.href='{{url('/hut?flagz='.$flagz.'&golz='.$golz.'' )}}'" class="btn btn-outline-secondary">Close</button>
 							</div>
 						</div>
@@ -264,7 +248,10 @@
 					<tr>
 						<th>Po#</th>
 						<th>Kode</th>
-						<th>Nama</th>				
+						<th>-</th>
+						<th>Total</th>
+						<th>Bayar</th>
+						<th>Sisa</th>					
 					</tr>
 				</thead>
 				<tbody>
@@ -279,6 +266,38 @@
 	</div>
 		
 
+	<div class="modal fade" id="browseBeliModal" tabindex="-1" role="dialog" aria-labelledby="browseBeliModalLabel" aria-hidden="true">
+	  <div class="modal-dialog mw-100 w-75" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="browseBeliModalLabel">Cari Beli#</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			<table class="table table-stripped table-bordered" id="table-bbeli">
+				<thead>
+					<tr>
+						<th>Beli#</th>
+						<th>Kode</th>
+						<th>-</th>
+						<th>Total</th>
+						<th>Bayar</th>
+						<th>Sisa</th>
+						<th>Pilih</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" onclick="chooseBeliArr()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
 	
 
 	<div class="modal fade" id="browseAccount1Modal" tabindex="-1" role="dialog" aria-labelledby="browseAccount1ModalLabel" aria-hidden="true">
@@ -329,9 +348,6 @@
     idrow=<?=$no?>;
     baris=<?=$no?>;
 
-		$tipx = $('#tipx').val();
-		$searchx = $('#CARI').val();
-		
 		$('body').on('keydown', 'input, select', function(e) {
 			if (e.key === "Enter") {
 				var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
@@ -341,21 +357,24 @@
 				if (next.length) {
 					next.focus().select();
 				} else {
-					// tambah();
-					// var nomer = idrow-1;
-					console.log("NO_BUKTI");
-					document.getElementById("NO_BUKTI").focus();
+					tambah();
+					var nomer = idrow-1;
+					console.log("NO_FAKTUR"+nomer);
+					document.getElementById("NO_FAKTUR"+nomer).focus();
 					// form.submit();
 				}
 				return false;
 			}
 		});
 
+		$tipx = $('#tipx').val();
+		$searchx = $('#CARI').val();
+		
 		
         if ( $tipx == 'new' )
 		{
 			 baru();	
-           //  tambah();
+             tambah();
 			 
 		}
 
@@ -364,21 +383,29 @@
 			 ganti();			
 		}    
 		
-		$("#TOTAL").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
-		$("#BAYAR").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
-
 	
 	
-		$("#TSISA").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-999999999.99'});
+		$("#TBAYAR").autoNumeric('init', {aSign: '<?php echo ''; ?>',vMin: '-99999999999.99'});
 
 
 		jumlahdata = 100;
 		for (i = 0; i <= jumlahdata; i++) {
-			$("#XTOTAL" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-			$("#XBAYAR" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
+			$("#TOTAL" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-99999999999.99'});
+			$("#BAYAR" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-99999999999.99'});
+			$("#SISA" + i.toString()).autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-99999999999.99'});
 		}	
 
-	
+		$(".NO_FAKTUR").each(function() {
+			var getid = $(this).attr('id');
+			var noid = getid.substring(9,12);
+
+			$("#NO_FAKTUR"+noid).keypress(function(e){
+				if(e.keyCode == 46){
+					e.preventDefault();
+					browseBeli(noid);
+				}
+			}); 
+		});
 		
         $('body').on('click', '.btn-delete', function() {
 			var val = $(this).parents("tr").remove();
@@ -449,166 +476,203 @@
 //////////////////////////////////////////////////////////////
 
 		
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-		
- 	// var dTableBPo;
-	// 	loadDataBPo = function(){
-	// 		$.ajax(
-	// 		{
-	// 			type: 'GET', 		
-	// 			url: '{{url('po/browseuang')}}',
-	// 			data: {
-	// 				'GOL': "{{$golz}}",
-	// 			},
-	// 			success: function( response )
-	// 			{
-	// 				resp = response;
-	// 				if(dTableBPo){
-	// 					dTableBPo.clear();
-	// 				}
-	// 				for(i=0; i<resp.length; i++){
-						
-	// 					dTableBPo.row.add([
-	// 						'<a href="javascript:void(0);" onclick="choosePo(\''+resp[i].NO_PO+'\',  \''+resp[i].KODES+'\', \''+resp[i].NAMAS+'\' , \''+resp[i].TOTAL+'\' , \''+resp[i].BAYAR+'\' , \''+resp[i].SISA+'\'                )">'+resp[i].NO_PO+'</a>',
-	// 						resp[i].KODES,
-	// 						resp[i].NAMAS,
-	// 						Intl.NumberFormat('en-US').format(resp[i].TOTAL),
-	// 						Intl.NumberFormat('en-US').format(resp[i].BAYAR),
-	// 						Intl.NumberFormat('en-US').format(resp[i].SISA),
-							
-	// 					]);
-	// 				}
-	// 				dTableBPo.draw();
-	// 			}
-	// 		});
-	// 	}
-		
-	// 	dTableBPo = $("#table-bpo").DataTable({
-	// 		columnDefs: [
-	// 			{
-    //                 className: "dt-right", 
-	// 				targets:  [],
-	// 				render: $.fn.dataTable.render.number( ',', '.', 2, '' )
-	// 			}
-	// 		],
-	// 	});
-		
-	// 	browsePo = function(){
-	// 		 loadDataBPo();
-	// 		$("#browsePoModal").modal("show");
-	// 	}
-		
-	// 	choosePo = function(NO_PO,KODES,NAMAS, TOTAL, BAYAR, SISA ){
-	// 		$("#NO_PO").val(NO_PO);
-	// 		$("#KODES").val(KODES);
-	// 		$("#NAMAS").val(NAMAS);		
-	// 		$("#browsePoModal").modal("hide");
-			
-	// 		getBeli(NO_PO);
-	// 		hitung();
-	// 	}
-		
-	// 	$("#NO_PO").keypress(function(e){
-
-	// 		if(e.keyCode == 46){
-	// 			e.preventDefault();
-	// 			browsePo();
-	// 		}
-	// 	}); 
-		
-/////////////////////////////////////////////////////////////////////////////////////////
-
-		var dTableBPo;
-		var rowidPo;
+ 	var dTableBPo;
 		loadDataBPo = function(){
-		
 			$.ajax(
 			{
-				type: 'GET',    
-				url: "{{url('po/browseuang')}}",
-				async : false,
+				type: 'GET', 		
+				url: '{{url('po/browseuang')}}',
 				data: {
-						'NO_PO': $("#NO_PO").val(),
-					
+					'GOL': "{{$golz}}",
 				},
 				success: function( response )
-
 				{
 					resp = response;
-					
-					
-					if ( resp.length > 1 )
-					{	
-							if(dTableBPo){
-								dTableBPo.clear();
-							}
-							for(i=0; i<resp.length; i++){
-								
-								dTableBPo.row.add([
-									'<a href="javascript:void(0);" onclick="choosePo(\''+resp[i].NO_PO+'\',  \''+resp[i].KODES+'\', \''+resp[i].NAMAS+'\'    )">'+resp[i].NO_PO+'</a>',
-									resp[i].KODES,
-									resp[i].NAMAS,
-									// Intl.NumberFormat('en-US').format(resp[i].TOTAL),
-									// Intl.NumberFormat('en-US').format(resp[i].BAYAR),
-									// Intl.NumberFormat('en-US').format(resp[i].SISA),
-								]);
-							}
-							dTableBPo.draw();
-					
+					if(dTableBPo){
+						dTableBPo.clear();
 					}
-					else
-					{
-						$("#NO_PO").val(resp[0].NO_PO);
-						$("#KODES").val(resp[0].KODES);
-						$("#NAMAS").val(resp[0].NAMAS);
-						// $("#TOTAL").val(resp[0].TOTAL);
-						// $("#BAYAR").val(resp[0].BAYAR);
-						// $("#SISA").val(resp[0].SISA);
+					for(i=0; i<resp.length; i++){
+						
+						dTableBPo.row.add([
+							'<a href="javascript:void(0);" onclick="choosePo(\''+resp[i].NO_BUKTI+'\',  \''+resp[i].KODES+'\', \''+resp[i].NAMAS+'\' , \''+resp[i].TOTAL+'\' , \''+resp[i].BAYAR+'\' , \''+resp[i].SISA+'\'                )">'+resp[i].NO_BUKTI+'</a>',
+							resp[i].KODES,
+							resp[i].NAMAS,
+							Intl.NumberFormat('en-US').format(resp[i].TOTAL),
+							Intl.NumberFormat('en-US').format(resp[i].BAYAR),
+							Intl.NumberFormat('en-US').format(resp[i].SISA),
+							
+						]);
 					}
+					dTableBPo.draw();
 				}
 			});
 		}
 		
 		dTableBPo = $("#table-bpo").DataTable({
-			
+			columnDefs: [
+				{
+                    className: "dt-right", 
+					targets:  [],
+					render: $.fn.dataTable.render.number( ',', '.', 2, '' )
+				}
+			],
 		});
-
-		browsePo = function(rid){
-			rowidPo = rid;
-			$("#NAMAS").val("");			
-			loadDataBPo();
-	
-			
-			if ( $("#NAMAS").val() == '' ) {				
-					$("#browsePoModal").modal("show");
-			}	
+		
+		browsePo = function(){
+			 loadDataBPo();
+			$("#browsePoModal").modal("show");
 		}
 		
-		choosePo = function(NO_PO,KODES,NAMAS ){
-			$("#NO_PO").val(NO_PO);
+		choosePo = function(NO_BUKTI,KODES,NAMAS, TOTAL, BAYAR, SISA ){
+			$("#NO_PO").val(NO_BUKTI);
 			$("#KODES").val(KODES);
-			$("#NAMAS").val(NAMAS);
-			// $("#TOTAL").val(TOTAL);
-			// $("#BAYAR").val(BAYAR);		
-			// $("#SISA").val(SISA);	
+			$("#NAMAS").val(NAMAS);		
 			$("#browsePoModal").modal("hide");
+		}
+		
+		$("#NO_PO").keypress(function(e){
 
-			getBeli(NO_PO);
+			if(e.keyCode == 46){
+				e.preventDefault();
+				browsePo();
+			}
+		}); 
+		
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+		var dTableBBeli;
+		var rowidBeli;
+
+		loadDataBBeli = function(){
+	
+			$.ajax(
+			{
+				type: 'GET',    
+				url: "{{url('beli/browseuang')}}",
+				data: {		
+					'NO_PO': $("#NO_PO").val(),				
+					'GOL': "{{$golz}}",				
+				},
+				success: function( response )
+				{
+					resp = response;
+					
+					if(dTableBBeli){
+						dTableBBeli.clear();
+					}
+					for(i=0; i<resp.length; i++){
+						
+						dTableBBeli.row.add([
+							'<a href="javascript:void(0);" onclick="chooseBeli(\''+resp[i].NO_BUKTI+'\',  \''+resp[i].KODES+'\',   \''+resp[i].NAMAS+'\',   \''+resp[i].TOTAL+'\' ,  \''+resp[i].BAYAR+'\', \''+resp[i].SISA+'\'   )">'+resp[i].NO_BUKTI+'<input id="pilihFaktur'+i+'" hidden value="'+resp[i].NO_BUKTI+'"></input></a>',
+							resp[i].KODES,
+							resp[i].NAMAS,
+							'<label for="pilihTotal" id="pilihTotal'+i+'" value="'+resp[i].TOTAL+'">'+Intl.NumberFormat('en-US').format(resp[i].TOTAL)+'</label>',
+							Intl.NumberFormat('en-US').format(resp[i].BAYAR),	
+							'<label for="pilihSisa" id="pilihSisa'+i+'" value="'+resp[i].SISA+'">'+Intl.NumberFormat('en-US').format(resp[i].SISA)+'</label>',
+							'<input type="checkbox" class="form-control" id="pilih'+i+'" value="'+resp[i].KD_BRG+'"></input>',						
+						]);
+					}
+					dTableBBeli.draw();
+				}
+			});
+		}
+		
+		dTableBBeli = $("#table-bbeli").DataTable({
+			
+			columnDefs: [
+				{
+					targets:  [4,5,6],
+					className: 'dt-body-right'
+				}
+			],
+		});
+		
+		browseBeli = function(rid){
+			rowidBeli = rid;
+			loadDataBBeli();
+			$("#browseBeliModal").modal("show");
+		}
+		
+		chooseBeli = function(NO_BUKTI,KODES, NAMAS, TOTAL, BAYAR, SISA){
+			$("#NO_FAKTUR"+rowidBeli).val(NO_BUKTI);
+			$("#TOTAL"+rowidBeli).val(SISA);
+			$("#BAYAR"+rowidBeli).val(SISA);	
+			$("#TOTAL"+rowidBeli).autoNumeric('update');
+			$("#BAYAR"+rowidBeli).autoNumeric('update');
+			
+			$("#browseBeliModal").modal("hide");
+			hitung();
+		}
+		
+		chooseBeliArr = function(){
+			var beliDipilih = $("input[type='checkbox']").map(function() {
+				var idx = dTableBBeli.row(this).index();
+				var kode = null;
+				if($(this).prop("checked"))
+				{
+					kode = '"'+$(this).val()+'"';
+				} 
+				return kode;
+			}).get();
+			var fakturDipilih = $("input[type='checkbox']").map(function() {
+				var kode = null;
+				if($(this).prop("checked"))
+				{
+					var idx = (this.id).substring(5, 7);
+					kode = '"' + $("#pilihFaktur"+idx).val() + '"';
+				} 
+				return kode;
+			}).get();
+			var totalDipilih = $("input[type='checkbox']").map(function() {
+				var kode = null;
+				if($(this).prop("checked"))
+				{
+					var idx = (this.id).substring(5, 7);
+					kode = '"' + $("#pilihTotal"+idx).text() + '"';
+				} 
+				return kode;
+			}).get();
+			var sisaDipilih = $("input[type='checkbox']").map(function() {
+				var kode = null;
+				if($(this).prop("checked"))
+				{
+					var idx = (this.id).substring(5, 7);
+					kode = '"' + $("#pilihSisa"+idx).text() + '"';
+				} 
+				return kode;
+			}).get();
+
+			var fakturArr = JSON.parse("[" + fakturDipilih + "]");
+			var totalArr = JSON.parse("[" + totalDipilih + "]");
+			var sisaArr = JSON.parse("[" + sisaDipilih + "]");
+
+			while (idrow<(parseInt(rowidBeli)+parseInt(fakturArr.length)))
+			{
+				tambah();
+			};
+
+			for (i=0 ; i<fakturArr.length ; i++) 
+			{
+				$("#NO_FAKTUR"+(parseInt(rowidBeli)+i)).val(fakturArr[i]);
+				$("#TOTAL"+(parseInt(rowidBeli)+i)).val(sisaArr[i]);
+				$("#BAYAR"+(parseInt(rowidBeli)+i)).val(sisaArr[i]);
+			};
+
+			$("#browseBeliModal").modal("hide");
 			hitung();
 		}
 		
 		
-		/* $("#NO_PO0").onblur(function(e){
+		$("#NO_FAKTUR0").keypress(function(e){
 			if(e.keyCode == 46){
 				e.preventDefault();
-				browsePo(0);
+				browseBeli(0);
 			}
-		});  */
-		
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+		}); 
 		
 	
 		
@@ -617,11 +681,17 @@
 
 	function cekDetail(){
 		var cekFaktur = '';
-		$(".XBAYAR").each(function() {
+		$(".BAYAR").each(function() {
 			let z = $(this).closest('tr');
-			var TOTALX = parseFloat(z.find('.XTOTAL').val().replace(/,/g, ''));
-			var BAYARX = parseFloat(z.find('.XBAYAR').val().replace(/,/g, ''));
-	
+			var TOTALX = parseFloat(z.find('.TOTAL').val().replace(/,/g, ''));
+			var BAYARX = parseFloat(z.find('.BAYAR').val().replace(/,/g, ''));
+			var FAKTURX = z.find('.NO_FAKTUR').val();
+			if(FAKTURX.substring(0,2)!="UM")
+			{
+				if(BAYARX>TOTALX){
+					cekFaktur = FAKTURX;
+				};		
+			}		
 		});
 
 		return cekFaktur;
@@ -633,15 +703,16 @@
 		var tgl = $('#TGL').val();
 		var bulanPer = {{session()->get('periode')['bulan']}};
 		var tahunPer = {{session()->get('periode')['tahun']}};
+		var TBAYARX = parseFloat($('#TBAYAR').val().replace(/,/g, ''));
 
         	var check = '0';
 		
 
-			// if ( $('#BACNO').val()=='' ) 
-            // {				
-			//     check = '1';
-			// 	alert("Type Cash Bank Harus Diisi.");
-			// }
+			if ( $('#BACNO').val()=='' ) 
+            {				
+			    check = '1';
+				alert("Type Cash Bank Harus Diisi.");
+			}
 			
 			
 			if ( tgl.substring(3,5) != bulanPer ) 
@@ -667,74 +738,6 @@
 
 			
 	}
-	
-	
-	function getBeli(NO_PO)
-	{
- 		 var mulai = (idrow==baris) ? idrow-1 : idrow;
-		 var zbukti = $("#NO_BUKTI").val() ;
-		 var ztgl = $("#TGL").val();
-		
-		 var ztotal = $("#TOTAL").val();
-		 var zbayar = $("#BAYAR").val();
-		 
-		$.ajax(
-			{
-				type: 'GET',    
-				url: "{{url('po/browseisi')}}",
-				data: {
-					NO_PO: NO_PO,
-				},
-				success: function( resp )
-				{
-					var html = '';
-					for(i=0; i<resp.length; i++){
-						html+=`<tr>
-                                    <td><input name='REC[]' id='REC${i}' value='1' type='text' class='REC form-control' onkeypress='return tabE(this,event)' readonly></td>
-                                    <td><input name='NO_FAKTUR[]' data-rowid=${i} id='NO_FAKTUR${i}' value="${resp[i].NO_FAKTUR}" type='text' class='form-control NO_FAKTUR'  readonly ></td>
-                                    <td><input name='TGL_FAKTUR[]' data-rowid=${i} id='TGL_FAKTUR${i}' value="${resp[i].TGL_FAKTUR}" type='text' class='form-control TGL_FAKTUR'  readonly ></td>
-
-                                    <td><input name='XTOTAL[]' onblur="hitung()" id='XTOTAL${i}' value="${resp[i].TOTAL}" type='text' style='text-align: right' class='form-control XTOTAL text-primary' readonly required></td>
-                                    <td><input name='XBAYAR[]' onblur="hitung()" id='XBAYAR${i}' value="${resp[i].BAYAR}" type='text' style='text-align: right' class='form-control XBAYAR text-primary' readonly required></td>
-								</tr>`;
-								
-					}
-
-					idrow=resp.length;
-					baris=resp.length;
-					
-		            if (zbukti == '+' )
-					{	
-						html+=`<tr>
-                                    <td><input name='REC[]' id='REC${idrow}' value='1' type='text' class='REC form-control' onkeypress='return tabE(this,event)' readonly></td>
-                                    <td><input name='NO_FAKTUR[]'  id='NO_FAKTUR${idrow}' value="${zbukti}" type='text' class='form-control NO_FAKTUR'  readonly ></td>
-                                    <td><input name='TGL_FAKTUR[]'  id='TGL_FAKTUR${idrow}' value="${ztgl}" type='text' class='form-control TGL_FAKTUR'  readonly ></td>
-
-                                    <td><input name='XTOTAL[]' onblur="hitung()" id='XTOTAL${idrow}' value="${ztotal}" type='text' style='text-align: right' class='form-control XTOTAL text-primary' readonly required></td>
-                                    <td><input name='XBAYAR[]' onblur="hitung()" id='XBAYAR${idrow}' value="${zbayar}" type='text' style='text-align: right' class='form-control XBAYAR text-primary' readonly required></td>
-								</tr>`;
-
-					idrow =idrow + 1;
-					baris =baris + 1;
-
-					}
-					
-					$('#detailBeli').html(html);
-					$(".XTOTAL").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".XTOTAL").autoNumeric('update');
-					
-					$(".XBAYAR").autoNumeric('init', {aSign: '<?php echo ''; ?>', vMin: '-999999999.99'});
-					$(".XBAYAR").autoNumeric('update');
-					
-					
-					nomor();
-					hitung();
-			
-				}
-			});
-	}
-	
-	
 		
     function nomor() {
 		var i = 1;
@@ -745,63 +748,30 @@
 	}
 
     function hitung() {
-		var TSISA = 0;
+		var TBAYAR = 0;
 
-		$(".XBAYAR").each(function() {
+		$(".BAYAR").each(function() {
 			
 			let z = $(this).closest('tr');
-			var XTOTALX = parseFloat(z.find('.XTOTAL').val().replace(/,/g, ''));
-			var XBAYARX = parseFloat(z.find('.XBAYAR').val().replace(/,/g, ''));
+			var TOTALX = parseFloat(z.find('.TOTAL').val().replace(/,/g, ''));
+			var BAYARX = parseFloat(z.find('.BAYAR').val().replace(/,/g, ''));
+		
+            var SISAX  = TOTALX - BAYARX;
+			z.find('.SISA').val(SISAX);
 
-            var SISAX  = XTOTALX - XBAYARX ;
-
-            TSISA +=SISAX;				
+		    z.find('.TOTAL').autoNumeric('update');			
+		    z.find('.BAYAR').autoNumeric('update');			
+		    z.find('.SISA').autoNumeric('update');
+		
+            TBAYAR +=BAYARX;				
 		
 		});
 		
 		
-		if(isNaN(TSISA)) TSISA = 0;
+		if(isNaN(TBAYAR)) TBAYAR = 0;
 
-		$('#TSISA').val(numberWithCommas(TSISA));		
-		$("#TSISA").autoNumeric('update');
-	}
-	
-	function ambil_belix() {
-	
-		 var zbukti = $("#NO_BUKTI").val() ;
-		 var ztgl = $("#TGL").val();
-		
-		 var ztotal = $("#TOTAL").val();
-		 var zbayar = $("#BAYAR").val();
-		
-		
-		jumlahdata = 100;
-		baris1 = baris - 1;
-		
-		for (i = 0; i <= jumlahdata; i++) {
-			
-			if ( i == baris1 )
-			{
-				
-			     $("#NO_FAKTUR" + i.toString()).val(zbukti);
-			     $("#TGL_FAKTUR" + i.toString()).val(ztgl);
-			     $("#XTOTAL" + i.toString()).val(ztotal);
-			     $("#XBAYAR" + i.toString()).val(zbayar);
-					
-					}			
-		}
-		
-		hitung();
-		
-		
-	}
-	
-	function ambil_beliy() {
-		
-		 var NO_PO = $("#NO_PO").val() ;
-         getBeli(NO_PO);
-		
-		hitung();	
+		$('#TBAYAR').val(numberWithCommas(TBAYAR));		
+		$("#TBAYAR").autoNumeric('update');
 	}
 	
 	
@@ -815,8 +785,8 @@
 	
 	function ganti() {
 		
-		mati();
-		// hidup();
+		// mati();
+		hidup();
 	}
 	
 	function batal() {
@@ -856,35 +826,24 @@
 		   
 			$("#NO_BUKTI").attr("readonly", true);		   
 			$("#TGL").attr("readonly", false);
-			// $("#NO_PO").attr("readonly", true);
+			$("#NO_PO").attr("readonly", true);
 			$("#KODES").attr("readonly", true);
 			$("#NAMAS").attr("readonly", true);
 			$("#BACNO").attr("readonly", true);
 			$("#BNAMA").attr("readonly", true);
-			$("#TOTAL").attr("readonly", false);
-			$("#BAYAR").attr("readonly", false);
-			$("#LAIN").attr("readonly", false);
 			
 			$("#NOTES").attr("readonly", false);
-
-			$tipx = $('#tipx').val();
 		
-			
-			if ( $tipx != 'new' )
-			{
-				$("#NO_PO").attr("readonly", true);		
-				$("#NO_PO").removeAttr('onblur');	
-				document.getElementById("NO_PO").addEventListener("blur", getBeli);	
-			} 
 	
 
 		jumlahdata = 100;
 		for (i = 0; i <= jumlahdata; i++) {
 			$("#REC" + i.toString()).attr("readonly", true);
 			$("#NO_FAKTUR" + i.toString()).attr("readonly", true);
-			$("#TGL_FAKTUR" + i.toString()).attr("readonly", true);
-			$("#XTOTAL" + i.toString()).attr("readonly", true);
-			$("#XBAYAR" + i.toString()).attr("readonly", true);		
+			$("#TOTAL" + i.toString()).attr("readonly", true);
+			$("#BAYAR" + i.toString()).attr("readonly", false);
+			$("#SISA" + i.toString()).attr("readonly", false);
+			$("#DELETEX" + i.toString()).attr("hidden", false);			
 		}
 
 		
@@ -921,18 +880,16 @@
 		$("#BACNO").attr("readonly", true);
 		$("#BNAMA").attr("readonly", true);
 		$("#NOTES").attr("readonly", true);
-		$("#TOTAL").attr("readonly", true);
-		$("#BAYAR").attr("readonly", true);
-		$("#LAIN").attr("readonly", true);
 
 		
 		jumlahdata = 100;
 		for (i = 0; i <= jumlahdata; i++) {
 			$("#REC" + i.toString()).attr("readonly", true);
 			$("#NO_FAKTUR" + i.toString()).attr("readonly", true);
-			$("#TGL_FAKTUR" + i.toString()).attr("readonly", true);
-			$("#XTOTAL" + i.toString()).attr("readonly", true);
-			$("#XBAYAR" + i.toString()).attr("readonly", true);		
+			$("#TOTAL" + i.toString()).attr("readonly", true);
+			$("#BAYAR" + i.toString()).attr("readonly", true);
+			$("#SISA" + i.toString()).attr("readonly", true);
+			$("#DELETEX" + i.toString()).attr("hidden", true);		
 		}
 
 
@@ -944,16 +901,13 @@
 				
 		 $('#NO_BUKTI').val("+");	
 	//	 $('#TGL').val("");	
-		 $('#NO_PO').val("");
 		 $('#BACNO').val("");	
 		 $('#BNAMA').val("");
 		 $('#KODES').val("");	
 		 $('#NAMAS').val("");	
 		 $('#NOTES').val("");	
-		 $('#TSISA').val("0.00");
+		 $('#TBAYAR').val("0.00");
 		 
-		 $('#TOTAL').val("0.00");
-		 $('#BAYAR').val("0.00");
 		 
 		var html = '';
 		$('#detailx').html(html);	
@@ -984,35 +938,33 @@
 	function tambah() {
 
         var x = document.getElementById('datatable').insertRow(baris + 1);
-        
-		 var zbukti = $("#NO_BUKTI").val() ;
-		 var ztgl = $("#TGL").val();
-		
-		 var ztotal = $("#TOTAL").val();
-		 var zbayar = $("#BAYAR").val();
-		
+ 
 		html=`<tr>
 
                 <td>
+ 					<input name='NO_ID[]' id='NO_ID${idrow}' type='hidden' class='form-control NO_ID' value='new' readonly> 
 					<input name='REC[]' id='REC${idrow}' type='text' class='REC form-control' onkeypress='return tabE(this,event)' readonly>
 	            </td>
 						       
                 <td>
-				    <input name='NO_FAKTUR[]' data-rowid=${idrow}  value ="${zbukti}" id='NO_FAKTUR${idrow}' type='text' class='form-control  NO_FAKTUR' required readonly>
+				    <input name='NO_FAKTUR[]' data-rowid=${idrow}  id='NO_FAKTUR${idrow}' type='text' class='form-control  NO_FAKTUR' required readonly>
                 </td>
 				
 				<td>
-		            <input name='TGL_FAKTUR[]' id='TGL_FAKTUR${idrow}' value ="${ztgl}" type='text' style='text-align: right' class='form-control TGL_FAKTUR text-primary' readonly required >
+		            <input name='TOTAL[]'  onblur='hitung()' value='0' id='TOTAL${idrow}' type='text' style='text-align: right' class='form-control TOTAL text-primary' required >
                 </td>
 				
 				<td>
-		            <input name='XTOTAL[]'  value ="${ztotal}" id='XTOTAL${idrow}' type='text' style='text-align: right' class='form-control XTOTAL text-primary' readonly required >
+		            <input name='BAYAR[]'  onblur='hitung()' value='0' id='BAYAR${idrow}' type='text' style='text-align: right' class='form-control BAYAR text-primary' required >
                 </td>
 				
 				<td>
-		            <input name='XBAYAR[]'   value ="${zbayar}"  id='XBAYAR${idrow}' type='text' style='text-align: right' class='form-control XBAYAR text-primary' readonly required >
+		            <input name='SISA[]'  value='0' id='SISA${idrow}' type='text' style='text-align: right' class='form-control SISA text-primary' required >
                 </td>
-								
+				
+                <td>
+					<button type='button' class='btn btn-sm btn-circle btn-outline-danger btn-delete' onclick=''> <i class='fa fa-fw fa-trash'></i> </button>
+                </td>				
          </tr>`;
 				
         x.innerHTML = html;
@@ -1020,18 +972,30 @@
 		
 		jumlahdata = 100;
 		for (i = 0; i <= jumlahdata; i++) {
-			$("#XTOTAL" + i.toString()).autoNumeric('init', {
+			$("#TOTAL" + i.toString()).autoNumeric('init', {
 				aSign: '<?php echo ''; ?>',
-				vMin: '-999999999.99'
+				vMin: '-99999999999.99'
 			});
 
-			$("#XBAYAR" + i.toString()).autoNumeric('init', {
+			$("#BAYAR" + i.toString()).autoNumeric('init', {
 				aSign: '<?php echo ''; ?>',
-				vMin: '-999999999.99'
+				vMin: '-99999999999.99'
 			});
-				 
+			
+			$("#SISA" + i.toString()).autoNumeric('init', {
+				aSign: '<?php echo ''; ?>',
+				vMin: '-99999999999.99'
+			});			 
+
+
 		}
- 
+
+		$("#NO_FAKTUR"+idrow).keypress(function(e){
+			if(e.keyCode == 46){
+				e.preventDefault();
+				browseBeli(eval($(this).data("rowid")));
+			}
+		}); 
 		
 
         idrow++;

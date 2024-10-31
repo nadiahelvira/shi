@@ -19,9 +19,9 @@ class Sup extends Model
 // ganti 3
     protected $fillable = 
     [
-        "KODES", "NAMAS", "ALAMAT", "KOTA", 'GOL', "TELPON1", "HP",
+        "KODES", "NAMAS", "ALAMAT", "KOTA", "GOL", "TELPON1", "HP",
 		"KET", "KONTAK", "NPWP", "EMAIL", "AKT", "FAX", "BANK",
 		"BANK_CAB", "BANK_KOTA", "BANK_NAMA", "BANK_REK",
-		"HARI", "USRNM", "TG_SMP", "KODESGD", "NAMASGD",
+		"HARI", "USRNM", "TG_SMP", "KODESGD", "NAMASGD", "NAMAS_LM"
     ];
 }

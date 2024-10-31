@@ -1,0 +1,18 @@
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Warning:  include_once(PHPJasperXML.inc): failed to open stream: No such file or directory in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 2
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Warning:  include_once(): Failed opening 'PHPJasperXML.inc' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 2
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Warning:  include_once(fpdf/fpdf.php): failed to open stream: No such file or directory in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 3
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Warning:  include_once(): Failed opening 'fpdf/fpdf.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 3
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Warning:  simplexml_load_file(): I/O warning : failed to load external entity &quot;yearly cso.jrxml&quot; in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 18
+[15-Jul-2024 15:15:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'PHPJasperXML' not found in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 19
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Warning:  include_once(PHPJasperXML.inc): failed to open stream: No such file or directory in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 2
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Warning:  include_once(): Failed opening 'PHPJasperXML.inc' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 2
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Warning:  include_once(fpdf/fpdf.php): failed to open stream: No such file or directory in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 3
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Warning:  include_once(): Failed opening 'fpdf/fpdf.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 3
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Warning:  simplexml_load_file(): I/O warning : failed to load external entity &quot;yearly cso.jrxml&quot; in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 18
+[29-Jul-2024 15:30:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'PHPJasperXML' not found in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/reportc01/phpjasperxml/templates_code.php on line 19

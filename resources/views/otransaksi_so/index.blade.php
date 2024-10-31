@@ -68,12 +68,13 @@
                     <thead class="table-dark">
                         <tr>
                             <th scope="col" style="text-align: center">No</th>
-				     		<th scope="col" style="text-align: center">-</th>							
+				     		            <th scope="col" style="text-align: center">-</th>							
                             <th scope="col" style="text-align: left">So</th>
                             <th scope="col" style="text-align: center">Tgl</th>
                             <th scope="col" style="text-align: left">Customer</th>
-							<th scope="col" style="text-align: left">-</th>							
+							              <th scope="col" style="text-align: left">-</th>							
                             <th scope="col" style="text-align: right">Kg</th>
+                            <th scope="col" style="text-align: right">Harga</th>
                             <th scope="col" style="text-align: right">Total</th>
                             <th scope="col" style="text-align: left">Notes</th>
                             <th scope="col" style="text-align: left">User</th>
@@ -114,11 +115,12 @@
             [
                 {data: 'DT_RowIndex', orderable: false, searchable: false },
 			    {data: 'action', name: 'action'},
-                {data: 'NO_SO', name: 'NO_SO'},
+                {data: 'NO_BUKTI', name: 'NO_BUKTI'},
                 {data: 'TGL', name: 'TGL'},
 				{data: 'KODEC', name: 'KODEC'},
                 {data: 'NAMAC', name: 'NAMAC'},	
                 {data: 'KG', name: 'KG', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},				
+                {data: 'HARGA', name: 'HARGA', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},				
                 {data: 'TOTAL', name: 'TOTAL', render: $.fn.dataTable.render.number( ',', '.', 0, '' )},				
                 {data: 'NOTES', name: 'NOTES'},
                 {data: 'USRNM', name: 'USRNM'},

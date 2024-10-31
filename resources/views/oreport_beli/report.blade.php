@@ -102,7 +102,7 @@
 
                     <!-- PASTE DIBAWAH INI -->
  				<!-- DISINI BATAS AWAL KOOLREPORT-->
-				<div class="report-content" col-md-12>
+				<div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
 					<?php
 					use \koolreport\datagrid\DataTables;
 
@@ -219,10 +219,20 @@
                                     ),			
 									"BL" => array(
                                         "label" => "BL#",
-                                    ),	
+                                    ),
+									"KONTRAK" => array(
+                                        "label" => "KONTRAK",
+                                    ),
 									"NOTES" => array(
                                         "label" => "NOTES#",
-                                    ),									
+                                    ),
+									"ACNOA" => array(
+                                        "label" => "Acc#",
+                                    ),	
+									"NACNOA" => array(
+                                        "label" => "-",
+                                    ),
+                                    
                                 ),
 							"cssClass" => array(
 								"table" => "table table-hover table-striped table-bordered compact",

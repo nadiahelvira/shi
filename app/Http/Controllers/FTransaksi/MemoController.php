@@ -158,13 +158,7 @@ class MemoController extends Controller
 
         $bulan    = session()->get('periode')['bulan'];
         $tahun    = substr(session()->get('periode')['tahun'], -2);
-        // $query = DB::table('memo')->select('NO_BUKTI')->where('PER', $periode)->where('FLAG', 'M')->orderByDesc('NO_BUKTI')->limit(1)->get();
-        
-        $query = DB::SELECT("SELECT TRIM(REPLACE(REPLACE(REPLACE(memo.NO_BUKTI, '\n', ' '), '\r', ' '), '\t', ' ')) as NO_BUKTI
-                            FROM memo
-                            WHERE PER = '$periode'
-                            AND FLAG ='$FLAGZ'
-                            ORDER BY NO_BUKTI DESC Limit 1");
+        $query = DB::table('memo')->select('NO_BUKTI')->where('PER', $periode)->where('FLAG', 'M')->orderByDesc('NO_BUKTI')->limit(1)->get();
 
         if ($query != '[]') {
             $query = substr($query[0]->NO_BUKTI, -4);
@@ -190,7 +184,7 @@ class MemoController extends Controller
                 'DEBET'            => (float) str_replace(',', '', $request['TJUMLAH']),
                 'KREDIT'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'USRNM'            => Auth::user()->username,
-                // 'created_by'       => Auth::user()->username,
+                'created_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );
@@ -391,7 +385,7 @@ class MemoController extends Controller
  
          
          return view('ftransaksi_memo.edit', $data)
-		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul'=> $this->judul ]);
+		 ->with(['tipx' => $tipx, 'idx' => $idx, 'flagz' =>$this->FLAGZ, 'judul' => $this->judul ]);
 	
 
     }
@@ -439,7 +433,7 @@ class MemoController extends Controller
                 'KREDIT'           => (float) str_replace(',', '', $request['TJUMLAH']),
                 'KET'              => ($request['KET'] == null) ? "" : $request['KET'],
                 'USRNM'            => Auth::user()->username,
-                // 'updated_by'       => Auth::user()->username,
+                'updated_by'       => Auth::user()->username,
                 'TG_SMP'           => Carbon::now()
             ]
         );

@@ -40,6 +40,11 @@
 							<label class="form-label">Nama</label>
 							<input type="text" class="form-control NAMAC" id="NAMAC" name="NAMAC" placeholder="Nama" value="{{ session()->get('filter_namac1') }}" readonly>
 						</div>
+
+						<div class="col-md-1" align="left"><strong style="font-size: 13px;">Gudang :</strong></div>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control kdgd1" id="kdgd1" name="kdgd1" placeholder="Pilih Gudang# 1" value="{{ session()->get('filter_kdgd1') }}" readonly>
+                        </div>  
 					</div>
 					
 					
@@ -51,6 +56,12 @@
                             <input type="text" class="form-control nabrg1" id="nabrg1" name="nabrg1" placeholder="Nama" value="{{ session()->get('filter_nabrg1') }}" readonly>
                         </div>
 					</div>
+
+					<!-- <div class="form-group row">
+                        <div class="col-md-2">
+                            <input type="text" class="form-control kdgd1" id="kdgd1" name="kdgd1" placeholder="Pilih Gudang# 1" value="{{ session()->get('filter_kdgd1') }}" readonly>
+                        </div>  
+					</div> -->
 
 
 					<!-- Filter Tanggal -->
@@ -95,7 +106,7 @@
 					
                     <!-- PASTE DIBAWAH INI -->
  				<!-- DISINI BATAS AWAL KOOLREPORT-->
-				<div class="report-content" col-md-12>
+				<div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
 					<?php
 					use \koolreport\datagrid\DataTables;
 
@@ -126,7 +137,7 @@
 									"label" => "-",
 								),
 								"TRUCK" => array(
-									"label" => "TRUCK#",
+									"label" => "Truck#",
 								),
 								"KD_BRG" => array(
 									"label" => "Barang#",
@@ -164,7 +175,7 @@
 									"footerText" => "<b>@value</b>",
 								),
 								"QTY" => array(
-									"label" => "BAG",
+									"label" => "Bag",
 									"type" => "number",
 									"decimals" => 2,
 									"decimalPoint" => ".",
@@ -175,9 +186,13 @@
 								"GDG" => array(
 									"label" => "GDG",
 								),
+
+								"GUDANG" => array(
+									"label" => "Gudang",
+								),
 								
 								"NOTES" => array(
-									"label" => "NOTES",
+									"label" => "Notes",
 								),
 								"DPP" => array(
 									"label" => "DPP",
@@ -296,23 +311,21 @@
 	</div>
 </div>
 
-<div class="modal fade" id="browseTujuanModal" tabindex="-1" role="dialog" aria-labelledby="browseTujanModalLabel" aria-hidden="true">
+<div class="modal fade" id="browseGudangModal" tabindex="-1" role="dialog" aria-labelledby="browseGudangModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 	<div class="modal-content">
 		<div class="modal-header">
-		<h5 class="modal-title" id="browseSuplierModalLabel">Cari Tujuan</h5>
+		<h5 class="modal-title" id="browseGudangModalLabel">Cari Gudang</h5>
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
 		</div>
 		<div class="modal-body">
-		<table class="table table-stripped table-bordered" id="table-btujuan">
+		<table class="table table-stripped table-bordered" id="table-bgudang">
 			<thead>
 				<tr>
-					<th>Tujuan</th>
-					<th>-</th>
-					<th>Alamat</th>
-					<th>Kota</th>
+					<th>Kode</th>
+					<th>Nama</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -521,55 +534,49 @@
 	});
 
 	
-	var dTableBTujuan;
-	var rowidTujuan;
-	loadDataBTujuan = function(){
+	var dTableBGudang;
+	var rowidGudang;
+	loadDataBGudang = function(){
 		$.ajax(
 		{
 			type: 'GET',    
-			url: "{{url('tujuan/browse')}}",
-			data: {
-				'GOL': 'Z',
-			},
+			url: "{{url('gdg/browse')}}",
 			success: function(resp)
 			{
-				if(dTableBTujuan){
-					dTableBTujuan.clear();
+				if(dTableBGudang){
+					dTableBGudang.clear();
 				}
 				for(i=0; i<resp.length; i++){
 					
-					dTableBTujuan.row.add([
-						'<a href="javascript:void(0);" onclick="chooseTujuan(\''+resp[i].KODET+'\',  \''+resp[i].NAMAT+'\',   \''+resp[i].ALAMAT+'\', \''+resp[i].KOTA+'\' )">'+resp[i].KODET+'</a>',
-						resp[i].NAMAT,
-						resp[i].ALAMAT,
-						resp[i].KOTA,
+					dTableBGudang.row.add([
+						'<a href="javascript:void(0);" onclick="chooseGudang(\''+resp[i].KODE+'\',  \''+resp[i].NAMA+'\' )">'+resp[i].KODE+'</a>',
+						resp[i].NAMA,
 						
 					]);
 				}
-				dTableBTujuan.draw();
+				dTableBGudang.draw();
 			}
 		});
 	}
 	
-	dTableBTujuan = $("#table-btujuan").DataTable({
+	dTableBGudang = $("#table-bgudang").DataTable({
 		
 	});
 	
-	browseTujuan = function(){
-		loadDataBTujuan();
-		$("#browseTujuanModal").modal("show");
+	browseGudang = function(){
+		loadDataBGudang();
+		$("#browseGudangModal").modal("show");
 	}
 	
-	chooseTujuan = function(KODET,NAMAT,ALAMAT,KOTA){
-		$("#kodet").val(KODET);
-		$("#NAMAT").val(NAMAT);			
-		$("#browseTujuanModal").modal("hide");
+	chooseGudang = function(KODE,NAMA ){
+		$("#kdgd1").val(KODE);		
+		$("#browseGudangModal").modal("hide");
 	}
 	
-	$("#kodet").keypress(function(e){
+	$("#kdgd1").keypress(function(e){
 		if(e.keyCode == 46){
 			e.preventDefault();
-			browseTujuan();
+			browseGudang();
 		}
 	}); 
 

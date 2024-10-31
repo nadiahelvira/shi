@@ -43,6 +43,17 @@
 							<input type="text" class="form-control NAMAS" id="NAMAS" name="NAMAS" placeholder="Nama" value="{{ session()->get('filter_namas1') }}" readonly>
 						</div>
 					</div>
+
+					<div class="form-group row">
+						<div class="col-md-2">						
+							<label class="form-label">Barang</label>
+							<input type="text" class="form-control brg1" id="brg1" name="brg1" placeholder="Pilih Barang# 1" value="{{ session()->get('filter_brg1') }}" readonly>
+						</div>  
+						<div class="col-md-3">						
+							<label class="form-label">Nama</label>
+							<input type="text" class="form-control nabrg1" id="nabrg1" name="nabrg1" placeholder="Nama" value="{{ session()->get('filter_nabrg1') }}" readonly>
+						</div>
+					</div>
 					
 					<!-- Filter Tanggal -->
 					<div class="form-group row">
@@ -98,7 +109,7 @@
 					
 				<!-- PASTE DIBAWAH INI -->
 				<!-- DISINI BATAS AWAL KOOLREPORT-->
-				<div class="report-content" col-md-12>
+				<div class="report-content" col-md-12 style="max-width: 100%; overflow-x: scroll;">
 					<?php
 					use \koolreport\datagrid\DataTables;
 
@@ -113,7 +124,7 @@
 							"showFooter" => true,
 							"showFooter" => "bottom",
 							"columns" => array(
-								"NO_PO" => array(
+								"NO_BUKTI" => array(
 									"label" => "Bukti#",
 								),
 								"TGL" => array(
@@ -144,7 +155,7 @@
 								"HARGA" => array(
 									"label" => "Harga",
 									"type" => "number",
-									"decimals" => 0,
+									"decimals" => 5,
 									"decimalPoint" => ".",
 									"thousandSeparator" => ",",
 									"footer" => "sum",
@@ -176,6 +187,9 @@
 									"thousandSeparator" => ",",
 									"footer" => "sum",
 									"footerText" => "<b>@value</b>",
+								),
+								"KONTRAK" => array(
+									"label" => "KONTRAK",
 								),
 								"NOTES" => array(
 									"label" => "NOTES",
@@ -246,6 +260,35 @@
 						<th>Nama</th>
 						<th>Alamat</th>
 						<th>Kota</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="browseBarangModal" tabindex="-1" role="dialog" aria-labelledby="browseBarangModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="browseBarangModalLabel">Cari Barang</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<table class="table table-stripped table-bordered" id="table-bbarang">
+				<thead>
+					<tr>
+						<th>Barang#</th>
+						<th>Nama</th>
+						<th>Satuan</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -449,5 +492,63 @@
 			browseSuplier();
 		}
 	}); 
+
+	//////////////////////////////////////////////////////////////////////
+		
+	var dTableBBarang;
+	loadDataBBarang = function(){
+		$.ajax(
+		{
+			type: 'GET',    
+			url: "{{url('brg/browse')}}",
+			data: {
+				'GOL': $('#gol').val(),
+			},
+			success: function( response )
+			{
+				resp = response;
+				if(dTableBBarang){
+					dTableBBarang.clear();
+				}
+				for(i=0; i<resp.length; i++){
+					
+				dTableBBarang.row.add([
+						'<a href="javascript:void(0);" onclick="chooseBarang(\''+resp[i].KD_BRG+'\',  \''+resp[i].NA_BRG+'\',   \''+resp[i].SATUAN+'\')">'+resp[i].KD_BRG+'</a>',
+						resp[i].NA_BRG,
+						resp[i].SATUAN,
+					]);
+					
+				}
+				dTableBBarang.draw();
+			}
+		});
+	}
+	
+	dTableBBarang = $("#table-bbarang").DataTable({
+		
+	});
+	
+	browseBarang = function(){
+		loadDataBBarang();
+		$("#browseBarangModal").modal("show");
+	}
+	
+	chooseBarang = function(KD_BRG,NA_BRG){
+		$("#brg1").val(KD_BRG);
+		$("#nabrg1").val(NA_BRG);			
+		$("#browseBarangModal").modal("hide");
+	}
+	
+	
+	$("#brg1").keypress(function(e){
+		if(e.keyCode == 46){
+			e.preventDefault();
+			browseBarang();
+		}
+	}); 
+
+//////////////////////////////////////////////
+
+
 </script>
 @endsection

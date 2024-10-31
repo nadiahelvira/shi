@@ -1,0 +1,138 @@
+[07-Apr-2024 00:57:56 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[13-Apr-2024 08:32:52 UTC] PHP Fatal error:  Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[25-Apr-2024 15:25:44 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[28-Apr-2024 13:42:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[27-Jun-2024 02:22:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[27-Jun-2024 15:23:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[29-Jun-2024 16:23:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[03-Jul-2024 23:05:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[03-Jul-2024 23:05:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[03-Jul-2024 23:05:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[03-Jul-2024 23:05:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[03-Jul-2024 23:06:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[05-Jul-2024 05:32:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[09-Jul-2024 09:33:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[10-Jul-2024 10:58:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[15-Jul-2024 15:15:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[15-Jul-2024 21:26:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[15-Jul-2024 21:27:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[29-Jul-2024 15:30:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[09-Aug-2024 12:03:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[09-Aug-2024 18:28:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[28-Aug-2024 08:41:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[10-Sep-2024 17:52:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[12-Sep-2024 06:36:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[16-Sep-2024 00:26:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[16-Sep-2024 00:42:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[16-Sep-2024 03:51:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[16-Sep-2024 04:06:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[16-Sep-2024 16:29:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[17-Oct-2024 12:36:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[23-Oct-2024 23:27:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[24-Oct-2024 21:34:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[24-Oct-2024 22:45:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[25-Oct-2024 12:11:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[28-Oct-2024 12:00:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10
+[28-Oct-2024 14:15:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/januar13/public_html/pagoda/app/Models/FMaster/Account.php on line 10

@@ -68,8 +68,7 @@ class AccountController extends Controller
 
     public function browse()
     {
-        // $account = Account::where('BNK', '=', '')->get();
-        $account = Account::get();
+        $account = Account::where('BNK', '=', '')->get();
         return response()->json($account);
     }
 
