@@ -67,13 +67,10 @@
                             <th {{($flagz == 'BL') ? '' : 'hidden' }} 
                                 scope="col" style="text-align: center">RpRate</th>
                               
-                            <th {{($flagz == 'BL' || $flagz == 'TH') ? '' : 'hidden' }} 
-                                scope="col" width="200px" style="text-align: center">COA</th>	
-                              
                             <th scope="col" style="text-align: center">Posted</th>
                             <th scope="col" style="text-align: center">User</th>
-                                          <th 
-                            scope="col" style="text-align: center">Bank#</th>							
+                            <th scope="col" style="text-align: center">Bank#</th>							
+                            <th scope="col" style="text-align: center">COA#</th>							
                         </tr>
                     </thead>
     
@@ -127,7 +124,7 @@
                 { data: 'AJU', name: 'AJU'},
                 { data: 'BL', name: 'BL'},	
                 { data: 'RPRATE', name: 'RPRATE', render: $.fn.dataTable.render.number( ',', '.', 2, '' )},
-                { data: 'NACNOA', name: 'NACNOA'},				
+               	
                 { data: 'POSTED', name: 'POSTED',
                   render : function(data, type, row, meta) {
                     if(row['POSTED']=="0"){
@@ -139,6 +136,7 @@
                 },
                 { data: 'USRNM', name: 'USRNM'},
                 { data: 'NO_BANK', name: 'NO_BANK'},
+                { data: 'NACNOA', name: 'NACNOA'},			
             ],
             columnDefs: 
             [
@@ -172,29 +170,29 @@
        });
 
 
-            if ( '{{$flagz}}' == 'BL' ) {
+      if ( '{{$flagz}}' == 'BL' ) {
               
-              dataTable.columns([7,11,12,13,14]).visible(true);
-              
-            }
-            else
-            {
-              
-              dataTable.columns([7,11,12,13,14]).visible(false);
-              
-            }
+        dataTable.columns([7,11,12,13]).visible(true);
+        
+      }
+      else
+      {
+        
+        dataTable.columns([7,11,12,13]).visible(false);
+        
+      }
 			
-			if ( '{{$flagz}}' == 'TH' ) {
+			// if ( '{{$flagz}}' == 'TH' ) {
               
-              dataTable.columns([14]).visible(true);
-              
-            }
-            else
-            {
-              
-              dataTable.columns([14]).visible(false);
-              
-            }
+      //   dataTable.columns([14]).visible(true);
+        
+      // }
+      // else
+      // {
+        
+      //   dataTable.columns([14]).visible(false);
+        
+      // }
 
        $("div.test_btn").html('<a class="btn btn-lg btn-md btn-success" href="{{url('beli/edit?flagz='.$flagz.'&golz='.$golz.'&idx=0&tipx=new')}}"> <i class="fas fa-plus fa-sm md-3" ></i></a>');
 
